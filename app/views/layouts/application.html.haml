@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title ELearning
+    %meta{name: "viewport", content: "width=device-width,initial-scale=1"}
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = stylesheet_link_tag "styles/bootstrap4/bootstrap.min.css", "data-turbo-track": "reload"
+    = stylesheet_link_tag "plugins/OwlCarousel2-2.2.1/owl.carousel.css", "data-turbo-track": "reload"
+    = stylesheet_link_tag "plugins/OwlCarousel2-2.2.1/owl.theme.css", "data-turbo-track": "reload"
+    = stylesheet_link_tag "plugins/OwlCarousel2-2.2.1/animate.css", "data-turbo-track": "reload"
+    = stylesheet_link_tag "plugins/video-js/video-js.css", "data-turbo-track": "reload"
+    = stylesheet_link_tag "styles/main_styles.css", "data-turbo-track": "reload"
+    = stylesheet_link_tag "styles/responsive.css", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+  %body
+    = render partial: 'home/header'
+    = yield
+    = render partial: 'home/footer'

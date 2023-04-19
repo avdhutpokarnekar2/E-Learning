@@ -1,0 +1,425 @@
+.home
+  .home_slider_container
+    / Home Slider
+    .owl-carousel.owl-theme.home_slider
+      / Slider Item
+      .owl-item
+        / Background image artist https://unsplash.com/@benwhitephotography
+        .home_slider_background{style: "background-image: url('#{image_path('index.jpg')}')" }
+        .home_container
+          .container
+            .row
+              .col
+                .home_content.text-center
+                  .home_logo
+                    = image_tag('home_logo.png')
+                  .home_text
+                    .home_title Complete Online Courses
+                    .home_subtitle Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.
+                  .home_buttons
+                    .button.home_button
+                      %a{:href => "#"}
+                        learn more
+                        .button_arrow
+                          %i.fa.fa-angle-right{"aria-hidden" => "true"}
+                    .button.home_button
+                      %a{:href => "#"}
+                        see all courses
+                        .button_arrow
+                          %i.fa.fa-angle-right{"aria-hidden" => "true"}
+      / Slider Item
+      .owl-item
+        / Background image artist https://unsplash.com/@benwhitephotography
+        .home_slider_background{style: "background-image: url('#{image_path('index.jpg')}')" }
+        .home_container
+          .container
+            .row
+              .col
+                .home_content.text-center
+                  .home_logo
+                    = image_tag('home_logo.png')
+                  .home_text
+                    .home_title Complete Online Courses
+                    .home_subtitle Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.
+                  .home_buttons
+                    .button.home_button
+                      %a{:href => "#"}
+                        learn more
+                        .button_arrow
+                          %i.fa.fa-angle-right{"aria-hidden" => "true"}
+                    .button.home_button
+                      %a{:href => "#"}
+                        see all courses
+                        .button_arrow
+                          %i.fa.fa-angle-right{"aria-hidden" => "true"}
+      / Slider Item
+      .owl-item
+        / Background image artist https://unsplash.com/@benwhitephotography
+        .home_slider_background{style: "background-image: url('#{image_path('index.jpg')}')" }
+        .home_container
+          .container
+            .row
+              .col
+                .home_content.text-center
+                  .home_logo
+                    = image_tag('home_logo.png')
+                  .home_text
+                    .home_title Complete Online Courses
+                    .home_subtitle Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue ut, fermentum ipsum.
+                  .home_buttons
+                    .button.home_button
+                      %a{:href => "#"}
+                        learn more
+                        .button_arrow
+                          %i.fa.fa-angle-right{"aria-hidden" => "true"}
+                    .button.home_button
+                      %a{:href => "#"}
+                        see all courses
+                        .button_arrow
+                          %i.fa.fa-angle-right{"aria-hidden" => "true"}
+/ Featured Course
+.featured
+  .container
+    .row
+      .col
+        / Home Slider Nav
+        .home_slider_nav_container.d-flex.flex-row.align-items-start.justify-content-between
+          .home_slider_nav.home_slider_prev.trans_200
+            %i.fa.fa-angle-left{"aria-hidden" => "true"}
+          .home_slider_nav.home_slider_next.trans_200
+            %i.fa.fa-angle-right{"aria-hidden" => "true"}
+        .featured_container
+          .row
+            .col-lg-6.featured_col
+              .featured_content
+                .featured_header.d-flex.flex-row.align-items-center.justify-content-start
+                  .featured_tag
+                    %a{:href => "#"} Featured
+                  .featured_price.ml-auto
+                    Price:
+                    %span $35
+                .featured_title
+                  %h3
+                    %a{:href => "courses.html"} Online Literature Course
+                .featured_text Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Donec vehicula efficitur nibh, in pretium nulla interdum non.
+                .featured_footer.d-flex.align-items-center.justify-content-start
+                  .featured_author_image
+                    = image_tag('featured_author.jpg')
+                  .featured_author_name
+                    By
+                    %a{:href => "#"} James S. Morrison
+                  .featured_sales.ml-auto
+                    %span 352
+                    Sales
+            .col-lg-6.featured_col
+              / Background image artist https://unsplash.com/@jtylernix
+              .featured_background{style: "background-image: url('#{image_path('featured.jpg')}')" }
+/ Courses
+.courses
+  .container
+    .row
+      .col-lg-10.offset-lg-1
+        .section_title.text-center
+          %h2 Choose your course
+        .section_subtitle Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut
+    .row
+      .col
+        .course_search
+          %form.course_search_form.d-flex.flex-md-row.flex-column.align-items-start.justify-content-between{:action => "#"}
+            %div
+              %input.course_input{:placeholder => "Course", :required => "required", :type => "text"}/
+            %div
+              %input.course_input{:placeholder => "Level", :required => "required", :type => "text"}/
+            %button.course_button
+              %span search course
+              %span.button_arrow
+                %i.fa.fa-angle-right{"aria-hidden" => "true"}
+    .row
+      .col
+        / Courses Slider
+        .courses_slider_container
+          .owl-carousel.owl-theme.courses_slider
+            / Slider Item
+            .owl-item
+              .course
+                .course_image
+                  = image_tag('course_1.jpg')
+                .course_body
+                  .course_header.d-flex.flex-row.align-items-center.justify-content-start
+                    .course_tag
+                      %a{:href => "#"} Featured
+                    .course_price.ml-auto
+                      Price:
+                      %span $35
+                  .course_title
+                    %h3
+                      %a{:href => "courses.html"} Online Literature Course
+                  .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+                  .course_footer.d-flex.align-items-center.justify-content-start
+                    .course_author_image
+                      = image_tag('featured_author.jpg')
+                    .course_author_name
+                      By
+                      %a{:href => "#"} James S. Morrison
+                    .course_sales.ml-auto
+                      %span 352
+                      Sales
+            / Slider Item
+            .owl-item
+              .course
+                .course_image
+                  = image_tag('course_2.jpg')
+                .course_body
+                  .course_header.d-flex.flex-row.align-items-center.justify-content-start
+                    .course_tag
+                      %a{:href => "#"} New
+                    .course_price.ml-auto
+                      Price:
+                      %span $35
+                  .course_title
+                    %h3
+                      %a{:href => "courses.html"} Social Media Course
+                  .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+                  .course_footer.d-flex.align-items-center.justify-content-start
+                    .course_author_image
+                      = image_tag('course_author_2.jpg')
+                    .course_author_name
+                      By
+                      %a{:href => "#"} Mark Smith
+                    .course_sales.ml-auto
+                      %span 352
+                      Sales
+            / Slider Item
+            .owl-item
+              .course
+                .course_image
+                  = image_tag('course_3.jpg')
+                .course_body
+                  .course_header.d-flex.flex-row.align-items-center.justify-content-start
+                    .course_tag
+                      %a{:href => "#"} Featured
+                    .course_price.ml-auto
+                      Price:
+                      %span $35
+                  .course_title
+                    %h3
+                      %a{:href => "courses.html"} Marketing Course
+                  .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+                  .course_footer.d-flex.align-items-center.justify-content-start
+                    .course_author_image
+                      = image_tag('course_author_3.jpg')
+                    .course_author_name
+                      By
+                      %a{:href => "#"} Julia Williams
+                    .course_sales.ml-auto
+                      %span 352
+                      Sales
+          / Courses Slider Nav
+          .courses_slider_nav.courses_slider_prev.trans_200
+            %i.fa.fa-angle-left{"aria-hidden" => "true"}
+          .courses_slider_nav.courses_slider_next.trans_200
+            %i.fa.fa-angle-right{"aria-hidden" => "true"}
+/ Milestones
+.milestones
+  / Background image artis https://unsplash.com/@thepootphotographer
+  .parallax_background.parallax-window{ data: {parallax: "scroll", speed: "0.8"} }
+    = image_tag("milestones.jpg", style: "width: -webkit-fill-available")
+  .container
+    .row.milestones_container
+      / Milestone
+      .col-lg-3.milestone_col
+        .milestone.text-center
+          .milestone_icon
+            = image_tag('milestone_1.svg')
+          .milestone_counter{"data-end-value" => "1548"} 0
+          .milestone_text Online Courses
+      / Milestone
+      .col-lg-3.milestone_col
+        .milestone.text-center
+          .milestone_icon
+            = image_tag('milestone_2.svg')
+          .milestone_counter{"data-end-value" => "7286"} 0
+          .milestone_text Students
+      / Milestone
+      .col-lg-3.milestone_col
+        .milestone.text-center
+          .milestone_icon
+            = image_tag('milestone_3.svg')
+          .milestone_counter{"data-end-value" => "257"} 0
+          .milestone_text Teachers
+      / Milestone
+      .col-lg-3.milestone_col
+        .milestone.text-center
+          .milestone_icon
+            = image_tag('milestone_4.svg')
+          .milestone_counter{"data-end-value" => "39"} 0
+          .milestone_text Countries
+/ Sections
+.grouped_sections
+  .container
+    .row
+      / Why Choose Us
+      .col-lg-4.grouped_col
+        .grouped_title Why Choose Us?
+        .accordions
+          .accordion_container
+            .accordion.d-flex.flex-row.align-items-center.active
+              %div Mauris vehicula nisi congue?
+            .accordion_panel
+              %div
+                %p Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam.
+          .accordion_container
+            .accordion.d-flex.flex-row.align-items-center
+              %div Vehicula nisi congue, blandit?
+            .accordion_panel
+              %div
+                %p Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam.
+          .accordion_container
+            .accordion.d-flex.flex-row.align-items-center
+              %div Mauris vehicula nisi congue?
+            .accordion_panel
+              %div
+                %p Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam.
+          .accordion_container
+            .accordion.d-flex.flex-row.align-items-center
+              %div Nisi congue, blandit purus sed?
+            .accordion_panel
+              %div
+                %p Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam.
+      / Events
+      .col-lg-4.grouped_col
+        .grouped_title Upcoming Events
+        .events
+          / Event
+          .event.d-flex.flex-row.align-items-start.justify-content-start
+            %div
+              .event_date.d-flex.flex-column.align-items-center.justify-content-center
+                .event_day 20
+                .event_month April
+            .event_body
+              .event_title
+                %a{:href => "#"} New Marketing Course Release
+              .event_subtitle Location: Online Platform
+          / Event
+          .event.d-flex.flex-row.align-items-start.justify-content-start
+            %div
+              .event_date.d-flex.flex-column.align-items-center.justify-content-center
+                .event_day 23
+                .event_month April
+            .event_body
+              .event_title
+                %a{:href => "#"} Students Art Workshop
+              .event_subtitle Location: Online Platform
+          / Event
+          .event.d-flex.flex-row.align-items-start.justify-content-start
+            %div
+              .event_date.d-flex.flex-column.align-items-center.justify-content-center
+                .event_day 25
+                .event_month April
+            .event_body
+              .event_title
+                %a{:href => "#"} Launch Party for a new Platform
+              .event_subtitle Location: Online Platform
+          / Event
+          .event.d-flex.flex-row.align-items-start.justify-content-start
+            %div
+              .event_date.d-flex.flex-column.align-items-center.justify-content-center
+                .event_day 27
+                .event_month April
+            .event_body
+              .event_title
+                %a{:href => "#"} New Marketing Course
+              .event_subtitle Location: Online Platform
+          / Event
+          .event.d-flex.flex-row.align-items-start.justify-content-start
+            %div
+              .event_date.d-flex.flex-column.align-items-center.justify-content-center
+                .event_day 29
+                .event_month April
+            .event_body
+              .event_title
+                %a{:href => "#"} New Marketing Course
+              .event_subtitle Location: Online Platform
+      / News
+      .col-lg-4.grouped_col
+        .grouped_title Latest News
+        .news
+          / News Post
+          .news_post.d-flex.flex-row.align-items-start.justify-content-start
+            %div
+              .news_post_image
+                = image_tag('news_1.jpg')
+            .news_post_body
+              .news_post_date April 02, 2018
+              .news_post_title
+                %a{:href => "news.html"} Why Choose online education?
+              .news_post_author
+                By
+                %a{:href => "#"} William Smith
+          / News Post
+          .news_post.d-flex.flex-row.align-items-start.justify-content-start
+            %div
+              .news_post_image
+                = image_tag('news_2.jpg')
+            .news_post_body
+              .news_post_date April 02, 2018
+              .news_post_title
+                %a{:href => "news.html"} Books, Kindle or tablet?
+              .news_post_author
+                By
+                %a{:href => "#"} William Smith
+          / News Post
+          .news_post.d-flex.flex-row.align-items-start.justify-content-start
+            %div
+              .news_post_image
+                = image_tag('news_3.jpg')
+            .news_post_body
+              .news_post_date April 02, 2018
+              .news_post_title
+                %a{:href => "news.html"} Why Choose online education?
+              .news_post_author
+                By
+                %a{:href => "#"} William Smith
+          / News Post
+          .news_post.d-flex.flex-row.align-items-start.justify-content-start
+            %div
+              .news_post_image
+                = image_tag('news_4.jpg')
+            .news_post_body
+              .news_post_date April 02, 2018
+              .news_post_title
+                %a{:href => "news.html"} Books, Kindle or tablet?
+              .news_post_author
+                By
+                %a{:href => "#"} William Smith
+/ Video
+.video
+  .container
+    .row
+      .col
+        .video_container_outer
+          .video_container
+            / Video poster image artist: https://unsplash.com/@annademy
+            %video#vid1.video-js.vjs-default-skin.poster{:controls => true, "data-setup" => '{ "poster": "#{image_tag("video.jpg")}", "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://youtu.be/5_MRXyYjHDk"}], "youtube": { "iv_load_policy": 1 } }'}
+/ Join
+.join
+  .container
+    .row
+      .col-lg-10.offset-lg-1
+        .section_title.text-center
+          %h2 Join Our Platform Today
+        .section_subtitle Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut
+  .button.join_button
+    %a{:href => "#"}
+      register now
+      .button_arrow
+        %i.fa.fa-angle-right{"aria-hidden" => "true"}
+
+
+
+
+
+
+
+
+

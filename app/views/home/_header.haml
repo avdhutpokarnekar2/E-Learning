@@ -1,0 +1,107 @@
+%body
+  .super_container
+    / Header
+    %header.header
+      / Top Bar
+      .top_bar
+        .top_bar_container
+          .container
+            .row
+              .col
+                .top_bar_content.d-flex.flex-row.align-items-center.justify-content-start
+                  %ul.top_bar_contact_list
+                    %li
+                      .question Have any questions?
+                    %li
+                      %div (009) 35475 6688933 32
+                    %li
+                      %div info@elaerntemplate.com
+                  .top_bar_login.ml-auto
+                    %ul
+                      %li
+                        = link_to "Register",new_user_session_path
+                      %li
+                        = link_to "Login",new_user_session_path
+      / Header Content
+      .header_container
+        .container
+          .row
+            .col
+              .header_content.d-flex.flex-row.align-items-center.justify-content-start
+                .logo_container
+                  %a{:href => ""}
+                    .logo_content.d-flex.flex-row.align-items-end.justify-content-start
+                      .logo_img
+                        = image_tag('logo.png')
+                      .logo_text learn
+                %nav.main_nav_contaner.ml-auto
+                  %ul.main_nav
+                    %li.active
+                      %a{:href => "#"} home
+                    %li
+                      %a{:href => "about.html"} about us
+                    %li
+                      %a{:href => "courses.html"} courses
+                    %li
+                      %a{:href => "news.html"} news
+                    %li
+                      %a{:href => "contact.html"} contact
+                  .search_button
+                    %i.fa.fa-search{"aria-hidden" => "true"}
+                  / Hamburger
+                  .hamburger.menu_mm
+                    %i.fa.fa-bars.menu_mm{"aria-hidden" => "true"}
+      / Header Search Panel
+      .header_search_container
+        .container
+          .row
+            .col
+              .header_search_content.d-flex.flex-row.align-items-center.justify-content-end
+                %form.header_search_form{:action => "#"}
+                  %input.search_input{:placeholder => "Search", :required => "required", :type => "search"}/
+                  %button.header_search_button.d-flex.flex-column.align-items-center.justify-content-center
+                    %i.fa.fa-search{"aria-hidden" => "true"}
+    / Menu
+    .menu.d-flex.flex-column.align-items-end.justify-content-start.text-right.menu_mm.trans_400
+      .menu_close_container
+        .menu_close
+          %div
+          %div
+      .search
+        %form.header_search_form.menu_mm{:action => "#"}
+          %input.search_input.menu_mm{:placeholder => "Search", :required => "required", :type => "search"}/
+          %button.header_search_button.d-flex.flex-column.align-items-center.justify-content-center.menu_mm
+            %i.fa.fa-search.menu_mm{"aria-hidden" => "true"}
+      %nav.menu_nav
+        %ul.menu_mm
+          %li.menu_mm
+            %a{:href => "index.html"} Home
+          %li.menu_mm
+            %a{:href => "courses.html"} Courses
+          %li.menu_mm
+            %a{:href => "instructors.html"} Instructors
+          %li.menu_mm
+            %a{:href => "#"} Events
+          %li.menu_mm
+            %a{:href => "blog.html"} Blog
+          %li.menu_mm
+            %a{:href => "contact.html"} Contact
+      .menu_extra
+        .menu_phone
+          %span.menu_title> phone:
+          (009) 35475 6688933 32
+        .menu_social
+          %span.menu_title follow us
+          %ul
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-pinterest{"aria-hidden" => "true"}
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-facebook{"aria-hidden" => "true"}
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-instagram{"aria-hidden" => "true"}
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-twitter{"aria-hidden" => "true"}
