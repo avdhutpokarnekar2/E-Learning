@@ -21,8 +21,8 @@
 //= link plugins/video-js/video.min.js
 //= link plugins/video-js/Youtube.min.js
 //= link plugins/parallax-js-master/parallax.min.js
- //= link js/jquery-3.2.1.min.js
-
+//= link js/jquery-3.2.1.min.js
+//= link js/courses.js
 
 
 

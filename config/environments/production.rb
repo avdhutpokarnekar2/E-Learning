@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
@@ -83,11 +85,26 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
-    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger           = ActiveSupport::Logger.new($stdout)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  # self add line
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  # config.action_mailer.default_options = { :host => 'localhost:3000'}
+  config.action_mailer.default_options = { from: 'mailto:apokarnekar@gmail.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'gmail.com',
+    user_name: 'mailto:apokarnekar@gmail.com',
+    password: 'vnehtbirpoywvvtc',
+    authentication: 'plain'
+  }
 end

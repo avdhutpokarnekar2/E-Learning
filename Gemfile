@@ -74,8 +74,9 @@ end
 
 gem 'devise'
 gem 'dotenv-rails'
+gem 'haml-rails'
+gem 'pundit'
 gem 'rspec'
 gem 'rubocop'
 gem 'rubocop-rails'
-gem 'haml-rails'
 gem 'simplecov-rcov'

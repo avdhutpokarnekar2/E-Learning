@@ -1,0 +1,304 @@
+/ Home
+.home
+  / Background image artist https://unsplash.com/@thepootphotographer
+  .home_background.parallax_background.parallax-window{"data-image-src" => "images/courses.jpg", "data-parallax" => "scroll", "data-speed" => "0.8"}
+  .home_container
+    .container
+      .row
+        .col
+          .home_content.text-center
+            .home_title About us
+            .breadcrumbs
+              %ul
+                %li
+                  %a{:href => "index.html"} Home
+                %li About us
+/ Courses
+.courses
+  .container
+    .row
+      .col-lg-10.offset-lg-1
+        .section_title.text-center
+          %h2 Choose your course
+        .section_subtitle Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut
+    / Course Search
+    .row
+      .col
+        .course_search
+          %form.course_search_form.d-flex.flex-md-row.flex-column.align-items-start.justify-content-between{:action => "#"}
+            %div
+              %input.course_input{:placeholder => "Course", :required => "required", :type => "text"}/
+            %div
+              %input.course_input{:placeholder => "Level", :required => "required", :type => "text"}/
+            %button.course_button
+              %span search course
+              %span.button_arrow
+                %i.fa.fa-angle-right{"aria-hidden" => "true"}
+    / Featured Course
+    .row.featured_row
+      .col-lg-6.featured_col
+        .featured_content
+          .featured_header.d-flex.flex-row.align-items-center.justify-content-start
+            .featured_tag
+              %a{:href => "#"} Featured
+            .featured_price.ml-auto
+              Price:
+              %span $35
+          .featured_title
+            %h3
+              %a{:href => "courses.html"} Online Literature Course
+          .featured_text Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Donec vehicula efficitur nibh, in pretium nulla interdum lacus vehicula efficitur nibh, in pretiumvehicula efficitur nibh, in pretium tempus non.
+          .featured_footer.d-flex.align-items-center.justify-content-start
+            .featured_author_image
+              %img{:alt => "", :src => "images/featured_author.jpg"}/
+            .featured_author_name
+              By
+              %a{:href => "#"} James S. Morrison
+            .featured_sales.ml-auto
+              %span 352
+              Sales
+      .col-lg-6.featured_col
+        / Background image artist https://unsplash.com/@jtylernix
+        .featured_background{:style => "background-image:url(images/featured.jpg)"}
+    .row.courses_row
+      / Course
+      .col-lg-4.col-md-6
+        .course
+          .course_image
+            %img{:alt => "", :src => "images/course_1.jpg"}/
+          .course_body
+            .course_header.d-flex.flex-row.align-items-center.justify-content-start
+              .course_tag
+                %a{:href => "#"} Featured
+              .course_price.ml-auto
+                Price:
+                %span $35
+            .course_title
+              %h3
+                %a{:href => "courses.html"} Online Literature Course
+            .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+            .course_footer.d-flex.align-items-center.justify-content-start
+              .course_author_image
+                %img{:alt => "https://unsplash.com/@anthonytran", :src => "images/featured_author.jpg"}/
+              .course_author_name
+                By
+                %a{:href => "#"} James S. Morrison
+              .course_sales.ml-auto
+                %span 352
+                Sales
+      / Course
+      .col-lg-4.col-md-6
+        .course
+          .course_image
+            %img{:alt => "", :src => "images/course_2.jpg"}/
+          .course_body
+            .course_header.d-flex.flex-row.align-items-center.justify-content-start
+              .course_tag
+                %a{:href => "#"} New
+              .course_price.ml-auto
+                Price:
+                %span $35
+            .course_title
+              %h3
+                %a{:href => "courses.html"} Social Media Course
+            .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+            .course_footer.d-flex.align-items-center.justify-content-start
+              .course_author_image
+                %img{:alt => "https://unsplash.com/@anthonytran", :src => "images/course_author_2.jpg"}/
+              .course_author_name
+                By
+                %a{:href => "#"} Mark Smith
+              .course_sales.ml-auto
+                %span 352
+                Sales
+      / Course
+      .col-lg-4.col-md-6
+        .course
+          .course_image
+            %img{:alt => "", :src => "images/course_3.jpg"}/
+          .course_body
+            .course_header.d-flex.flex-row.align-items-center.justify-content-start
+              .course_tag
+                %a{:href => "#"} Featured
+              .course_price.ml-auto
+                Price:
+                %span $35
+            .course_title
+              %h3
+                %a{:href => "courses.html"} Online Marketing Course
+            .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+            .course_footer.d-flex.align-items-center.justify-content-start
+              .course_author_image
+                %img{:alt => "https://unsplash.com/@anthonytran", :src => "images/course_author_3.jpg"}/
+              .course_author_name
+                By
+                %a{:href => "#"} Julia Williams
+              .course_sales.ml-auto
+                %span 352
+                Sales
+      / Course
+      .col-lg-4.col-md-6
+        .course
+          .course_image
+            %img{:alt => "", :src => "images/course_4.jpg"}/
+          .course_body
+            .course_header.d-flex.flex-row.align-items-center.justify-content-start
+              .course_tag
+                %a{:href => "#"} Featured
+              .course_price.ml-auto
+                Price:
+                %span $35
+            .course_title
+              %h3
+                %a{:href => "courses.html"} Online Literature Course
+            .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+            .course_footer.d-flex.align-items-center.justify-content-start
+              .course_author_image
+                %img{:alt => "https://unsplash.com/@anthonytran", :src => "images/featured_author.jpg"}/
+              .course_author_name
+                By
+                %a{:href => "#"} James S. Morrison
+              .course_sales.ml-auto
+                %span 352
+                Sales
+      / Course
+      .col-lg-4.col-md-6
+        .course
+          .course_image
+            %img{:alt => "", :src => "images/course_5.jpg"}/
+          .course_body
+            .course_header.d-flex.flex-row.align-items-center.justify-content-start
+              .course_tag
+                %a{:href => "#"} New
+              .course_price.ml-auto
+                Price:
+                %span $35
+            .course_title
+              %h3
+                %a{:href => "courses.html"} Social Media Course
+            .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+            .course_footer.d-flex.align-items-center.justify-content-start
+              .course_author_image
+                %img{:alt => "https://unsplash.com/@anthonytran", :src => "images/course_author_2.jpg"}/
+              .course_author_name
+                By
+                %a{:href => "#"} Mark Smith
+              .course_sales.ml-auto
+                %span 352
+                Sales
+      / Course
+      .col-lg-4.col-md-6
+        .course
+          .course_image
+            %img{:alt => "", :src => "images/course_6.jpg"}/
+          .course_body
+            .course_header.d-flex.flex-row.align-items-center.justify-content-start
+              .course_tag
+                %a{:href => "#"} Featured
+              .course_price.ml-auto
+                Price:
+                %span $35
+            .course_title
+              %h3
+                %a{:href => "courses.html"} Online Marketing Course
+            .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+            .course_footer.d-flex.align-items-center.justify-content-start
+              .course_author_image
+                %img{:alt => "https://unsplash.com/@anthonytran", :src => "images/course_author_3.jpg"}/
+              .course_author_name
+                By
+                %a{:href => "#"} Julia Williams
+              .course_sales.ml-auto
+                %span 352
+                Sales
+      / Course
+      .col-lg-4.col-md-6
+        .course
+          .course_image
+            %img{:alt => "", :src => "images/course_7.jpg"}/
+          .course_body
+            .course_header.d-flex.flex-row.align-items-center.justify-content-start
+              .course_tag
+                %a{:href => "#"} Featured
+              .course_price.ml-auto
+                Price:
+                %span $35
+            .course_title
+              %h3
+                %a{:href => "courses.html"} Online Literature Course
+            .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+            .course_footer.d-flex.align-items-center.justify-content-start
+              .course_author_image
+                %img{:alt => "https://unsplash.com/@anthonytran", :src => "images/featured_author.jpg"}/
+              .course_author_name
+                By
+                %a{:href => "#"} James S. Morrison
+              .course_sales.ml-auto
+                %span 352
+                Sales
+      / Course
+      .col-lg-4.col-md-6
+        .course
+          .course_image
+            %img{:alt => "", :src => "images/course_8.jpg"}/
+          .course_body
+            .course_header.d-flex.flex-row.align-items-center.justify-content-start
+              .course_tag
+                %a{:href => "#"} New
+              .course_price.ml-auto
+                Price:
+                %span $35
+            .course_title
+              %h3
+                %a{:href => "courses.html"} Social Media Course
+            .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+            .course_footer.d-flex.align-items-center.justify-content-start
+              .course_author_image
+                %img{:alt => "https://unsplash.com/@anthonytran", :src => "images/course_author_2.jpg"}/
+              .course_author_name
+                By
+                %a{:href => "#"} Mark Smith
+              .course_sales.ml-auto
+                %span 352
+                Sales
+      / Course
+      .col-lg-4.col-md-6
+        .course
+          .course_image
+            %img{:alt => "", :src => "images/course_9.jpg"}/
+          .course_body
+            .course_header.d-flex.flex-row.align-items-center.justify-content-start
+              .course_tag
+                %a{:href => "#"} Featured
+              .course_price.ml-auto
+                Price:
+                %span $35
+            .course_title
+              %h3
+                %a{:href => "courses.html"} Online Marketing Course
+            .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+            .course_footer.d-flex.align-items-center.justify-content-start
+              .course_author_image
+                %img{:alt => "https://unsplash.com/@anthonytran", :src => "images/course_author_3.jpg"}/
+              .course_author_name
+                By
+                %a{:href => "#"} Julia Williams
+              .course_sales.ml-auto
+                %span 352
+                Sales
+    / Pagination
+    .row
+      .col
+        .courses_paginations
+          %ul
+            %li.active
+              %a{:href => "#"} 01
+            %li
+              %a{:href => "#"} 02
+            %li
+              %a{:href => "#"} 03
+            %li
+              %a{:href => "#"} 04
+            %li
+              %a{:href => "#"} 05
+

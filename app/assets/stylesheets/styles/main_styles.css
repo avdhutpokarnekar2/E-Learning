@@ -1941,3 +1941,9 @@ section
 .align{
 	text-align: center;
 }
+.font_size{
+	font-size: 25px !important;
+}
+.form-padding{
+	padding-left: 15px;
+}
