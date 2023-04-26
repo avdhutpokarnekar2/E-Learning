@@ -13,7 +13,7 @@
 	3.3 Logo
 	3.4 Main Nav
 	3.5 Hamburger
-4. Menu
+4. Men
 5. Home
 6. Featured Course
 7. Courses
@@ -1946,4 +1946,14 @@ section
 }
 .form-padding{
 	padding-left: 15px;
+}
+.image_widht{
+	width: 1279px;
+}
+.bg_color{
+	background-color: rgb(44,43,49);
+	color: rgb(145,142,160);
+}
+.text_color{
+	color: black;
 }

@@ -1,0 +1,117 @@
+/ Home
+.home
+  / Background image artist https://unsplash.com/@thepootphotographer
+  .home_background.parallax_background.parallax-window{ data: {parallax: "scroll", speed: "0.8"} }
+    = image_tag("courses.jpg")
+  .home_container
+    .container
+      .row
+        .col
+          .home_content.text-center
+            .home_title Courses
+            .breadcrumbs
+              %ul
+                %li
+                  %a{:href => "index.html"} Home
+                %li Courses
+/ Courses
+.courses
+  .container
+    .row
+      .col-lg-10.offset-lg-1
+        .section_title.text-center
+          %h2 Choose your course
+        .section_subtitle Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut
+    / Course Search
+    .row
+      .col
+        .course_search
+          %form.course_search_form.d-flex.flex-md-row.flex-column.align-items-start.justify-content-between{:action => "#"}
+            %div
+              %input.course_input{:placeholder => "Course", :required => "required", :type => "text"}/
+            %div
+              %input.course_input{:placeholder => "Level", :required => "required", :type => "text"}/
+            %button.course_button
+              %span search course
+              %span.button_arrow
+                %i.fa.fa-angle-right{"aria-hidden" => "true"}
+    / Featured Course
+    .row.featured_row
+      .col-lg-6.featured_col
+        .featured_content
+          .featured_header.d-flex.flex-row.align-items-center.justify-content-start
+            .featured_tag
+              %a{:href => "#"} Featured
+            .featured_price.ml-auto
+              Price:
+              %span
+              = @courses.fees
+          .featured_title
+            %h3
+              %a{:href => "courses.html"}
+              = @courses.name
+          .featured_text
+          = @courses.description
+          .featured_footer.d-flex.align-items-center.justify-content-start
+            .featured_author_image
+              = image_tag('featured_author.jpg')
+            .featured_author_name
+              By
+              %a{:href => "#"} James S. Morrison
+            .featured_sales.ml-auto
+              %span 
+              = @courses.duration
+              Months
+      .col-lg-6.featured_col
+        .featured_background{style: "background-image: url('#{image_path('featured.jpg')}')" }
+
+    .row.courses_row
+      - @course.each do |course|
+        / Course
+        .col-lg-4.col-md-6
+          .course
+            .course_image
+              = image_tag('course_1.jpg')
+            .course_body
+              .course_header.d-flex.flex-row.align-items-center.justify-content-start
+                .course_tag
+                  %a{:href => "#"} Featured
+                .course_price.ml-auto
+                  Price:
+                  %span $
+                  = course.fees
+              .course_title
+                %h3
+                  %a{:href => "courses.html"}
+                  = course.name
+              .course_text
+                = course.description
+              .course_footer.d-flex.align-items-center.justify-content-start
+                .course_author_image
+                  = image_tag('featured_author.jpg')
+
+                  %img{:alt => "https://unsplash.com/@anthonytran", :src => "images/featured_author.jpg"}/
+                .course_author_name
+                  By
+                  %a{:href => "#"} James S. Morrison
+                .course_sales.ml-auto
+                  %span
+                  = course.duration
+                  Months
+
+    / Pagination
+    .row
+      .col
+        .courses_paginations
+          %ul
+            %li.active
+              %a{:href => "#"} 01
+            %li
+              %a{:href => "#"} 02
+            %li
+              %a{:href => "#"} 03
+            %li
+              %a{:href => "#"} 04
+            %li
+              %a{:href => "#"} 05
+

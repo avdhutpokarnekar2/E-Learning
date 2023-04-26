@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   #   cookies['CSRF-TOKEN'] = form_authenticity_token
   # end
 
-  def user_not_authorized(exception)
+  def user_not_authorized(_exception)
     redirect_to root_path
   end
 end

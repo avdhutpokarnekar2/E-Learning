@@ -20,7 +20,14 @@
                     %ul
                       - if user_signed_in?
                         %li
-                          = link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete}
+                          .dropdown
+                            %button.btn.dropdown-toggle.bg_color{type: "button", id: "dropdownMenuButton", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false"}
+                              #{current_user.email}
+                            .dropdown-menu.bg_color{ "aria-labelledby": "dropdownMenuButton"}
+                              .dropdown-item
+                                = link_to "Profile", destroy_user_session_path, data: { turbo_method: :delete}
+                              .dropdown-item
+                                = link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete}
                       - else
                         %li
                           = link_to "Register",new_user_registration_path,data: {turbo: false}
@@ -46,7 +53,7 @@
                     %li
                       %a{:href => "about.html"} about us
                     %li
-                      %a{:href => "cours.haml"} courses
+                      = link_to "courses",home_cours_path
                     %li
                       %a{:href => "news.html"} news
                     %li
@@ -110,3 +117,5 @@
             %li
               %a{:href => "#"}
                 %i.fa.fa-twitter{"aria-hidden" => "true"}
+
+

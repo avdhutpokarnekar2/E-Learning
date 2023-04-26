@@ -9,7 +9,6 @@ class CoursesController < ApplicationController
   def index
     @courses = Course.all
     authorize @courses
-
   end
 
   # GET /courses/1 or /courses/1.json

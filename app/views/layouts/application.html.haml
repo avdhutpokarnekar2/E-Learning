@@ -15,6 +15,6 @@
     = stylesheet_link_tag "styles/responsive.css", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
-    =   
+    = render partial: 'home/header' 
     = yield
     = render partial: 'home/footer'
