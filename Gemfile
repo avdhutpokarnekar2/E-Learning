@@ -72,6 +72,7 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'pry'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'haml-rails'

@@ -1,0 +1,15 @@
+.container
+  = form_with(model: @user, method: :patch, url: profile_path(current_user.id), authenticity_token: false) do |form|
+    - if user_signed_in?
+      - user = current_user
+      %h4 First name
+      = form.text_field :first_name, required: true, class: 'form-control', value: user.first_name
+      %h4 Last name
+      = form.text_field :last_name, class: 'form-control', value: user.last_name
+      %h4 Mobile no
+      = form.text_field :mobile_no, required: true, class: 'form-control', pattern: "[0-9]{10}", value: user.mobile_no
+      %h4 Email
+      = form.text_field :email, class: 'form-control', value: user.email, type: "text"
+    %br
+    .actions
+      = form.submit "update"

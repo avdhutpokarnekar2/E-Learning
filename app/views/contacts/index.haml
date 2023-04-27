@@ -1,0 +1,70 @@
+/ Home
+.home
+  / Background image artist https://unsplash.com/@thepootphotographer
+  .home_background.parallax_background.parallax-window{ data: {parallax: "scroll", speed: "0.8"} }
+    = image_tag("contact.jpg", style: "width: -webkit-fill-available; height: 600px")
+  .home_container
+    .container
+      .row
+        .col
+          .home_content.text-center
+            .home_title Contact
+            .breadcrumbs
+              %ul
+                %li
+                  %a{:href => "index.html"} Home
+                %li Contact
+/ Contact
+.contact
+  .container-fluid
+    .row.row-xl-eq-height
+      / Contact Content
+      .col-xl-6
+        .contact_content
+          .row
+            .col-xl-6
+              .contact_about
+                .logo_container
+                  %a{:href => "#"}
+                    .logo_content.d-flex.flex-row.align-items-end.justify-content-start
+                      .logo_img
+                        = image_tag('logo.png')
+                      .logo_text learn
+                .contact_about_text
+                  %p Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut. Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar.
+            .col-xl-6
+              .contact_info_container
+                .contact_info_main_title Contact Us
+                .contact_info
+                  .contact_info_item
+                    .contact_info_title Address:
+                    .contact_info_line 1481 Creekside Lane Avila Beach, CA 93424
+                  .contact_info_item
+                    .contact_info_title Phone:
+                    .contact_info_line +53 345 7953 32453
+                  .contact_info_item
+                    .contact_info_title Email:
+                    .contact_info_line yourmail@gmail.com
+          .contact_form_container
+            = form_for @contact, url: contacts_path, method: :post do |form|
+              %div
+                .row
+                  .col-lg-6.contact_name_col
+                    %input.contact_input{:placeholder => "Name", :required => "required", :type => "text", :name => "name"}
+                  .col-lg-6
+                    %input.contact_input{:placeholder => "E-mail", :required => "required", :type => "email", :name => "email"}
+              %div
+                %input.contact_input{:placeholder => "contact number", :required => "required", :type => "text",:name => "contact_no"}
+              %div
+                %textarea.contact_input.contact_textarea{:placeholder => "Message",:name => "message"}
+              %button.contact_button
+                %span send message
+                %span.button_arrow
+                  %i.fa.fa-angle-right{"aria-hidden" => "true"}
+      / Contact Map
+      .col-xl-6.map_col
+        .contact_map
+          / Google Map
+          #google_map.google_map
+            .map_container
+              #map

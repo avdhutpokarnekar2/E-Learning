@@ -5,8 +5,11 @@ class HomeController < ApplicationController
     render 'home/show'
   end
 
-  def cours
+  def course
     @course = Course.all
     @courses = Course.first
+  end
+
+  def contact
   end
 end

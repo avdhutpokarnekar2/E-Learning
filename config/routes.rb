@@ -2,9 +2,12 @@
 
 Rails.application.routes.draw do
   resources :courses
+  resources :contacts
+  resources :profile
   devise_for :users
 
   root 'home#index'
   get 'home/show'
-  get 'home/cours'
+  get 'home/course'
+  get 'home/contact'
 end
