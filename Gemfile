@@ -72,12 +72,14 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'pry'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'haml-rails'
+gem 'pry'
 gem 'pundit'
 gem 'rspec'
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'simplecov-rcov'
+
+gem "rspec-rails", "~> 6.0"

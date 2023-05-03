@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# contactscontroller
 class ContactsController < ApplicationController
   def index
     @contact = Contact.new
@@ -5,7 +8,6 @@ class ContactsController < ApplicationController
 
   # create the contact form
   def create
-  	binding.pry
     @contact = Contact.create(contact_params) if params.present?
     if @contact.save
       redirect_to root_path, notice: 'Contact form saved successfully.'
@@ -20,4 +22,3 @@ class ContactsController < ApplicationController
     params.permit(:name, :email, :contact_no, :message)
   end
 end
-

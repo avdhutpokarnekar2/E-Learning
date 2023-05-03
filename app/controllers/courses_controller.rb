@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# courcescontroller
 class CoursesController < ApplicationController
   include Pundit::Authorization
 

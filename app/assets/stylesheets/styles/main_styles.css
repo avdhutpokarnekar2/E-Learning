@@ -413,9 +413,10 @@ section
 .top_bar_login ul li a
 {
 	font-size: 12px;
+	text-align: center;
 	text-transform: uppercase;
 	font-weight: 600;
-	color: #FFFFFF;
+	color: orange;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -1951,9 +1952,6 @@ section
 	width: 1279px;
 }
 .bg_color{
-	background-color: rgb(44,43,49);
-	color: rgb(145,142,160);
-}
-.text_color{
-	color: black;
+	background-color: rgb(44,43,49) !important;
+	color: rgb(145,142,160) !important;
 }

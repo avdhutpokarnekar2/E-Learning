@@ -1,0 +1,6 @@
+require: rubocop-rails
+
+Documentation:
+  Enabled: false
+Style/Documentation:
+  Enabled: false

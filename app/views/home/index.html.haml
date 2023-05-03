@@ -97,11 +97,14 @@
                     %a{:href => "#"} Featured
                   .featured_price.ml-auto
                     Price:
-                    %span $35
+                    %span $
+                    = @course.fees
                 .featured_title
                   %h3
-                    %a{:href => "courses.html"} Online Literature Course
-                .featured_text Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Donec vehicula efficitur nibh, in pretium nulla interdum non.
+                    %a{:href => "courses.html"}
+                    = @course.name
+                .featured_text
+                = @course.description
                 .featured_footer.d-flex.align-items-center.justify-content-start
                   .featured_author_image
                     = image_tag('featured_author.jpg')
@@ -109,8 +112,9 @@
                     By
                     %a{:href => "#"} James S. Morrison
                   .featured_sales.ml-auto
-                    %span 352
-                    Sales
+                    %span
+                    = @course.duration
+                    Months
             .col-lg-6.featured_col
               / Background image artist https://unsplash.com/@jtylernix
               .featured_background{style: "background-image: url('#{image_path('featured.jpg')}')" }
@@ -136,6 +140,7 @@
                 %i.fa.fa-angle-right{"aria-hidden" => "true"}
     .row
       .col
+      - @courses.each do |course|
         / Courses Slider
         .courses_slider_container
           .owl-carousel.owl-theme.courses_slider
@@ -150,11 +155,14 @@
                       %a{:href => "#"} Featured
                     .course_price.ml-auto
                       Price:
-                      %span $35
+                      %span $
+                      = course.fees
                   .course_title
                     %h3
-                      %a{:href => "courses.html"} Online Literature Course
-                  .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
+                      %a{:href => "courses.html"}
+                      = course.name
+                  .course_text
+                    = course.description
                   .course_footer.d-flex.align-items-center.justify-content-start
                     .course_author_image
                       = image_tag('featured_author.jpg')
@@ -162,58 +170,9 @@
                       By
                       %a{:href => "#"} James S. Morrison
                     .course_sales.ml-auto
-                      %span 352
-                      Sales
-            / Slider Item
-            .owl-item
-              .course
-                .course_image
-                  = image_tag('course_2.jpg')
-                .course_body
-                  .course_header.d-flex.flex-row.align-items-center.justify-content-start
-                    .course_tag
-                      %a{:href => "#"} New
-                    .course_price.ml-auto
-                      Price:
-                      %span $35
-                  .course_title
-                    %h3
-                      %a{:href => "courses.html"} Social Media Course
-                  .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
-                  .course_footer.d-flex.align-items-center.justify-content-start
-                    .course_author_image
-                      = image_tag('course_author_2.jpg')
-                    .course_author_name
-                      By
-                      %a{:href => "#"} Mark Smith
-                    .course_sales.ml-auto
-                      %span 352
-                      Sales
-            / Slider Item
-            .owl-item
-              .course
-                .course_image
-                  = image_tag('course_3.jpg')
-                .course_body
-                  .course_header.d-flex.flex-row.align-items-center.justify-content-start
-                    .course_tag
-                      %a{:href => "#"} Featured
-                    .course_price.ml-auto
-                      Price:
-                      %span $35
-                  .course_title
-                    %h3
-                      %a{:href => "courses.html"} Marketing Course
-                  .course_text Maecenas rutrum viverra sapien sed ferm entum. Morbi tempor odio eget lacus tempus pulvinar.
-                  .course_footer.d-flex.align-items-center.justify-content-start
-                    .course_author_image
-                      = image_tag('course_author_3.jpg')
-                    .course_author_name
-                      By
-                      %a{:href => "#"} Julia Williams
-                    .course_sales.ml-auto
-                      %span 352
-                      Sales
+                      %span
+                      = course.duration
+                      Months
           / Courses Slider Nav
           .courses_slider_nav.courses_slider_prev.trans_200
             %i.fa.fa-angle-left{"aria-hidden" => "true"}

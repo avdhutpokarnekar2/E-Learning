@@ -31,7 +31,7 @@
           .footer_title Quick menu
           %ul.footer_list
             %li
-              %a{:href => "index.html"} Home
+              = link_to "home", root_path
             %li
               %a{:href => "about.html"} About us
             %li
@@ -39,7 +39,7 @@
             %li
               %a{:href => "#"} Services
             %li
-              %a{:href => "contact.html"} Contact
+              = link_to "Contacts",contacts_path
             %li
               %a{:href => "#"} Facts
       .col-lg-3.footer_col
@@ -47,7 +47,7 @@
           .footer_title Useful Links
           %ul.footer_list
             %li
-              %a{:href => "courses.html"} Courses
+              = link_to "courses",home_course_path
             %li
               %a{:href => "#"} Events
             %li

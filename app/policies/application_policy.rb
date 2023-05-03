@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# policy
 class ApplicationPolicy
   include Pundit::Authorization
   attr_reader :user, :record
@@ -41,6 +42,7 @@ class ApplicationPolicy
     Pundit.policy_scope!(user, record.class)
   end
 
+  # scope
   class Scope
     attr_reader :user, :scope
 

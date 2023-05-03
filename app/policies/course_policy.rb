@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# course_policy
 class CoursePolicy < ApplicationPolicy
   # attr_reader :current_user
 

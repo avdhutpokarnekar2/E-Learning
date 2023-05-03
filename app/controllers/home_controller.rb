@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
+# home_controller
 class HomeController < ApplicationController
+  def index
+    @courses = Course.all
+    @course = Course.last
+  end
   def show
-    render 'home/show'
+      
   end
 
   def course
@@ -10,6 +15,5 @@ class HomeController < ApplicationController
     @courses = Course.first
   end
 
-  def contact
-  end
+  def contact; end
 end

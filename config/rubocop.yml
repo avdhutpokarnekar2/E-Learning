@@ -1,8 +1,0 @@
-# require: rubocop-rails
-
-
-Documentation:
-  Enabled: false
-
-Metrics/MethodLength:
-  Max: 1000

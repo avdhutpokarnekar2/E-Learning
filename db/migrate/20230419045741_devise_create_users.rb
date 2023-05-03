@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
+# user
 class DeviseCreateUsers < ActiveRecord::Migration[7.0]
-  def change
+  def change # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
     create_table :users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ''
       t.string :encrypted_password, null: false, default: ''
 
-
       t.string :first_name
       t.string :last_name
       t.string :mobile_no
-      
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
