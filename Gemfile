@@ -66,6 +66,7 @@ group :development do
 end
 
 group :test do
+  gem 'shoulda-matchers'
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -74,12 +75,15 @@ end
 
 gem 'devise'
 gem 'dotenv-rails'
+gem 'factory_bot_rails'
 gem 'haml-rails'
 gem 'pry'
 gem 'pundit'
+gem 'rails-controller-testing'
 gem 'rspec'
+gem 'rspec-rails', '~> 6.0'
 gem 'rubocop'
 gem 'rubocop-rails'
-gem 'simplecov-rcov'
-
-gem "rspec-rails", "~> 6.0"
+# gem 'shoulda-matchers'
+gem 'simplecov'
+gem 'simplecov-rcov', require: false

@@ -2,14 +2,7 @@
 
 # course_policy
 class CoursePolicy < ApplicationPolicy
-  # attr_reader :current_user
-
-  # def initialize(current_user)
-  #   @current_user = current_user
-  # end
-
   def create?
-    p user.instructor?
     user.instructor?
   end
 

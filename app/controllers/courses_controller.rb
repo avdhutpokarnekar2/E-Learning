@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-# courcescontroller
+# cources controller
 class CoursesController < ApplicationController
   include Pundit::Authorization
-
   before_action :set_course, only: %i[show edit update destroy]
 
   # GET /courses or /courses.json

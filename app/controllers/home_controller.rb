@@ -6,9 +6,8 @@ class HomeController < ApplicationController
     @courses = Course.all
     @course = Course.last
   end
-  def show
-      
-  end
+
+  def show; end
 
   def course
     @course = Course.all
