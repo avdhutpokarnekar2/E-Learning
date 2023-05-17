@@ -84,6 +84,9 @@ gem 'rspec'
 gem 'rspec-rails', '~> 6.0'
 gem 'rubocop'
 gem 'rubocop-rails'
-# gem 'shoulda-matchers'
 gem 'simplecov'
 gem 'simplecov-rcov', require: false
+gem 'warden'
+gem 'faker'
+
+

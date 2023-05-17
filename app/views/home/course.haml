@@ -83,7 +83,8 @@
               .course_title
                 %h3
                   %a{:href => "courses.html"}
-                  = course.name
+                  = link_to course_path(course) do
+                    = course.name
               .course_text
                 = course.description
               .course_footer.d-flex.align-items-center.justify-content-start

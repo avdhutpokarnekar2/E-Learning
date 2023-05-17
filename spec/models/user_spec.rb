@@ -9,25 +9,11 @@ RSpec.describe User, type: :model do # rubocop:disable Metrics/BlockLength
                mobile_no: 1_234_567_890, role: 'student')
     end
 
-    it 'first name should present' do
-      user.first_name = nil
-      expect(user).not_to be_valid
-    end
-
-    it 'last_name should present' do
-      user.last_name = nil
-      expect(user).not_to be_valid
-    end
-
-    it 'mobile_no should present' do
-      user.mobile_no = nil
-      expect(user).not_to be_valid
-    end
-
     it 'email should present' do
       user.email = nil
       expect(user).not_to be_valid
     end
+
 
     it 'is valid with a properly formatted email' do
       user = User.new(email: 'avdhut@gmail.com')

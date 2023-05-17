@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :courses
   resources :contacts
   resources :profile
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'devise/registrations' }
 
   root 'home#index'
   get 'home/show'

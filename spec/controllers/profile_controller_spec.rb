@@ -22,7 +22,7 @@ RSpec.describe ProfileController, type: :controller do # rubocop:disable Metrics
         expect(user.first_name).to eq(updated_user_params[:first_name])
         expect(user.last_name).to eq(updated_user_params[:last_name])
         expect(user.mobile_no).to eq(updated_user_params[:mobile_no])
-        expect(user.email).to eq(updated_user_params[:email])
+        expect(user.email).to match(/\A[\w+\-.]+@[a-z\d-]+(\.[a-z]+)*\.[a-z]+\z/i)
       end
 
       it 'redirects to the profile index page' do

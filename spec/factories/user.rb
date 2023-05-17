@@ -6,8 +6,9 @@ FactoryBot.define do
     first_name { 'avdhut' }
     last_name { 'p' }
     mobile_no { '1234567890' }
-    email { 'user@example.com' }
+    email { Faker::Internet.unique.email }
     password { 'password' }
+    password_confirmation { 'password' }
     role { 'instructor' }
   end
 end
