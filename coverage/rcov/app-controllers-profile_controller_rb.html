@@ -26,16 +26,16 @@
           <tr>
             <td class="left_align"><a href="app-controllers-profile_controller_rb.html">app/controllers/profile_controller.rb</a></td>
             <td class='right_align'><tt>21</tt></td>
-            <td class='right_align'><tt>15</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>28.57%</tt></div>
+            <td class='right_align'><tt>10</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>76.19%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:29px"></div>
-        <div class="uncovered" style="width:71px"></div>
+        <div class="covered" style="width:76px"></div>
+        <div class="uncovered" style="width:24px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>50.00%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:0px"></div>
-        <div class="uncovered" style="width:100px"></div>
+        <div class="covered" style="width:50px"></div>
+        <div class="uncovered" style="width:50px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -59,16 +59,16 @@
         <tr class="inferred">
           <td><pre><a name="line4">4</a> # profile_controller</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line5">5</a> class ProfileController &lt; ApplicationController</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line6">6</a>   skip_before_action :verify_authenticity_token</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line7">7</a> </pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line8">8</a>   def update</pre></td>
         </tr>
         <tr class="uncovered">
@@ -80,43 +80,43 @@
         <tr class="uncovered">
           <td><pre><a name="line11">11</a>       redirect_to profile_index_path(@user), notice: &#39;User successfully updated.&#39;</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="inferred">
           <td><pre><a name="line12">12</a>     else</pre></td>
         </tr>
         <tr class="uncovered">
           <td><pre><a name="line13">13</a>       redirect_to profile_index_path(@user.errors), alert: @user.errors.full_messages</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="inferred">
           <td><pre><a name="line14">14</a>     end</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="inferred">
           <td><pre><a name="line15">15</a>   end</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line16">16</a> </pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line17">17</a>   private</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line18">18</a> </pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line19">19</a>   def user_params</pre></td>
         </tr>
         <tr class="uncovered">
           <td><pre><a name="line20">20</a>     params.permit(:first_name, :last_name, :mobile_no, :email, :id)</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="inferred">
           <td><pre><a name="line21">21</a>   end</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="inferred">
           <td><pre><a name="line22">22</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-05-17 12:42:50 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-05-23 16:54:35 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

@@ -76,6 +76,7 @@ end
 gem 'devise'
 gem 'dotenv-rails'
 gem 'factory_bot_rails'
+gem 'faker'
 gem 'haml-rails'
 gem 'pry'
 gem 'pundit'
@@ -87,6 +88,3 @@ gem 'rubocop-rails'
 gem 'simplecov'
 gem 'simplecov-rcov', require: false
 gem 'warden'
-gem 'faker'
-
-

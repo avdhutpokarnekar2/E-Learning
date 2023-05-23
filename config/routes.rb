@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get 'home/show'
   get 'home/course'
   get 'home/contact'
+  get 'home/about'
 end

@@ -25,9 +25,9 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-courses_controller_rb.html">app/controllers/courses_controller.rb</a></td>
-            <td class='right_align'><tt>75</tt></td>
+            <td class='right_align'><tt>74</tt></td>
             <td class='right_align'><tt>35</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>72.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>71.62%</tt></div>
       <div class="percent_graph">
         <div class="covered" style="width:72px"></div>
         <div class="uncovered" style="width:28px"></div>
@@ -93,192 +93,189 @@
           <td><pre><a name="line15">15</a>   # GET /courses/1 or /courses/1.json</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line16">16</a>   def show;</pre></td>
+          <td><pre><a name="line16">16</a>   def show; end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line17">17</a>   end</pre></td>
+          <td><pre><a name="line17">17</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line18">18</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line19">19</a>   # GET /courses/new</pre></td>
+          <td><pre><a name="line18">18</a>   # GET /courses/new</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line20">20</a>   def new</pre></td>
+          <td><pre><a name="line19">19</a>   def new</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line21">21</a>     @course = Course.new</pre></td>
+          <td><pre><a name="line20">20</a>     @course = Course.new</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line22">22</a>   end</pre></td>
+          <td><pre><a name="line21">21</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line23">23</a> </pre></td>
+          <td><pre><a name="line22">22</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line24">24</a>   # GET /courses/1/edit</pre></td>
+          <td><pre><a name="line23">23</a>   # GET /courses/1/edit</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line25">25</a>   def edit; end</pre></td>
+          <td><pre><a name="line24">24</a>   def edit; end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line26">26</a> </pre></td>
+          <td><pre><a name="line25">25</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line27">27</a>   # POST /courses or /courses.json</pre></td>
+          <td><pre><a name="line26">26</a>   # POST /courses or /courses.json</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line28">28</a>   def create</pre></td>
+          <td><pre><a name="line27">27</a>   def create</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line29">29</a>     @course = Course.new(course_params)</pre></td>
+          <td><pre><a name="line28">28</a>     @course = Course.new(course_params)</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line30">30</a> </pre></td>
+          <td><pre><a name="line29">29</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line31">31</a>     respond_to do |format|</pre></td>
+          <td><pre><a name="line30">30</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line32">32</a>       if @course.save</pre></td>
+          <td><pre><a name="line31">31</a>       if @course.save</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line33">33</a>         format.html { redirect_to course_url(@course), notice: &#39;Course was successfully created.&#39; }</pre></td>
+          <td><pre><a name="line32">32</a>         format.html { redirect_to course_url(@course), notice: &#39;Course was successfully created.&#39; }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line34">34</a>         format.json { render :show, status: :created, location: @course }</pre></td>
+          <td><pre><a name="line33">33</a>         format.json { render :show, status: :created, location: @course }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line35">35</a>       else</pre></td>
+          <td><pre><a name="line34">34</a>       else</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line36">36</a>         format.html { render :new, status: :unprocessable_entity }</pre></td>
+          <td><pre><a name="line35">35</a>         format.html { render :new, status: :unprocessable_entity }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line37">37</a>         format.json { render json: @course.errors, status: :unprocessable_entity }</pre></td>
+          <td><pre><a name="line36">36</a>         format.json { render json: @course.errors, status: :unprocessable_entity }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line38">38</a>       end</pre></td>
+          <td><pre><a name="line37">37</a>       end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line39">39</a>     end</pre></td>
+          <td><pre><a name="line38">38</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line40">40</a>   end</pre></td>
+          <td><pre><a name="line39">39</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line41">41</a> </pre></td>
+          <td><pre><a name="line40">40</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line42">42</a>   # PATCH/PUT /courses/1 or /courses/1.json</pre></td>
+          <td><pre><a name="line41">41</a>   # PATCH/PUT /courses/1 or /courses/1.json</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line43">43</a>   def update</pre></td>
+          <td><pre><a name="line42">42</a>   def update</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line44">44</a>     respond_to do |format|</pre></td>
+          <td><pre><a name="line43">43</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line45">45</a>       if @course.update(course_params)</pre></td>
+          <td><pre><a name="line44">44</a>       if @course.update(course_params)</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line46">46</a>         format.html { redirect_to course_url(@course), notice: &#39;Course was successfully updated.&#39; }</pre></td>
+          <td><pre><a name="line45">45</a>         format.html { redirect_to course_url(@course), notice: &#39;Course was successfully updated.&#39; }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line47">47</a>         format.json { render :show, status: :ok, location: @course }</pre></td>
+          <td><pre><a name="line46">46</a>         format.json { render :show, status: :ok, location: @course }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line48">48</a>       else</pre></td>
+          <td><pre><a name="line47">47</a>       else</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line49">49</a>         format.html { render :edit, status: :unprocessable_entity }</pre></td>
+          <td><pre><a name="line48">48</a>         format.html { render :edit, status: :unprocessable_entity }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line50">50</a>         format.json { render json: @course.errors, status: :unprocessable_entity }</pre></td>
+          <td><pre><a name="line49">49</a>         format.json { render json: @course.errors, status: :unprocessable_entity }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line51">51</a>       end</pre></td>
+          <td><pre><a name="line50">50</a>       end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line52">52</a>     end</pre></td>
+          <td><pre><a name="line51">51</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line53">53</a>   end</pre></td>
+          <td><pre><a name="line52">52</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line54">54</a> </pre></td>
+          <td><pre><a name="line53">53</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line55">55</a>   # DELETE /courses/1 or /courses/1.json</pre></td>
+          <td><pre><a name="line54">54</a>   # DELETE /courses/1 or /courses/1.json</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line56">56</a>   def destroy</pre></td>
+          <td><pre><a name="line55">55</a>   def destroy</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line57">57</a>     @course.destroy</pre></td>
+          <td><pre><a name="line56">56</a>     @course.destroy</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line58">58</a> </pre></td>
+          <td><pre><a name="line57">57</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line59">59</a>     respond_to do |format|</pre></td>
+          <td><pre><a name="line58">58</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line60">60</a>       format.html { redirect_to courses_url, notice: &#39;Course was successfully destroyed.&#39; }</pre></td>
+          <td><pre><a name="line59">59</a>       format.html { redirect_to courses_url, notice: &#39;Course was successfully destroyed.&#39; }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line61">61</a>       format.json { head :no_content }</pre></td>
+          <td><pre><a name="line60">60</a>       format.json { head :no_content }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line62">62</a>     end</pre></td>
+          <td><pre><a name="line61">61</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line63">63</a>   end</pre></td>
+          <td><pre><a name="line62">62</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line64">64</a> </pre></td>
+          <td><pre><a name="line63">63</a> </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line65">65</a>   private</pre></td>
+          <td><pre><a name="line64">64</a>   private</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line66">66</a> </pre></td>
+          <td><pre><a name="line65">65</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line67">67</a>   # Use callbacks to share common setup or constraints between actions.</pre></td>
+          <td><pre><a name="line66">66</a>   # Use callbacks to share common setup or constraints between actions.</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line68">68</a>   def set_course</pre></td>
+          <td><pre><a name="line67">67</a>   def set_course</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line69">69</a>     @course = Course.find(params[:id])</pre></td>
+          <td><pre><a name="line68">68</a>     @course = Course.find(params[:id])</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line70">70</a>   end</pre></td>
+          <td><pre><a name="line69">69</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line71">71</a> </pre></td>
+          <td><pre><a name="line70">70</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line72">72</a>   # Only allow a list of trusted parameters through.</pre></td>
+          <td><pre><a name="line71">71</a>   # Only allow a list of trusted parameters through.</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line73">73</a>   def course_params</pre></td>
+          <td><pre><a name="line72">72</a>   def course_params</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line74">74</a>     params.require(:course).permit(:name, :description, :fees, :course_type, :duration, :start_date)</pre></td>
+          <td><pre><a name="line73">73</a>     params.require(:course).permit(:name, :description, :fees, :course_type, :duration, :start_date, :image)</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line75">75</a>   end</pre></td>
+          <td><pre><a name="line74">74</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line76">76</a> end</pre></td>
+          <td><pre><a name="line75">75</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-05-17 12:42:50 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-05-23 16:54:35 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

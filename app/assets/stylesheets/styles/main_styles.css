@@ -1955,3 +1955,10 @@ section
 	background-color: rgb(44,43,49) !important;
 	color: rgb(145,142,160) !important;
 }
+.image-show{
+	height: 500px;
+    width: 270px;
+}
+.btn{
+	background-color: orange;
+}

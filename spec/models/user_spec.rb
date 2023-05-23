@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe User, type: :model do # rubocop:disable Metrics/BlockLength
-  describe 'authentication process' do # rubocop:disable Metrics/BlockLength
+RSpec.describe User, type: :model do
+  describe 'authentication process' do
     let(:user) do
       User.new(email: 'testuser@gmail.com', password: 'Password123!', first_name: 'avdhut', last_name: 'pokarnekar',
                mobile_no: 1_234_567_890, role: 'student')
@@ -13,7 +13,6 @@ RSpec.describe User, type: :model do # rubocop:disable Metrics/BlockLength
       user.email = nil
       expect(user).not_to be_valid
     end
-
 
     it 'is valid with a properly formatted email' do
       user = User.new(email: 'avdhut@gmail.com')

@@ -94,7 +94,7 @@
               .featured_content
                 .featured_header.d-flex.flex-row.align-items-center.justify-content-start
                   .featured_tag
-                    %a{:href => "#"} Featured
+                    %a{:href => "#"} ENROLL
                   .featured_price.ml-auto
                     Price:
                     %span $
@@ -140,19 +140,19 @@
                 %i.fa.fa-angle-right{"aria-hidden" => "true"}
     .row
       .col
-      - @courses.each do |course|
         / Courses Slider
-        .courses_slider_container
-          .owl-carousel.owl-theme.courses_slider
+        .owl-carousel.owl-theme.courses_slider
+          - @courses.each do |course|
             / Slider Item
             .owl-item
+              .courses_slider_container
               .course
                 .course_image
-                  = image_tag('course_1.jpg')
+                  = image_tag(course.image)
                 .course_body
                   .course_header.d-flex.flex-row.align-items-center.justify-content-start
                     .course_tag
-                      %a{:href => "#"} Featured
+                      %a{:href => "#"} ENROLL
                     .course_price.ml-auto
                       Price:
                       %span $

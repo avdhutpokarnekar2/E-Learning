@@ -26,6 +26,8 @@
                             .dropdown-menu.bg_color.dropdown_bg_color{ "aria-labelledby": "dropdownMenuButton"}
                               .dropdown-item.dropdown_bg_color
                                 = link_to "Profile", profile_index_path
+                              .dropdown-item.dropdown_bg_color
+                                = link_to "My Courses", profile_index_path
                               .dropdown-item
                                 = link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete}
                       - else
@@ -51,7 +53,7 @@
                     %li.active
                       = link_to "home", root_path
                     %li
-                      %a{:href => "about.html"} about us
+                      = link_to "about",home_about_path
                     %li
                       = link_to "courses",home_course_path
                     %li

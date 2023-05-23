@@ -41,7 +41,7 @@
         .featured_content
           .featured_header.d-flex.flex-row.align-items-center.justify-content-start
             .featured_tag
-              %a{:href => "#"} Featured
+              %a{:href => "#"} ENROLL
             .featured_price.ml-auto
               Price:
               %span
@@ -71,18 +71,18 @@
         .col-lg-4.col-md-6
           .course
             .course_image
-              = image_tag('course_1.jpg')
+              = image_tag(course.image)
             .course_body
               .course_header.d-flex.flex-row.align-items-center.justify-content-start
                 .course_tag
-                  %a{:href => "#"} Featured
+                  = link_to course_path(course) do
+                    ENROLL
                 .course_price.ml-auto
                   Price:
                   %span $
                   = course.fees
               .course_title
                 %h3
-                  %a{:href => "courses.html"}
                   = link_to course_path(course) do
                     = course.name
               .course_text

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Devise::RegistrationsController, type: :controller do
@@ -5,11 +7,9 @@ RSpec.describe Devise::RegistrationsController, type: :controller do
     request.env['devise.mapping'] = Devise.mappings[:user]
   end
   describe 'POST #create' do
-
     context 'with valid parameters' do
-      user = FactoryBot.build(:user) 
       it 'creates a new user' do
-        expect {
+        expect do
           post :create, params: {
             user: {
               email: 'test@example.com',
@@ -17,7 +17,7 @@ RSpec.describe Devise::RegistrationsController, type: :controller do
               password_confirmation: 'password'
             }
           }
-        }.to change(User, :count).by(1)
+        end.to change(User, :count).by(1)
       end
 
       it 'redirects to the root path' do

@@ -5,7 +5,6 @@
 //= link_tree ../../../vendor/javascript .js
 //= link js/custom.js
 //= link js/jquery-3.2.1.min.js
-//= link styles/bootstrap4/bootstrap.min.css
 //= link styles/bootstrap4/bootstrap.min.js
 //= link styles/bootstrap4/popper.js
 //= link plugins/greensock/TweenMax.min.js
@@ -23,6 +22,7 @@
 //= link plugins/parallax-js-master/parallax.min.js
 //= link js/jquery-3.2.1.min.js
 //= link js/courses.js
+//= link js/about.js
 
 
 

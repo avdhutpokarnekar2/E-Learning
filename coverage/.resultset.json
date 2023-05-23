@@ -9,9 +9,7 @@
           1,
           1,
           null,
-          null,
           1,
-          null,
           null
         ]
       },
@@ -32,15 +30,15 @@
           null,
           1,
           1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
           2,
           2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          4,
           null,
           null,
           1,
@@ -126,44 +124,7 @@
           1,
           1,
           1,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/controllers/contacts_controller.rb": {
-        "lines": [
           null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/models/contact.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          1,
           1,
           null
         ]
@@ -187,7 +148,6 @@
           1,
           null,
           null,
-          null,
           1,
           0,
           null,
@@ -237,7 +197,7 @@
           null,
           null,
           1,
-          7,
+          11,
           null,
           null,
           null,
@@ -252,8 +212,36 @@
           null,
           null,
           null,
+          1,
+          1,
+          null,
+          1,
           0,
           0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/user/e_learning/app/controllers/contacts_controller.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
           null,
           0,
           0,
@@ -265,6 +253,19 @@
           0,
           null,
           0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/models/contact.rb": {
+        "lines": [
+          null,
+          null,
           null,
           0,
           0,
@@ -365,6 +366,6 @@
         }
       }
     },
-    "timestamp": 1684307570
+    "timestamp": 1684841075
   }
 }

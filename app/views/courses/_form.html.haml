@@ -35,6 +35,11 @@
     = f.label :start_date, class: "control-label col-sm-2"
     .col-sm-10
       = f.datetime_field :start_date, class: "form-control"
+  
+  .form-group
+    = f.label :image, class: "control-label col-sm-2"
+    .col-sm-10
+      = f.file_field :image, class: "form-control"
 
   .form-group
     .col-sm-offset-2.col-sm-10
