@@ -1,15 +1,17 @@
 = form_for @lesson, html: {class: "form-horizontal"} do |f|
-  - if @lesson.errors.any?
-    .alert.alert-danger
-      %h4= "#{pluralize(@lesson.errors.count, "error")} prohibited this lesson from being saved:"
-      %ul
-        - @lesson.errors.full_messages.each do |message|
-          %li= message
-
   .form-group
     = f.label :name, class: "control-label col-sm-2"
     .col-sm-10
       = f.text_field :name, class: "form-control"
+  .form-group
+    = f.label :video, class: "control-label col-sm-2"
+    .col-sm-10
+      = f.file_field :video, class: "form-control"
+  .form-group
+    = f.label :course, class: "control-label col-sm-2"
+    .col-sm-10
+      = course_id = params[:course_id]
+      = f.hidden_field :course_id, value: course_id.to_i
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit 'Save', class: "btn btn-primary"

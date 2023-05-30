@@ -25,17 +25,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-profile_controller_rb.html">app/controllers/profile_controller.rb</a></td>
-            <td class='right_align'><tt>21</tt></td>
-            <td class='right_align'><tt>10</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>95.24%</tt></div>
+            <td class='right_align'><tt>27</tt></td>
+            <td class='right_align'><tt>13</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>81.48%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:95px"></div>
-        <div class="uncovered" style="width:5px"></div>
+        <div class="covered" style="width:81px"></div>
+        <div class="uncovered" style="width:19px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>90.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>61.54%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:90px"></div>
-        <div class="uncovered" style="width:10px"></div>
+        <div class="covered" style="width:62px"></div>
+        <div class="uncovered" style="width:38px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -71,13 +71,13 @@
         <tr class="marked">
           <td><pre><a name="line8">8</a>   def update</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line9">9</a>     @user = User.find(params[:id])</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line10">10</a>     if @user.update(user_params)</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line11">11</a>       redirect_to profile_index_path(@user), notice: &#39;User successfully updated.&#39;</pre></td>
         </tr>
         <tr class="inferred">
@@ -96,27 +96,45 @@
           <td><pre><a name="line16">16</a> </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line17">17</a>   private</pre></td>
+          <td><pre><a name="line17">17</a>   def show</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line18">18</a>     @c = Course.last</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line18">18</a> </pre></td>
+          <td><pre><a name="line19">19</a>   end</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line19">19</a>   def user_params</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line20">20</a>     params.permit(:first_name, :last_name, :mobile_no, :email, :id)</pre></td>
+          <td><pre><a name="line20">20</a>   def user_courses    </pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line21">21</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line22">22</a> end</pre></td>
+          <td><pre><a name="line22">22</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line23">23</a>   private</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line24">24</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line25">25</a>   def user_params</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line26">26</a>     params.permit(:first_name, :last_name, :mobile_no, :email, :id)</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line27">27</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line28">28</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-05-25 15:54:43 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-05-30 13:43:18 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

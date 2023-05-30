@@ -13,6 +13,12 @@ class ProfileController < ApplicationController
     end
   end
 
+  def show
+    @c = Course.last
+  end
+  def user_courses    
+  end
+
   private
 
   def user_params

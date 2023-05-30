@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get 'home/contact'
   get 'home/about'
   get 'courses/meth'
+  get 'profile/user_courses'
 end

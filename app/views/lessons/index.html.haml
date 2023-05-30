@@ -1,0 +1,8 @@
+%h1.main_padding
+  - @lessons.each do |l|
+    = l.name
+    - if l.video.present?
+      = video_tag(url_for(l.video), controls: true, size: "300x200")
+
+
+

@@ -16,14 +16,13 @@ class LessonsController < ApplicationController
 
   def create
     @lesson = Lesson.new(lesson_params)
-
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to course_url(@course), notice: 'Course was successfully created.' }
+        format.html { redirect_to courses_path, notice: 'lesson was successfully created.' }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
+        format.json { render json: @lesson.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -55,8 +54,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find(params[:id])
   end
 
-  def course_params
-    params.permit(:name)
+  def lesson_params
+    params.require(:lesson).permit(:name, :course_id, :video)
   end
 end
-
