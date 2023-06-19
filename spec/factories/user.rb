@@ -2,7 +2,6 @@
 
 FactoryBot.define do
   factory :user do
-    # Define attributes for the user factory
     first_name { 'avdhut' }
     last_name { 'p' }
     mobile_no { '1234567890' }

@@ -1,0 +1,22 @@
+<div class="main_padding">
+	<div class="container">
+		<% if @course.present? %>
+		<% @course.each do|c| %>
+			<div class="row brdr">
+				<div class="col-sm-4 ">
+					<%= image_tag(c.image, width: 300, height: 200) %>
+				</div>
+				<div class="col-sm-6">
+	  			<h3 class="fontcolor"><%= c.name %></h3>
+	  			<h5><%= c.description %></h5><br>
+	  			<h5>Duration:- <%= c.duration %> Monts</h5>
+					<br>
+					<%= link_to course_lesson_path(c) do %>
+						<button type="button" class="btn btn-warning">Start Course</button>
+					<% end %>
+				</div>
+			</div>
+		<%end%>
+		<% end %>
+	</div>
+</div>

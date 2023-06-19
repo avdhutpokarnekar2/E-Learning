@@ -25,17 +25,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-home_controller_rb.html">app/controllers/home_controller.rb</a></td>
-            <td class='right_align'><tt>18</tt></td>
-            <td class='right_align'><tt>9</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class='right_align'><tt>27</tt></td>
+            <td class='right_align'><tt>19</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>29.63%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:100px"></div>
-        <div class="uncovered" style="width:0px"></div>
+        <div class="covered" style="width:30px"></div>
+        <div class="uncovered" style="width:70px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:100px"></div>
-        <div class="uncovered" style="width:0px"></div>
+        <div class="covered" style="width:0px"></div>
+        <div class="uncovered" style="width:100px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -59,55 +59,82 @@
         <tr class="inferred">
           <td><pre><a name="line4">4</a> # home_controller</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line5">5</a> class HomeController &lt; ApplicationController</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line6">6</a>   def index</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line7">7</a>     @courses = Course.all</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line8">8</a>     @course = Course.last</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line9">9</a>   end</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line10">10</a> </pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line11">11</a>   def show; end</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line12">12</a> </pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line13">13</a>   def course</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line14">14</a>     @course = Course.all</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line15">15</a>     @courses = Course.first</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line16">16</a>   end</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line17">17</a> </pre></td>
         </tr>
-        <tr class="marked">
-          <td><pre><a name="line18">18</a>   def contact; end</pre></td>
+        <tr class="inferred">
+          <td><pre><a name="line18">18</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line19">19</a>   def course_lesson</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line20">20</a>     course = Course.find(params[:id])</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line21">21</a>     @c = course.lessons</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line22">22</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line19">19</a> end</pre></td>
+          <td><pre><a name="line23">23</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line24">24</a>   def lesson_video</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line25">25</a>     @c = course.lessons</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line26">26</a>     @l = Lesson.find(params[:id])</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line27">27</a>   end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line28">28</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-05-30 13:43:18 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-06-16 19:03:59 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

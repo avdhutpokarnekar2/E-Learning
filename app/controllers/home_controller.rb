@@ -14,5 +14,14 @@ class HomeController < ApplicationController
     @courses = Course.first
   end
 
-  def contact; end
+
+  def course_lesson
+    course = Course.find(params[:id])
+    @c = course.lessons
+  end
+
+  def lesson_video
+    @c = course.lessons
+    @l = Lesson.find(params[:id])
+  end
 end

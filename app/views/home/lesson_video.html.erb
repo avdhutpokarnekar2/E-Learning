@@ -1,0 +1,37 @@
+<div class="main_padding">
+<div class="row hgt">
+	<div class="col-sm-3">
+	  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+	    <div class="position-sticky">
+	      <div class="list-group list-group-flush mx-3 mt-4">
+	        <!-- Collapse 1 -->
+	        <a
+	          class="list-group-item list-group-item-action py-2 ripple"
+	          aria-current="true"
+	          data-mdb-toggle="collapse"
+	          href="#collapseExample1"
+	          aria-expanded="true"
+	          aria-controls="collapseExample1"
+	        >
+	          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span><h4>Lessons</h4></span>
+	        </a>
+	        <ul id="collapseExample1" class="collapse show list-group list-group-flush">
+	          <li class="list-group-item py-1">
+	            <a href="" class="text-reset"><% @c.each do |c| %>
+												<%= link_to lesson_video_path(c) do %>
+												<br><%= c.name %><br>
+												<% end %>
+												<%end%>
+				</a>
+	          </li>
+	        </ul>
+	        <!-- Collapse 1 -->
+	      </div>
+	    </div>
+	  </nav>
+	</div>
+	<div class="col-sm-8">
+		<h4><%= @l.name %></h4>
+		<%= video_tag(url_for(@l.video), controls: true, size: "300x200") %>
+	</div>
+</div>

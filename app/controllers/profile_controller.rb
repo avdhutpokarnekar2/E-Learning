@@ -14,7 +14,7 @@ class ProfileController < ApplicationController
   end
 
   def show
-    @c = Course.last
+    @course = current_user.courses
   end
   def user_courses    
   end

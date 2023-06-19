@@ -1,3 +1,7 @@
 <div class="main_padding">
-<h1> <%= @c.name %></h1>
+	<% @course.each do|c| %>
+	<br><%= link_to course_lesson_path(c) do %>
+  			<%= c.name %>
+			<% end %>
+	<%end%>
 </div>

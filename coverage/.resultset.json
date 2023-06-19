@@ -10,6 +10,9 @@
           1,
           null,
           1,
+          null,
+          1,
+          1,
           null
         ]
       },
@@ -23,260 +26,71 @@
           null
         ]
       },
-      "/home/user/e_learning/app/controllers/home_controller.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
       "/home/user/e_learning/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
           null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
           0,
           null,
-          null
-        ]
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
-      "/home/user/e_learning/app/helpers/application_helper.rb": {
+      "/home/user/e_learning/app/controllers/assignments_controller.rb": {
         "lines": [
-          null,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/helpers/contacts_helper.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/helpers/courses_helper.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/helpers/home_helper.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/helpers/lessons_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/helpers/profile_helper.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/models/course.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/controllers/profile_controller.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
           0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          4,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/controllers/lessons_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          5,
-          null,
-          null,
-          1,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/models/lesson.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
+          0
+        ],
+        "branches": {
+        }
       },
       "/home/user/e_learning/app/controllers/contacts_controller.rb": {
         "lines": [
           null,
           null,
           null,
-          1,
-          1,
-          2,
-          null,
-          null,
-          null,
-          1,
+          0,
           0,
           0,
           0,
           null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           0,
           null,
-          null,
-          null,
-          1,
-          null,
-          1,
           0,
           null,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/models/contact.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null
-        ]
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
       "/home/user/e_learning/app/controllers/courses_controller.rb": {
         "lines": [
@@ -351,6 +165,375 @@
           null,
           null,
           0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/controllers/enrollments_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/controllers/home_controller.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/controllers/lessons_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/controllers/profile_controller.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/controllers/questions_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/controllers/users_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/helpers/application_helper.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/helpers/assignments_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/helpers/contacts_helper.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/helpers/courses_helper.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/helpers/enrollments_helper.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/helpers/home_helper.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/helpers/lessons_helper.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/helpers/profile_helper.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/helpers/questions_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/helpers/users_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/models/assignment.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/models/contact.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/models/course.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/models/enrollment.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/models/lesson.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/user/e_learning/app/models/question.rb": {
+        "lines": [
           0,
           0,
           0
@@ -449,6 +632,6 @@
         }
       }
     },
-    "timestamp": 1685434398
+    "timestamp": 1686922439
   }
 }
