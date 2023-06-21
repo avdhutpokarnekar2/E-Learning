@@ -16,8 +16,8 @@ class ProfileController < ApplicationController
   def show
     @course = current_user.courses
   end
-  def user_courses    
-  end
+
+  def user_courses; end
 
   private
 

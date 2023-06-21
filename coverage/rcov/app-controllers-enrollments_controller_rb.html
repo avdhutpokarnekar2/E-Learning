@@ -63,25 +63,25 @@
           <td><pre><a name="line5">5</a>   def enroll</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line6">6</a>   	if current_user.courses.include?(@course)</pre></td>
+          <td><pre><a name="line6">6</a>     if current_user.courses.include?(@course)</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line7">7</a>    		notice =&gt; &#39;You are already enrolled in this course&#39;</pre></td>
+          <td><pre><a name="line7">7</a>       notice =&gt; &#39;You are already enrolled in this course&#39;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line8">8</a>    	else</pre></td>
+          <td><pre><a name="line8">8</a>     else</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line9">9</a> 	    @course = Course.find(params[:id])</pre></td>
+          <td><pre><a name="line9">9</a>       @course = Course.find(params[:id])</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line10">10</a> 	    current_user.courses &lt;&lt; @course</pre></td>
+          <td><pre><a name="line10">10</a>       current_user.courses &lt;&lt; @course</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line11">11</a> 	    redirect_to course_url(@course), notice: &#39;Successfully enrolled in the course.&#39;</pre></td>
+          <td><pre><a name="line11">11</a>       redirect_to course_url(@course), notice: &#39;Successfully enrolled in the course.&#39;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line12">12</a> 	  end</pre></td>
+          <td><pre><a name="line12">12</a>     end</pre></td>
         </tr>
         <tr class="uncovered">
           <td><pre><a name="line13">13</a>   end</pre></td>
@@ -107,7 +107,7 @@
       </tbody>
     </table>
 
-    <p>Generated on 2023-06-16 19:03:59 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-06-21 15:31:33 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

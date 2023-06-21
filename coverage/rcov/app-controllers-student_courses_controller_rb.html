@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
   <head>
-    <title>app/helpers/users_helper.rb</title>
+    <title>app/controllers/student_courses_controller.rb</title>
     <link href="./assets/0.3.1/screen.css" media="all" rel="stylesheet" type="text/css" />
     <link href="./assets/0.3.1/print.css" media="print" rel="stylesheet" type="text/css" />
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
@@ -9,7 +9,7 @@
   </head>
   <body>
     <h1>E learning C0 Coverage Information - Simploco - RCov</h1>
-    <h2>app/helpers/users_helper.rb</h2>
+    <h2>app/controllers/student_courses_controller.rb</h2>
 
     <div class="report_table_wrapper">
       <table class='report' id='report_table'>
@@ -24,9 +24,9 @@
         </thead>
         <tbody>
           <tr>
-            <td class="left_align"><a href="app-helpers-users_helper_rb.html">app/helpers/users_helper.rb</a></td>
-            <td class='right_align'><tt>2</tt></td>
-            <td class='right_align'><tt>1</tt></td>
+            <td class="left_align"><a href="app-controllers-student_courses_controller_rb.html">app/controllers/student_courses_controller.rb</a></td>
+            <td class='right_align'><tt>7</tt></td>
+            <td class='right_align'><tt>3</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
       <div class="percent_graph">
         <div class="covered" style="width:100px"></div>
@@ -50,16 +50,31 @@
 
     <table class="details">
       <tbody>
-        <tr class="marked">
-          <td><pre><a name="line2">2</a> module UsersHelper</pre></td>
+        <tr class="inferred">
+          <td><pre><a name="line2">2</a> # frozen_string_literal: true</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line3">3</a> end</pre></td>
+          <td><pre><a name="line3">3</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line4">4</a> class StudentCoursesController &lt; ApplicationController</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line5">5</a>   def index</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line6">6</a>     @course = current_user.courses if current_user.present?</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line7">7</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line8">8</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-06-20 13:10:06 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-06-21 15:31:33 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

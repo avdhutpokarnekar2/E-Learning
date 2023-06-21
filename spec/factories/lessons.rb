@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :lesson do
-    name {"lesson"}
+    name { 'lesson' }
     association :course
   end
 end

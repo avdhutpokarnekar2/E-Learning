@@ -14,7 +14,6 @@ class HomeController < ApplicationController
     @courses = Course.first
   end
 
-
   def course_lesson
     course = Course.find(params[:id])
     @c = course.lessons
