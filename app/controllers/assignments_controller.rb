@@ -2,15 +2,10 @@
 
 class AssignmentsController < ApplicationController
   before_action :set_assignment, only: %i[show edit update destroy]
-  include QuestionsHelper
+
   # GET /assignments or /assignments.json
   def index
-    if params[:course_id].present?
-      course = Course.find(params[:course_id])
-      # @assignments = course.assignments
-    else
-      @assignments = Assignment.all
-    end
+    @assignments = Assignment.all
   end
 
   # GET /assignments/1 or /assignments/1.json
@@ -19,18 +14,14 @@ class AssignmentsController < ApplicationController
   # GET /assignments/new
   def new
     @assignment = Assignment.new
-    authorize @assignment
   end
 
   # GET /assignments/1/edit
-  def edit
-    authorize @assignment
-  end
+  def edit; end
 
   # POST /assignments or /assignments.json
   def create
     @assignment = Assignment.new(assignment_params)
-    authorize @assignment
     respond_to do |format|
       if @assignment.save
         format.html { redirect_to assignment_url(@assignment), notice: 'Assignment was successfully created.' }
@@ -44,7 +35,6 @@ class AssignmentsController < ApplicationController
 
   # PATCH/PUT /assignments/1 or /assignments/1.json
   def update
-    authorize @assignment
     respond_to do |format|
       if @assignment.update(assignment_params)
         format.html { redirect_to assignment_url(@assignment), notice: 'Assignment was successfully updated.' }
@@ -59,7 +49,7 @@ class AssignmentsController < ApplicationController
   # DELETE /assignments/1 or /assignments/1.json
   def destroy
     @assignment.destroy
-    authorize @assignment
+
     respond_to do |format|
       format.html { redirect_to assignments_url, notice: 'Assignment was successfully destroyed.' }
       format.json { head :no_content }

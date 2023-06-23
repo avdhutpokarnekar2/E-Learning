@@ -1,0 +1,18 @@
+.main_padding
+  %p#notice= notice
+
+  %p
+    %b Title:
+    = @question.title
+  %p
+    %b Answer:
+    = @question.answer
+  %p
+    %b Option:
+    = @question.option
+  %p
+    %b Assignment:
+    = @question.assignment
+
+  = link_to 'Edit', edit_assignment_question_path(@question)
+  = link_to 'Back', assignment_questions_path

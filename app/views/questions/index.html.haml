@@ -1,0 +1,28 @@
+.main_padding
+  %h3 Listing questions
+
+  %table
+    %thead
+      %tr
+        %th Title
+        %th Answer
+        %th Option
+        %th Assignment
+        %th
+        %th
+        %th
+
+    %tbody
+      - @questions.each do |question|
+        %tr
+          %td= question.title
+          %td= question.answer
+          %td= question.option.values
+          %td= question.assignment.name
+          %td= link_to 'Show', assignment_questions_path
+          / %td= link_to 'Edit', edit_assignment_question_path(@question)
+          %td= link_to 'Destroy', assignment_questions_path, method: :delete, data: { confirm: 'Are you sure?' }
+
+  %br
+
+  = link_to 'New Question', new_assignment_question_path

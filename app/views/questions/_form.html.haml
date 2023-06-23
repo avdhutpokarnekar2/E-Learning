@@ -1,0 +1,38 @@
+= form_for [@assignment,@question],url:assignment_questions_path do |f|
+  - if @question.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"
+      %ul
+        - @question.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :Question
+    = f.text_field :title
+  .field
+    = f.label :answer
+    = f.text_field :answer
+  .field
+  = f.fields_for :option do |option_fields|
+    .option
+      = option_fields.label :option_a
+      = option_fields.text_field :a
+    
+    .option
+      = option_fields.label :option_b
+      = option_fields.text_field :b
+    
+    .option
+      = option_fields.label :option_c
+      = option_fields.text_field :c
+    
+    .option
+      = option_fields.label :option_d
+      = option_fields.text_field :d
+
+  .field
+    = f.label :assignment
+    = assignment_id = params[:assignment_id]
+    = f.hidden_field :assignment_id, value: assignment_id.to_i
+  .actions
+    = f.submit 'Save'
