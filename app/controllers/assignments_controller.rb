@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# assignment controller
 class AssignmentsController < ApplicationController
   before_action :set_assignment, only: %i[show edit update destroy]
 

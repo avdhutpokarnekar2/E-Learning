@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# question controller
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[ show edit update destroy ]
+  before_action :set_question, only: %i[show edit update destroy]
 
   # GET /questions or /questions.json
   def index
@@ -7,8 +10,7 @@ class QuestionsController < ApplicationController
   end
 
   # GET /questions/1 or /questions/1.json
-  def show
-  end
+  def show; end
 
   # GET /questions/new
   def new
@@ -16,15 +18,17 @@ class QuestionsController < ApplicationController
   end
 
   # GET /questions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /questions or /questions.json
   def create
     @question = Question.new(question_params)
     respond_to do |format|
       if @question.save
-        format.html { redirect_to assignment_question_path(@question.assignment,@question), notice: "Question was successfully created." }
+        format.html do
+          redirect_to assignment_question_path(@question.assignment, @question),
+                      notice: 'Question was successfully created.'
+        end
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -37,7 +41,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to question_url(@question), notice: "Question was successfully updated." }
+        format.html { redirect_to question_url(@question), notice: 'Question was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,19 +55,20 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     respond_to do |format|
-      format.html { redirect_to questions_url, notice: "Question was successfully destroyed." }
+      format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def question_params
-      params.require(:question).permit(:title, :answer, :assignment_id, option: {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_question
+    @question = Question.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def question_params
+    params.require(:question).permit(:title, :answer, :assignment_id, option: {})
+  end
 end

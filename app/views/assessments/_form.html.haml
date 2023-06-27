@@ -1,0 +1,28 @@
+= form_for @assessment do |f|
+  - if @assessment.errors.any?
+    #error_explanation
+      %h2
+        = "#{pluralize(@assessment.errors.count, "error")} prohibited this assessment from being saved:"
+      %ul
+        - @assessment.errors.full_messages.each do |message|
+          %li
+            = message
+  .field
+    = f.fields_for :question_set do |question_set_fields|
+      - @questions.each do |question|
+        .question_set
+          = question_set_fields.label :question
+          %strong= question.title
+        %p Options:
+        %ul
+          - question.option.each do |key, value|
+            .option
+              %li
+                = question_set_fields.radio_button "#{question.id}", key, checked: (question.option == key)
+                = question_set_fields.label "question_#{question.id}option_#{key}", "#{key}: #{value}"
+  .field
+    = f.hidden_field :assignment_id, value: @assignment.id
+  .field
+    = f.hidden_field :user_id, value: current_user.id
+  .actions
+    = f.submit 'Save'

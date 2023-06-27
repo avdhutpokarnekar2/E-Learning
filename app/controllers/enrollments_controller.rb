@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# enrollment controller
 class EnrollmentsController < ApplicationController
   def enroll
     if current_user.courses.include?(@course)

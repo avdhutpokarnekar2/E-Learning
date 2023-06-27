@@ -84,7 +84,6 @@ gem 'rails-controller-testing'
 gem 'rspec'
 gem 'rspec-rails', '~> 6.0'
 gem 'rubocop'
-gem 'rubocop-rails'
 gem 'simplecov'
 gem 'simplecov-rcov', require: false
 gem 'warden'

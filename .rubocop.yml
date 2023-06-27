@@ -1,0 +1,7 @@
+AllCops:
+  Exclude:
+    - 'spec/**/*'
+    - 'db/migrate/**/*'
+    - 'db/schema.rb'
+
+    

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# lesson controller
 class LessonsController < ApplicationController
   def index
     @lessons = Lesson.all
@@ -40,7 +41,6 @@ class LessonsController < ApplicationController
 
   def destroy
     @lesson.destroy
-
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
       format.json { head :no_content }
