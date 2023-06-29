@@ -1,4 +1,4 @@
-= form_for @assignment do |f|
+= simple_form_for @assignment, html: {class: "form-horizontal"} do |f|
   - if @assignment.errors.any?
     #error_explanation
       %h2= "#{pluralize(@assignment.errors.count, "error")} prohibited this assignment from being saved:"
@@ -6,15 +6,15 @@
         - @assignment.errors.full_messages.each do |message|
           %li= message
   %br
-  .field
-    = f.label :name
-    = f.text_field :name
-  %br
-  .field
-    = f.label :course
-    = course_id = params[:course_id]
-    = f.hidden_field :course_id, value: course_id.to_i
-  %br
-  .actions
-    = f.submit 'Save'
+  .form-group
+    = f.label :name, class: "control-label col-sm-2"
+    .col-sm-10
+      = f.text_field :name, class: "form-control"
+  .form-group
+    .col-sm-10
+      - course_id = params[:course_id]
+      = f.hidden_field :course_id, value: course_id.to_i
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit 'Save', class: "btn btn-primary"
   %br

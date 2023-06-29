@@ -1,5 +1,6 @@
 .main_padding
-  %p#notice= notice
+  .alert.alert-info
+    = notice
 
   %p
     %b Name:
@@ -8,5 +9,6 @@
     %b Course:
     = @assignment.course
 
-  = link_to 'Edit', edit_assignment_path(@assignment)
-  = link_to 'Back', assignments_path
+  .btn-group
+    = link_to 'Edit', edit_assignment_path(@assignment), class: 'btn btn-primary'
+    = link_to 'Back', assignments_path, class: 'btn btn-secondary'

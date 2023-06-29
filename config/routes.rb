@@ -3,6 +3,8 @@
 Rails.application.routes.draw do
   root 'home#index'
 
+  resources :certificates
+  
   resources :assessments
 
   resources :assignments do
@@ -35,4 +37,7 @@ Rails.application.routes.draw do
   get 'enrollments/enroll/:id', to: 'enrollments#enroll', as: 'enroll'
 
   get 'enrollments/show'
+
+  get 'certificates/:id/generate_pdf', to: 'certificates#generate_certificate', as: 'generate_certificate_pdf'
+
 end

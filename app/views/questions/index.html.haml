@@ -1,28 +1,29 @@
 .main_padding
-  %h3 Listing questions
+  %h3.listing-title Listing questions
 
-  %table
-    %thead
-      %tr
-        %th Title
-        %th Answer
-        %th Option
-        %th Assignment
-        %th
-        %th
-        %th
-
-    %tbody
-      - @questions.each do |question|
+  .table-responsive
+    %table.table.table-striped
+      %thead
         %tr
-          %td= question.title
-          %td= question.answer
-          %td= question.option.values
-          %td= question.assignment.name
-          %td= link_to 'Show', assignment_questions_path
-          / %td= link_to 'Edit', edit_assignment_question_path(@question)
-          %td= link_to 'Destroy', assignment_questions_path, method: :delete, data: { confirm: 'Are you sure?' }
+          %th Title
+          %th Answer
+          %th Option
+          %th Assignment
+          %th
+          %th
+          %th
+
+      %tbody
+        - @questions.each do |question|
+          %tr
+            %td= question.title
+            %td= question.answer
+            %td= question.option.values
+            %td= question.assignment.name
+            %td= link_to 'Show', assignment_questions_path, class: 'btn btn-primary btn-sm'
+            / %td= link_to 'Edit', edit_assignment_question_path(@question), class: 'btn btn-secondary btn-sm'
+            %td= link_to 'Destroy', assignment_questions_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
 
   %br
 
-  = link_to 'New Question', new_assignment_question_path
+  = link_to 'New Question', new_assignment_question_path, class: 'btn btn-success'

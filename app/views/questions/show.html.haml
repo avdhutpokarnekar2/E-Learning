@@ -1,6 +1,4 @@
 .main_padding
-  %p#notice= notice
-
   %p
     %b Title:
     = @question.title
@@ -14,5 +12,5 @@
     %b Assignment:
     = @question.assignment
 
-  = link_to 'Edit', edit_assignment_question_path(@question)
-  = link_to 'Back', assignment_questions_path
+  = link_to 'Edit', edit_assignment_question_path(@question), class: 'btn btn-primary'
+  = link_to 'Back', assignment_questions_path, class: 'btn btn-secondary'

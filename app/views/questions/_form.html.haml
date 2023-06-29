@@ -1,4 +1,4 @@
-= form_for [@assignment,@question],url:assignment_questions_path do |f|
+= form_for [@assignment, @question], url: assignment_questions_path, html: {class: "form-horizontal"} do |f|
   - if @question.errors.any?
     #error_explanation
       %h2= "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"
@@ -6,33 +6,40 @@
         - @question.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = f.label :Question
-    = f.text_field :title
-  .field
-    = f.label :answer
-    = f.text_field :answer
-  .field
-  = f.fields_for :option do |option_fields|
-    .option
-      = option_fields.label :option_a
-      = option_fields.text_field :a
+  .form-group
+    = f.label :Question, class: "control-label col-sm-2"
+    .col-sm-10
+      = f.text_field :title, class: "form-control"
+  .form-group
+    = f.label :answer, class: "control-label col-sm-2"
+    .col-sm-10
+      = f.text_field :answer, class: "form-control"
+  .form-group
+    = f.fields_for :option do |option_fields|
+      .option
+        = option_fields.label :option_a, class: "control-label col-sm-2"
+        .col-sm-10
+          = option_fields.text_field :a, class: "form-control"
     
-    .option
-      = option_fields.label :option_b
-      = option_fields.text_field :b
+      .option
+        = option_fields.label :option_b, class: "control-label col-sm-2"
+        .col-sm-10
+          = option_fields.text_field :b, class: "form-control"
     
-    .option
-      = option_fields.label :option_c
-      = option_fields.text_field :c
+      .option
+        = option_fields.label :option_c, class: "control-label col-sm-2"
+        .col-sm-10
+          = option_fields.text_field :c, class: "form-control"
     
-    .option
-      = option_fields.label :option_d
-      = option_fields.text_field :d
+      .option
+        = option_fields.label :option_d, class: "control-label col-sm-2"
+        .col-sm-10
+          = option_fields.text_field :d, class: "form-control"
 
-  .field
-    = f.label :assignment
-    = assignment_id = params[:assignment_id]
-    = f.hidden_field :assignment_id, value: assignment_id.to_i
-  .actions
-    = f.submit 'Save'
+  .form-group
+    .col-sm-10
+      - assignment_id = params[:assignment_id]
+      = f.hidden_field :assignment_id, value: assignment_id.to_i
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit 'Save', class: "btn btn-primary"

@@ -21,7 +21,7 @@ class QuestionsController < ApplicationController
   def edit; end
 
   # POST /questions or /questions.json
-  def create
+  def create # rubocop:disable Metrics/MethodLength
     @question = Question.new(question_params)
     respond_to do |format|
       if @question.save

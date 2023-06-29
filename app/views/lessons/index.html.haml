@@ -1,8 +1,5 @@
-%h1.main_padding
+%h1.main_padding.mb-3
   - @lessons.each do |l|
     = l.name
     - if l.video.present?
-      = video_tag(url_for(l.video), controls: true, size: "300x200")
-
-
-
+      = video_tag(url_for(l.video), controls: true, class: "img-fluid", size: "300x200")

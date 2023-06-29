@@ -37,6 +37,7 @@ class AssessmentsController < ApplicationController
     @assessment = Assessment.new(assessment_params)
     respond_to do |format|
       if @assessment.save
+        certificate
         format.html { redirect_to assessment_url(@assessment), notice: 'Assessment was successfully created.' }
         format.json { render :show, status: :created, location: @assessment }
       else
@@ -44,6 +45,16 @@ class AssessmentsController < ApplicationController
         format.json { render json: @assessment.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def certificate
+    binding.pry
+    grade = params[:assessment][:grade]
+    user_id = params[:assessment][:user_id]
+    assignment_id = params[:assessment][:assignment_id]
+    course_id = Course.where(assignment_id: assignment_id)
+    certificate = Certificate.create(grade: grade, user_id: user_id, course_id: 21)
+    @certificate = current_user.certificate if current_user.present?
   end
 
   # PATCH/PUT /assessments/1 or /assessments/1.json

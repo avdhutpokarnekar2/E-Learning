@@ -1,4 +1,4 @@
-= form_for @assessment do |f|
+= form_for @assessment, html: {class: "form-horizontal"} do |f|
   - if @assessment.errors.any?
     #error_explanation
       %h2
@@ -7,22 +7,25 @@
         - @assessment.errors.full_messages.each do |message|
           %li
             = message
-  .field
+  .form-group
     = f.fields_for :question_set do |question_set_fields|
       - @questions.each do |question|
         .question_set
-          = question_set_fields.label :question
-          %strong= question.title
-        %p Options:
+          .col-sm-10
+            %strong= question.title
         %ul
+        %br
           - question.option.each do |key, value|
             .option
               %li
                 = question_set_fields.radio_button "#{question.id}", key, checked: (question.option == key)
                 = question_set_fields.label "question_#{question.id}option_#{key}", "#{key}: #{value}"
-  .field
-    = f.hidden_field :assignment_id, value: @assignment.id
-  .field
-    = f.hidden_field :user_id, value: current_user.id
-  .actions
-    = f.submit 'Save'
+  .form-group
+    .col-sm-10
+      = f.hidden_field :assignment_id, value: @assignment.id
+  .form-group
+    .col-sm-10
+      = f.hidden_field :user_id, value: current_user.id
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit 'Save', class: "btn btn-primary"

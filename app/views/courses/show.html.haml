@@ -1,9 +1,9 @@
-%body.main_padding
+.body.main_padding
   %section
     .container
       .row
         .col-sm-4
-          = image_tag @course.image, size: "300x200"
+          = image_tag @course.image, size: "300x200", class: "img-fluid"
         .col-sm-6
           %h2
             = @course.name
@@ -21,7 +21,7 @@
             %b Start-Date:
             = @course.start_date.strftime("%Y-%m-%d")
           %p
-            %ul.main_nav
+            %ul.main_nav.list-unstyled
               %li.active
-                = link_to "Buy Now", root_path
+                = link_to "Buy Now", root_path, class: "btn btn-primary"
           %p

@@ -87,3 +87,5 @@ gem 'rubocop'
 gem 'simplecov'
 gem 'simplecov-rcov', require: false
 gem 'warden'
+gem 'wicked_pdf'
+gem 'simple_form'

@@ -1,27 +1,28 @@
 .main_padding
-.col-md-8.offset-md-2
-  %h3 Listing assignments
-  %br
-  %table
-    %thead
-      %tr
-        %th Name
-        %th Course
-        %th
-        %th
-        %th
+  .col-md-8.offset-md-2
+    %h3.listing-title Listing assignments
+    %br
+    .table-responsive
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Name
+            %th Course
+            %th
+            %th
+            %th
 
-    %tbody
-      - @assignments.each do |assignment|
-        %tr
-          %td= assignment.name
-          %td= assignment.course.name
-          %td= link_to 'Show', assignment
-          %td= link_to 'Edit', edit_assignment_path(assignment)
-          %td= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' }
-          %td= link_to 'Add Questions', new_assignment_question_path(assignment_id: assignment.id)
+        %tbody
+          - @assignments.each do |assignment|
+            %tr
+              %td= assignment.name
+              %td= assignment.course.name
+              %td= link_to 'Show', assignment, class: 'btn btn-primary btn-sm'
+              %td= link_to 'Edit', edit_assignment_path(assignment), class: 'btn btn-secondary btn-sm'
+              %td= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
+              %td= link_to 'Add Questions', new_assignment_question_path(assignment_id: assignment.id), class: 'btn btn-info btn-sm'
 
 
-  %br
-  = link_to 'New Assignment', new_assignment_path 
+    %br
+    = link_to 'New Assignment', new_assignment_path, class: 'btn btn-success'
 %br

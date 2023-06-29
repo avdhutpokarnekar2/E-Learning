@@ -1,0 +1,35 @@
+.main_padding
+  %div{:style => "width:800px; height:600px; padding:20px; text-align:center; border: 10px solid #787878", class: "offset-2"}
+    %div{:style => "width:750px; height:550px; padding:20px; text-align:center; border: 5px solid #787878"}
+      %span{:style => "font-size:50px; font-weight:bold"} Certificate of Completion
+      %br
+      %br
+      %span{:style => "font-size:25px"} 
+        %i This is to certify that
+      %br
+      %br
+      %span{:style => "font-size:30px"} 
+        %b= current_user.first_name
+        %b= current_user.last_name
+      %br
+      %br
+      %span{:style => "font-size:25px"} 
+        %i has completed the course
+      %br
+      %br
+      %span{:style => "font-size:30px"} 
+        = @certificate.course.name
+      %br
+      %br
+      %span{:style => "font-size:20px"} 
+        with a score of
+        %b= @certificate.grade
+      %br
+      %br
+      %br
+      %br
+      %span{:style => "font-size:25px"} 
+        %i dated
+      %h4= @certificate.created_at.strftime("%Y-%m-%d")
+
+      = link_to 'Generate PDF', generate_certificate_pdf_path(@certificate), target: '_blank'

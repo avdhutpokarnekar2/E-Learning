@@ -1,18 +1,22 @@
-%p#notice= notice
+.main_padding
+  %div.alert.alert-info
+    = notice
 
-%p
-  %b Question set:
-  = @assessment.question_set
-%p
-  %b Grade:
-  = @assessment.grade
-%p
-  %b Assignment:
-  = @assessment.assignment
-%p
-  %b User:
-  = @assessment.user
+  %p
+    %b Question set:
+    = @assessment.question_set
+  %p
+    %b Grade:
+    = @assessment.grade
+  %p
+    %b Assignment:
+    = @assessment.assignment
+  %p
+    %b User:
+    = @assessment.user
 
-= link_to 'Edit', edit_assessment_path(@assessment)
-\|
-= link_to 'Back', assessments_path
+  %div.btn-group
+    = link_to 'Edit', edit_assessment_path(@assessment), class: 'btn btn-primary'
+    %span
+      |
+    = link_to 'Back', assessments_path, class: 'btn btn-secondary'

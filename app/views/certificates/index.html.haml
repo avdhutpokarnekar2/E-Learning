@@ -1,0 +1,16 @@
+.main_padding
+  .container
+    - if @course.present?
+      - @course.zip(@certificates).each do |courses, certificate|
+        - course = Course.find(courses)
+        .row.brdr
+          .col-sm-4
+            = image_tag(course.image, width: 300, height: 200)
+          .col-sm-6
+            %h3.fontcolor= course.name
+            %br
+            %h5 You are succefully completed course
+            %br
+            %br
+            = link_to certificate do
+              %button.btn.btn-warning GET CERTIFICATE
