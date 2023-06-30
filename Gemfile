@@ -89,3 +89,4 @@ gem 'simplecov-rcov', require: false
 gem 'warden'
 gem 'wicked_pdf'
 gem 'simple_form'
+gem 'wkhtmltopdf-binary'

@@ -1,8 +1,9 @@
 .main_padding
   .container
     - if @course.present?
-      - @course.zip(@certificates).each do |courses, certificate|
-        - course = Course.find(courses)
+      - @course.zip(@certificates).each do |course_data, certificate|
+        - course_id = course_data[:course_id]
+        - course = Course.find(course_id)
         .row.brdr
           .col-sm-4
             = image_tag(course.image, width: 300, height: 200)
@@ -14,3 +15,8 @@
             %br
             = link_to certificate do
               %button.btn.btn-warning GET CERTIFICATE
+
+            = link_to generate_certificate_pdf_path(certificate, format: :pdf), target: '_blank', class: 'btn btn-warning' do
+              Download PDF
+
+

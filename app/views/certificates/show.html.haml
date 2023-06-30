@@ -31,5 +31,3 @@
       %span{:style => "font-size:25px"} 
         %i dated
       %h4= @certificate.created_at.strftime("%Y-%m-%d")
-
-      = link_to 'Generate PDF', generate_certificate_pdf_path(@certificate), target: '_blank'

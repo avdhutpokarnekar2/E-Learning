@@ -48,13 +48,11 @@ class AssessmentsController < ApplicationController
   end
 
   def certificate
-    binding.pry
     grade = params[:assessment][:grade]
     user_id = params[:assessment][:user_id]
     assignment_id = params[:assessment][:assignment_id]
     course_id = Course.where(assignment_id: assignment_id)
     certificate = Certificate.create(grade: grade, user_id: user_id, course_id: 21)
-    @certificate = current_user.certificate if current_user.present?
   end
 
   # PATCH/PUT /assessments/1 or /assessments/1.json

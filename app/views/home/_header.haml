@@ -28,6 +28,8 @@
                                 = link_to "Profile", profile_index_path
                               .dropdown-item.dropdown_bg_color
                                 = link_to "My Courses", student_courses_path
+                              .dropdown-item.dropdown_bg_color
+                                = link_to "My Certificate", certificates_path
                               .dropdown-item
                                 = link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete}
                       - else

@@ -3,12 +3,8 @@ class CertificatesController < ApplicationController
 
   # GET /certificates or /certificates.json
   def index
-    @course = Certificate.all.map(&:course_id)
-    # courses.each do|c|
-    #   c = Course.find(c)
-    #   @courses = c
-    # end
-    @certificates = Certificate.all
+    @course = Certificate.all.map { |certificate| { course_id: certificate.course_id, user_id: certificate.user_id } if certificate.user_id == current_user.id }.compact
+    @certificates = Certificate.where(user_id: current_user.id)
   end
 
   # GET /certificates/1 or /certificates/1.json
@@ -21,7 +17,7 @@ class CertificatesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: 'certificate', template: 'certificates/certificate.pdf.erb', layout: 'pdf.html'
+        render pdf: 'certificate', template: 'certificates/generate_certificate'
       end
     end
   end

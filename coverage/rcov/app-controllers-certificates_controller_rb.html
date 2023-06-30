@@ -25,17 +25,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-certificates_controller_rb.html">app/controllers/certificates_controller.rb</a></td>
-            <td class='right_align'><tt>87</tt></td>
+            <td class='right_align'><tt>83</tt></td>
             <td class='right_align'><tt>40</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>77.01%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>73.49%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:77px"></div>
-        <div class="uncovered" style="width:23px"></div>
+        <div class="covered" style="width:73px"></div>
+        <div class="uncovered" style="width:27px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>50.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>45.00%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:50px"></div>
-        <div class="uncovered" style="width:50px"></div>
+        <div class="covered" style="width:45px"></div>
+        <div class="uncovered" style="width:55px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -65,23 +65,23 @@
         <tr class="marked">
           <td><pre><a name="line6">6</a>   def index</pre></td>
         </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line7">7</a>     @course = Certificate.all.map { |certificate| { course_id: certificate.course_id, user_id: certificate.user_id } if certificate.user_id == current_user.id }.compact</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line8">8</a>     @certificates = Certificate.where(user_id: current_user.id)</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line9">9</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line10">10</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line11">11</a>   # GET /certificates/1 or /certificates/1.json</pre></td>
+        </tr>
         <tr class="marked">
-          <td><pre><a name="line7">7</a>     @course = Certificate.all.map(&amp;:course_id)</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line8">8</a>     # courses.each do|c|</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line9">9</a>     #   c = Course.find(c)</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line10">10</a>     #   @courses = c</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line11">11</a>     # end</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line12">12</a>     @certificates = Certificate.all</pre></td>
+          <td><pre><a name="line12">12</a>   def show</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line13">13</a>   end</pre></td>
@@ -89,62 +89,62 @@
         <tr class="inferred">
           <td><pre><a name="line14">14</a> </pre></td>
         </tr>
-        <tr class="inferred">
-          <td><pre><a name="line15">15</a>   # GET /certificates/1 or /certificates/1.json</pre></td>
+        <tr class="marked">
+          <td><pre><a name="line15">15</a>   def generate_certificate</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line16">16</a>   def show</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line17">17</a>   end</pre></td>
+          <td><pre><a name="line16">16</a>     @certificate = Certificate.find(params[:id])</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line18">18</a> </pre></td>
+          <td><pre><a name="line17">17</a>     </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line19">19</a>   def generate_certificate</pre></td>
+          <td><pre><a name="line18">18</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line20">20</a>     @certificate = Certificate.find(params[:id])</pre></td>
+          <td><pre><a name="line19">19</a>       format.html</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line20">20</a>       format.pdf do</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line21">21</a>         render pdf: &#39;certificate&#39;, template: &#39;certificates/generate_certificate&#39;</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line21">21</a>     </pre></td>
+          <td><pre><a name="line22">22</a>       end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line23">23</a>     end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line24">24</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line25">25</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line26">26</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line27">27</a>   # GET /certificates/new</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line22">22</a>     respond_to do |format|</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line23">23</a>       format.html</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line24">24</a>       format.pdf do</pre></td>
+          <td><pre><a name="line28">28</a>   def new</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line25">25</a>         render pdf: &#39;certificate&#39;, template: &#39;certificates/certificate.pdf.erb&#39;, layout: &#39;pdf.html&#39;</pre></td>
+          <td><pre><a name="line29">29</a>     @certificate = Certificate.new</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line26">26</a>       end</pre></td>
+          <td><pre><a name="line30">30</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line27">27</a>     end</pre></td>
+          <td><pre><a name="line31">31</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line28">28</a>   end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line29">29</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line30">30</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line31">31</a>   # GET /certificates/new</pre></td>
+          <td><pre><a name="line32">32</a>   # GET /certificates/1/edit</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line32">32</a>   def new</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line33">33</a>     @certificate = Certificate.new</pre></td>
+          <td><pre><a name="line33">33</a>   def edit</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line34">34</a>   end</pre></td>
@@ -153,168 +153,156 @@
           <td><pre><a name="line35">35</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line36">36</a>   # GET /certificates/1/edit</pre></td>
+          <td><pre><a name="line36">36</a>   # POST /certificates or /certificates.json</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line37">37</a>   def edit</pre></td>
+          <td><pre><a name="line37">37</a>   def create</pre></td>
         </tr>
-        <tr class="inferred">
-          <td><pre><a name="line38">38</a>   end</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line38">38</a>     @certificate = Certificate.new(certificate_params)</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line39">39</a> </pre></td>
         </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line40">40</a>     respond_to do |format|</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line41">41</a>       if @certificate.save</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line42">42</a>         format.html { redirect_to certificate_url(@certificate), notice: &quot;Certificate was successfully created.&quot; }</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line43">43</a>         format.json { render :show, status: :created, location: @certificate }</pre></td>
+        </tr>
         <tr class="inferred">
-          <td><pre><a name="line40">40</a>   # POST /certificates or /certificates.json</pre></td>
+          <td><pre><a name="line44">44</a>       else</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line45">45</a>         format.html { render :new, status: :unprocessable_entity }</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line46">46</a>         format.json { render json: @certificate.errors, status: :unprocessable_entity }</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line47">47</a>       end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line48">48</a>     end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line49">49</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line50">50</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line51">51</a>   # PATCH/PUT /certificates/1 or /certificates/1.json</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line41">41</a>   def create</pre></td>
+          <td><pre><a name="line52">52</a>   def update</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line42">42</a>     @certificate = Certificate.new(certificate_params)</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line43">43</a> </pre></td>
+          <td><pre><a name="line53">53</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line44">44</a>     respond_to do |format|</pre></td>
+          <td><pre><a name="line54">54</a>       if @certificate.update(certificate_params)</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line45">45</a>       if @certificate.save</pre></td>
+          <td><pre><a name="line55">55</a>         format.html { redirect_to certificate_url(@certificate), notice: &quot;Certificate was successfully updated.&quot; }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line46">46</a>         format.html { redirect_to certificate_url(@certificate), notice: &quot;Certificate was successfully created.&quot; }</pre></td>
+          <td><pre><a name="line56">56</a>         format.json { render :show, status: :ok, location: @certificate }</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line57">57</a>       else</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line47">47</a>         format.json { render :show, status: :created, location: @certificate }</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line48">48</a>       else</pre></td>
+          <td><pre><a name="line58">58</a>         format.html { render :edit, status: :unprocessable_entity }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line49">49</a>         format.html { render :new, status: :unprocessable_entity }</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line50">50</a>         format.json { render json: @certificate.errors, status: :unprocessable_entity }</pre></td>
+          <td><pre><a name="line59">59</a>         format.json { render json: @certificate.errors, status: :unprocessable_entity }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line51">51</a>       end</pre></td>
+          <td><pre><a name="line60">60</a>       end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line52">52</a>     end</pre></td>
+          <td><pre><a name="line61">61</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line53">53</a>   end</pre></td>
+          <td><pre><a name="line62">62</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line54">54</a> </pre></td>
+          <td><pre><a name="line63">63</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line55">55</a>   # PATCH/PUT /certificates/1 or /certificates/1.json</pre></td>
+          <td><pre><a name="line64">64</a>   # DELETE /certificates/1 or /certificates/1.json</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line56">56</a>   def update</pre></td>
+          <td><pre><a name="line65">65</a>   def destroy</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line57">57</a>     respond_to do |format|</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line58">58</a>       if @certificate.update(certificate_params)</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line59">59</a>         format.html { redirect_to certificate_url(@certificate), notice: &quot;Certificate was successfully updated.&quot; }</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line60">60</a>         format.json { render :show, status: :ok, location: @certificate }</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line61">61</a>       else</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line62">62</a>         format.html { render :edit, status: :unprocessable_entity }</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line63">63</a>         format.json { render json: @certificate.errors, status: :unprocessable_entity }</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line64">64</a>       end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line65">65</a>     end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line66">66</a>   end</pre></td>
+          <td><pre><a name="line66">66</a>     @certificate.destroy</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line67">67</a> </pre></td>
         </tr>
-        <tr class="inferred">
-          <td><pre><a name="line68">68</a>   # DELETE /certificates/1 or /certificates/1.json</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line69">69</a>   def destroy</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line68">68</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line70">70</a>     @certificate.destroy</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line71">71</a> </pre></td>
+          <td><pre><a name="line69">69</a>       format.html { redirect_to certificates_url, notice: &quot;Certificate was successfully destroyed.&quot; }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line72">72</a>     respond_to do |format|</pre></td>
+          <td><pre><a name="line70">70</a>       format.json { head :no_content }</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line71">71</a>     end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line72">72</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line73">73</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line74">74</a>   private</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line75">75</a>     # Use callbacks to share common setup or constraints between actions.</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line76">76</a>     def set_certificate</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line73">73</a>       format.html { redirect_to certificates_url, notice: &quot;Certificate was successfully destroyed.&quot; }</pre></td>
+          <td><pre><a name="line77">77</a>       @certificate = Certificate.find(params[:id])</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line78">78</a>     end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line79">79</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line80">80</a>     # Only allow a list of trusted parameters through.</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line81">81</a>     def certificate_params</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line74">74</a>       format.json { head :no_content }</pre></td>
+          <td><pre><a name="line82">82</a>       params.require(:certificate).permit(:grade, :user_id, :course_id)</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line75">75</a>     end</pre></td>
+          <td><pre><a name="line83">83</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line76">76</a>   end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line77">77</a> </pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line78">78</a>   private</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line79">79</a>     # Use callbacks to share common setup or constraints between actions.</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line80">80</a>     def set_certificate</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line81">81</a>       @certificate = Certificate.find(params[:id])</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line82">82</a>     end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line83">83</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line84">84</a>     # Only allow a list of trusted parameters through.</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line85">85</a>     def certificate_params</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line86">86</a>       params.require(:certificate).permit(:grade, :user_id, :course_id)</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line87">87</a>     end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line88">88</a> end</pre></td>
+          <td><pre><a name="line84">84</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-06-29 18:20:53 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-06-30 15:52:37 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>
