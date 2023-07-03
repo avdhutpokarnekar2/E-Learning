@@ -1,9 +1,8 @@
-# frozen_string_literal: true
-
+# spec/controllers/enrollments_controller_spec.rb
 require 'rails_helper'
 
-RSpec.describe 'Enrollments', type: :request do
-  describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
-  end
+RSpec.describe EnrollmentsController, type: :controller do
+  let(:user) { create(:user) }
+  let(:course) { create(:course) }
+
 end

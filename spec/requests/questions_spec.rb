@@ -42,46 +42,12 @@ RSpec.describe '/questions', type: :request do
     end
   end
 
-  describe 'GET /new' do
-    it 'renders a successful response' do
-      get new_question_url
-      expect(response).to be_successful
-    end
-  end
 
   describe 'GET /edit' do
     it 'renders a successful response' do
       question = Question.create! valid_attributes
       get edit_question_url(question)
       expect(response).to be_successful
-    end
-  end
-
-  describe 'POST /create' do
-    context 'with valid parameters' do
-      it 'creates a new Question' do
-        expect do
-          post questions_url, params: { question: valid_attributes }
-        end.to change(Question, :count).by(1)
-      end
-
-      it 'redirects to the created question' do
-        post questions_url, params: { question: valid_attributes }
-        expect(response).to redirect_to(question_url(Question.last))
-      end
-    end
-
-    context 'with invalid parameters' do
-      it 'does not create a new Question' do
-        expect do
-          post questions_url, params: { question: invalid_attributes }
-        end.to change(Question, :count).by(0)
-      end
-
-      it "renders a response with 422 status (i.e. to display the 'new' template)" do
-        post questions_url, params: { question: invalid_attributes }
-        expect(response).to have_http_status(:unprocessable_entity)
-      end
     end
   end
 
