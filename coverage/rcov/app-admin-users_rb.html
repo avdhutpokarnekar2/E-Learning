@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
   <head>
-    <title>app/controllers/contacts_controller.rb</title>
+    <title>app/admin/users.rb</title>
     <link href="./assets/0.3.1/screen.css" media="all" rel="stylesheet" type="text/css" />
     <link href="./assets/0.3.1/print.css" media="print" rel="stylesheet" type="text/css" />
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
@@ -9,7 +9,7 @@
   </head>
   <body>
     <h1>E learning C0 Coverage Information - Simploco - RCov</h1>
-    <h2>app/controllers/contacts_controller.rb</h2>
+    <h2>app/admin/users.rb</h2>
 
     <div class="report_table_wrapper">
       <table class='report' id='report_table'>
@@ -24,13 +24,13 @@
         </thead>
         <tbody>
           <tr>
-            <td class="left_align"><a href="app-controllers-contacts_controller_rb.html">app/controllers/contacts_controller.rb</a></td>
+            <td class="left_align"><a href="app-admin-users_rb.html">app/admin/users.rb</a></td>
+            <td class='right_align'><tt>28</tt></td>
             <td class='right_align'><tt>24</tt></td>
-            <td class='right_align'><tt>17</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>29.17%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>14.29%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:29px"></div>
-        <div class="uncovered" style="width:71px"></div>
+        <div class="covered" style="width:14px"></div>
+        <div class="uncovered" style="width:86px"></div>
       </div></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
       <div class="percent_graph">
@@ -50,82 +50,94 @@
 
     <table class="details">
       <tbody>
-        <tr class="inferred">
-          <td><pre><a name="line2">2</a> # frozen_string_literal: true</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line3">3</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line4">4</a> # contactscontroller</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line2">2</a> ActiveAdmin.register User do</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line5">5</a> class ContactsController &lt; ApplicationController</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line6">6</a>   def index</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line7">7</a>     @contact = Contact.new</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line8">8</a>   end</pre></td>
+          <td><pre><a name="line3">3</a>   permit_params :email, :password, :password_confirmation</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line9">9</a> </pre></td>
+          <td><pre><a name="line4">4</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line5">5</a>   index do</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line6">6</a>     selectable_column</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line7">7</a>     id_column</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line8">8</a>     column :email</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line9">9</a>     column :current_sign_in_at</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line10">10</a>     column :sign_in_count</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line11">11</a>     column :created_at</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line12">12</a>     actions</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line13">13</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line10">10</a>   # create the contact form</pre></td>
+          <td><pre><a name="line14">14</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line11">11</a>   def create</pre></td>
+          <td><pre><a name="line15">15</a>   filter :email</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line12">12</a>     @contact = Contact.create(contact_params) if params.present?</pre></td>
+          <td><pre><a name="line16">16</a>   filter :current_sign_in_at</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line13">13</a>     if @contact.save</pre></td>
+          <td><pre><a name="line17">17</a>   filter :sign_in_count</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line14">14</a>       redirect_to root_path, notice: &#39;Contact form saved successfully.&#39;</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line15">15</a>     else</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line16">16</a>       redirect_to contact_index_path, notice: &#39;Contact form not saved.&#39;</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line17">17</a>     end</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line18">18</a>   end</pre></td>
+          <td><pre><a name="line18">18</a>   filter :created_at</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line19">19</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line20">20</a>   private</pre></td>
+          <td><pre><a name="line20">20</a>   form do |f|</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line21">21</a>     f.inputs do</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line22">22</a>       f.input :email</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line23">23</a>       f.input :password</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line24">24</a>       f.input :password_confirmation</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line25">25</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line26">26</a>     f.actions</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line27">27</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line21">21</a> </pre></td>
+          <td><pre><a name="line28">28</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line22">22</a>   def contact_params</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line23">23</a>     params.permit(:name, :email, :contact_no, :message)</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line24">24</a>   end</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line25">25</a> end</pre></td>
+          <td><pre><a name="line29">29</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-04 16:36:41 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-04 15:44:50 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

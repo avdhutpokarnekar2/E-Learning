@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
   <head>
-    <title>app/controllers/application_controller.rb</title>
+    <title>app/admin/assessments.rb</title>
     <link href="./assets/0.3.1/screen.css" media="all" rel="stylesheet" type="text/css" />
     <link href="./assets/0.3.1/print.css" media="print" rel="stylesheet" type="text/css" />
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
@@ -9,7 +9,7 @@
   </head>
   <body>
     <h1>E learning C0 Coverage Information - Simploco - RCov</h1>
-    <h2>app/controllers/application_controller.rb</h2>
+    <h2>app/admin/assessments.rb</h2>
 
     <div class="report_table_wrapper">
       <table class='report' id='report_table'>
@@ -24,13 +24,13 @@
         </thead>
         <tbody>
           <tr>
-            <td class="left_align"><a href="app-controllers-application_controller_rb.html">app/controllers/application_controller.rb</a></td>
-            <td class='right_align'><tt>22</tt></td>
-            <td class='right_align'><tt>8</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>63.64%</tt></div>
+            <td class="left_align"><a href="app-admin-assessments_rb.html">app/admin/assessments.rb</a></td>
+            <td class='right_align'><tt>18</tt></td>
+            <td class='right_align'><tt>2</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>88.89%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:64px"></div>
-        <div class="uncovered" style="width:36px"></div>
+        <div class="covered" style="width:89px"></div>
+        <div class="uncovered" style="width:11px"></div>
       </div></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
       <div class="percent_graph">
@@ -50,76 +50,64 @@
 
     <table class="details">
       <tbody>
-        <tr class="inferred">
-          <td><pre><a name="line2">2</a> # frozen_string_literal: true</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line2">2</a> ActiveAdmin.register Assessment do</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line3">3</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line4">4</a> # main application</pre></td>
+          <td><pre><a name="line4">4</a>   # See permitted parameters documentation:</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line5">5</a>   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line6">6</a>   #</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line7">7</a>   # Uncomment all parameters which should be permitted for assignment</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line8">8</a>   #</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line9">9</a>   # permit_params :question_set, :grade, :assignment_id, :user_id</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line10">10</a>   #</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line11">11</a>   # or</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line12">12</a>   #</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line13">13</a>   # permit_params do</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line14">14</a>   #   permitted = [:question_set, :grade, :assignment_id, :user_id]</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line15">15</a>   #   permitted &lt;&lt; :other if params[:action] == &#39;create&#39; &amp;&amp; current_user.admin?</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line16">16</a>   #   permitted</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line17">17</a>   # end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line18">18</a>   </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line5">5</a> class ApplicationController &lt; ActionController::Base</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line6">6</a>   # protect_from_forgery with: :exception</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line7">7</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line8">8</a>   # before_action :set_csrf_cookie</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line9">9</a>   # before_action :authenticate_user!</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line10">10</a>   include Pundit::Authorization</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line11">11</a> </pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line12">12</a>   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line13">13</a> </pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line14">14</a>   private</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line15">15</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line16">16</a>   # def set_csrf_cookie</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line17">17</a>   #   cookies[&#39;CSRF-TOKEN&#39;] = form_authenticity_token</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line18">18</a>   # end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line19">19</a> </pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line20">20</a>   def user_not_authorized(_exception)</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line21">21</a>     redirect_to root_path</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line22">22</a>   end</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line23">23</a> end</pre></td>
+          <td><pre><a name="line19">19</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-04 16:36:41 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-04 15:44:50 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

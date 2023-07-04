@@ -1,32 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/user/e_learning/app/models/user.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/user/e_learning/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
       "/home/user/e_learning/app/controllers/application_controller.rb": {
         "lines": [
           null,
@@ -801,6 +775,18 @@
         "branches": {
         }
       },
+      "/home/user/e_learning/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/home/user/e_learning/app/models/assessment.rb": {
         "lines": [
           null,
@@ -908,6 +894,24 @@
         "branches": {
         }
       },
+      "/home/user/e_learning/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/home/user/e_learning/app/policies/application_policy.rb": {
         "lines": [
           null,
@@ -999,6 +1003,6 @@
         }
       }
     },
-    "timestamp": 1688364595
+    "timestamp": 1688468801
   }
 }
