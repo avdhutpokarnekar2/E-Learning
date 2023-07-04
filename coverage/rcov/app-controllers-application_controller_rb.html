@@ -26,16 +26,16 @@
           <tr>
             <td class="left_align"><a href="app-controllers-application_controller_rb.html">app/controllers/application_controller.rb</a></td>
             <td class='right_align'><tt>22</tt></td>
-            <td class='right_align'><tt>8</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>63.64%</tt></div>
+            <td class='right_align'><tt>6</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>95.45%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:64px"></div>
-        <div class="uncovered" style="width:36px"></div>
+        <div class="covered" style="width:95px"></div>
+        <div class="uncovered" style="width:5px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>83.33%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:0px"></div>
-        <div class="uncovered" style="width:100px"></div>
+        <div class="covered" style="width:83px"></div>
+        <div class="uncovered" style="width:17px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -59,7 +59,7 @@
         <tr class="inferred">
           <td><pre><a name="line4">4</a> # main application</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line5">5</a> class ApplicationController &lt; ActionController::Base</pre></td>
         </tr>
         <tr class="inferred">
@@ -74,19 +74,19 @@
         <tr class="inferred">
           <td><pre><a name="line9">9</a>   # before_action :authenticate_user!</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line10">10</a>   include Pundit::Authorization</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line11">11</a> </pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line12">12</a>   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line13">13</a> </pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line14">14</a>   private</pre></td>
         </tr>
         <tr class="inferred">
@@ -104,22 +104,22 @@
         <tr class="inferred">
           <td><pre><a name="line19">19</a> </pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line20">20</a>   def user_not_authorized(_exception)</pre></td>
         </tr>
         <tr class="uncovered">
           <td><pre><a name="line21">21</a>     redirect_to root_path</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="inferred">
           <td><pre><a name="line22">22</a>   end</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="inferred">
           <td><pre><a name="line23">23</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-03 11:39:55 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-04 17:02:03 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>
