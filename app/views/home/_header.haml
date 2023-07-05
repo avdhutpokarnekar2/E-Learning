@@ -15,7 +15,9 @@
                     %li
                       %div (009) 35475 6688933 32
                     %li
-                      %div info@elaerntemplate.com
+                      %div info@elearntemplate.com
+                    %li
+                      = link_to "Instructor",courses_path,data: {turbo: false}
                   .top_bar_login.ml-auto
                     %ul
                       - if user_signed_in?
@@ -34,7 +36,7 @@
                                 = link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete}
                       - else
                         %li
-                          = link_to "Register",new_user_registration_path,data: {turbo: false}
+                          = link_to "Register",user_session_path,data: {turbo: false}
                         %li
                           = link_to "Login",new_user_session_path,data: {turbo: false}
 

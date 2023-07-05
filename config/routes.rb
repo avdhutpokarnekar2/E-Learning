@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+ 
+  devise_for :users, controllers: { registrations: 'devise/registrations' }
+
+  ActiveAdmin.routes(self)
+
+ 
   root 'home#index'
 
   resources :certificates
@@ -21,7 +27,6 @@ Rails.application.routes.draw do
 
   resources :student_courses
 
-  devise_for :users, controllers: { registrations: 'devise/registrations' }
 
   resources :home do
     collection do
