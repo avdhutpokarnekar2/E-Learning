@@ -26,16 +26,16 @@
           <tr>
             <td class="left_align"><a href="app-models-course_rb.html">app/models/course.rb</a></td>
             <td class='right_align'><tt>12</tt></td>
-            <td class='right_align'><tt>9</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>25.00%</tt></div>
+            <td class='right_align'><tt>8</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:25px"></div>
-        <div class="uncovered" style="width:75px"></div>
+        <div class="covered" style="width:100px"></div>
+        <div class="uncovered" style="width:0px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:0px"></div>
-        <div class="uncovered" style="width:100px"></div>
+        <div class="covered" style="width:100px"></div>
+        <div class="uncovered" style="width:0px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -59,37 +59,37 @@
         <tr class="inferred">
           <td><pre><a name="line4">4</a> # course model</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line5">5</a> class Course &lt; ApplicationRecord</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line6">6</a>   validates :name, :description, :fees, :duration, presence: true</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line7">7</a>   validates :fees, numericality: { only_integer: true }</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line8">8</a>   has_one_attached :image, dependent: :destroy</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line9">9</a>   has_many :lessons, dependent: :destroy</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line10">10</a>   has_many :enrollments, dependent: :destroy</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line11">11</a>   has_many :users, through: :enrollments, dependent: :destroy</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line12">12</a>   has_one :assignment, dependent: :destroy</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="inferred">
           <td><pre><a name="line13">13</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-05 18:12:02 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-06 17:03:54 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

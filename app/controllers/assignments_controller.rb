@@ -6,7 +6,9 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments or /assignments.json
   def index
-    @assignments = Assignment.all
+    course_id =Course.find(params[:course_id])
+    @@course_id = course_id
+    @assignments = Assignment.where(course_id: course_id.id)
   end
 
   # GET /assignments/1 or /assignments/1.json
@@ -22,7 +24,8 @@ class AssignmentsController < ApplicationController
 
   # POST /assignments or /assignments.json
   def create
-    @assignment = Assignment.new(assignment_params)
+    course_id = @@course_id
+    @assignment = Assignment.new(assignment_params.merge(course_id: course_id.id))
     respond_to do |format|
       if @assignment.save
         format.html { redirect_to assignment_url(@assignment), notice: 'Assignment was successfully created.' }

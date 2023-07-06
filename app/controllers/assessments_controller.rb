@@ -15,6 +15,7 @@ class AssessmentsController < ApplicationController
   # GET /assessments/new
   def new
     course = Course.find(params[:id])
+    @@course = course
     @assignment = course.assignment
     @questions = @assignment.questions
     @assessment = Assessment.new
@@ -48,11 +49,13 @@ class AssessmentsController < ApplicationController
   end
 
   def certificate
+    binding.pry
     grade = params[:assessment][:grade]
     user_id = params[:assessment][:user_id]
+    course = @@course
     assignment_id = params[:assessment][:assignment_id]
     course_id = Course.where(assignment_id: assignment_id)
-    certificate = Certificate.create(grade: grade, user_id: user_id, course_id: 21)
+    certificate = Certificate.create(grade: grade, user_id: user_id, course_id: course.id)
   end
 
   # PATCH/PUT /assessments/1 or /assessments/1.json

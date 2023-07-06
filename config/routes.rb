@@ -17,11 +17,11 @@ Rails.application.routes.draw do
     resources :questions
   end
 
-  resources :courses
+  resources :courses do
+    resources :lessons
+  end
 
   resources :contacts
-
-  resources :lessons
 
   resources :profile
 
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'home/course_lesson/:id', to: 'home#course_lesson', as: 'course_lesson'
+  # get 'home/course_lesson/:id', to: 'home#course_lesson', as: 'course_lesson'
 
   get 'home/lesson_video/:id', to: 'home#lesson_video', as: 'lesson_video'
 

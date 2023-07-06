@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.where(user_id: current_user.id)
     # authorize @courses
   end
 
@@ -25,7 +25,6 @@ class CoursesController < ApplicationController
   # POST /courses or /courses.json
   def create
     @course = Course.new(course_params)
-
     respond_to do |format|
       if @course.save
         format.html { redirect_to course_url(@course), notice: 'Course was successfully created.' }
@@ -69,6 +68,6 @@ class CoursesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def course_params
-    params.require(:course).permit(:name, :description, :fees, :course_type, :duration, :start_date, :image)
+    params.require(:course).permit(:name, :description, :fees, :course_type, :duration, :start_date, :image , :user_id)
   end
 end

@@ -11,3 +11,5 @@
           %td
             - if l.video.present?
               = video_tag(url_for(l.video), controls: true, class: "img-fluid", size: "300x200")
+
+= link_to 'New lessons', new_course_lesson_path, class: 'btn btn-success'

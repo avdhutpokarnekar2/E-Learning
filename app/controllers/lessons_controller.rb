@@ -3,7 +3,8 @@
 # lesson controller
 class LessonsController < ApplicationController
   def index
-    @lessons = Lesson.all
+    course_id = params[:course_id]
+    @lessons = Lesson.where(course_id: course_id)
   end
 
   def show; end

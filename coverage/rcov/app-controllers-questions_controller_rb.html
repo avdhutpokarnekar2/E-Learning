@@ -25,9 +25,9 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-questions_controller_rb.html">app/controllers/questions_controller.rb</a></td>
-            <td class='right_align'><tt>74</tt></td>
-            <td class='right_align'><tt>51</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>31.08%</tt></div>
+            <td class='right_align'><tt>75</tt></td>
+            <td class='right_align'><tt>52</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>30.67%</tt></div>
       <div class="percent_graph">
         <div class="covered" style="width:31px"></div>
         <div class="uncovered" style="width:69px"></div>
@@ -75,207 +75,210 @@
           <td><pre><a name="line9">9</a>   def index</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line10">10</a>     @questions = Question.all</pre></td>
+          <td><pre><a name="line10">10</a>     assignment_id = params[:assignment_id]</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line11">11</a>   end</pre></td>
+          <td><pre><a name="line11">11</a>     @questions = Question.where(assignment_id: assignment_id)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line12">12</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line12">12</a> </pre></td>
+          <td><pre><a name="line13">13</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line13">13</a>   # GET /questions/1 or /questions/1.json</pre></td>
+          <td><pre><a name="line14">14</a>   # GET /questions/1 or /questions/1.json</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line14">14</a>   def show; end</pre></td>
+          <td><pre><a name="line15">15</a>   def show; end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line15">15</a> </pre></td>
+          <td><pre><a name="line16">16</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line16">16</a>   # GET /questions/new</pre></td>
+          <td><pre><a name="line17">17</a>   # GET /questions/new</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line17">17</a>   def new</pre></td>
+          <td><pre><a name="line18">18</a>   def new</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line18">18</a>     @question = Question.new</pre></td>
+          <td><pre><a name="line19">19</a>     @question = Question.new</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line19">19</a>   end</pre></td>
+          <td><pre><a name="line20">20</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line20">20</a> </pre></td>
+          <td><pre><a name="line21">21</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line21">21</a>   # GET /questions/1/edit</pre></td>
+          <td><pre><a name="line22">22</a>   # GET /questions/1/edit</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line22">22</a>   def edit; end</pre></td>
+          <td><pre><a name="line23">23</a>   def edit; end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line23">23</a> </pre></td>
+          <td><pre><a name="line24">24</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line24">24</a>   # POST /questions or /questions.json</pre></td>
+          <td><pre><a name="line25">25</a>   # POST /questions or /questions.json</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line25">25</a>   def create # rubocop:disable Metrics/MethodLength</pre></td>
+          <td><pre><a name="line26">26</a>   def create # rubocop:disable Metrics/MethodLength</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line26">26</a>     @question = Question.new(question_params)</pre></td>
+          <td><pre><a name="line27">27</a>     @question = Question.new(question_params)</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line27">27</a>     respond_to do |format|</pre></td>
+          <td><pre><a name="line28">28</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line28">28</a>       if @question.save</pre></td>
+          <td><pre><a name="line29">29</a>       if @question.save</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line29">29</a>         format.html do</pre></td>
+          <td><pre><a name="line30">30</a>         format.html do</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line30">30</a>           redirect_to assignment_question_path(@question.assignment, @question),</pre></td>
+          <td><pre><a name="line31">31</a>           redirect_to assignment_question_path(@question.assignment, @question),</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line31">31</a>                       notice: &#39;Question was successfully created.&#39;</pre></td>
+          <td><pre><a name="line32">32</a>                       notice: &#39;Question was successfully created.&#39;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line32">32</a>         end</pre></td>
+          <td><pre><a name="line33">33</a>         end</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line33">33</a>         format.json { render :show, status: :created, location: @question }</pre></td>
+          <td><pre><a name="line34">34</a>         format.json { render :show, status: :created, location: @question }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line34">34</a>       else</pre></td>
+          <td><pre><a name="line35">35</a>       else</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line35">35</a>         format.html { render :new, status: :unprocessable_entity }</pre></td>
+          <td><pre><a name="line36">36</a>         format.html { render :new, status: :unprocessable_entity }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line36">36</a>         format.json { render json: @question.errors, status: :unprocessable_entity }</pre></td>
+          <td><pre><a name="line37">37</a>         format.json { render json: @question.errors, status: :unprocessable_entity }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line37">37</a>       end</pre></td>
+          <td><pre><a name="line38">38</a>       end</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line38">38</a>     end</pre></td>
+          <td><pre><a name="line39">39</a>     end</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line39">39</a>   end</pre></td>
+          <td><pre><a name="line40">40</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line40">40</a> </pre></td>
+          <td><pre><a name="line41">41</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line41">41</a>   # PATCH/PUT /questions/1 or /questions/1.json</pre></td>
+          <td><pre><a name="line42">42</a>   # PATCH/PUT /questions/1 or /questions/1.json</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line42">42</a>   def update</pre></td>
+          <td><pre><a name="line43">43</a>   def update</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line43">43</a>     respond_to do |format|</pre></td>
+          <td><pre><a name="line44">44</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line44">44</a>       if @question.update(question_params)</pre></td>
+          <td><pre><a name="line45">45</a>       if @question.update(question_params)</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line45">45</a>         format.html { redirect_to question_url(@question), notice: &#39;Question was successfully updated.&#39; }</pre></td>
+          <td><pre><a name="line46">46</a>         format.html { redirect_to question_url(@question), notice: &#39;Question was successfully updated.&#39; }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line46">46</a>         format.json { render :show, status: :ok, location: @question }</pre></td>
+          <td><pre><a name="line47">47</a>         format.json { render :show, status: :ok, location: @question }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line47">47</a>       else</pre></td>
+          <td><pre><a name="line48">48</a>       else</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line48">48</a>         format.html { render :edit, status: :unprocessable_entity }</pre></td>
+          <td><pre><a name="line49">49</a>         format.html { render :edit, status: :unprocessable_entity }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line49">49</a>         format.json { render json: @question.errors, status: :unprocessable_entity }</pre></td>
+          <td><pre><a name="line50">50</a>         format.json { render json: @question.errors, status: :unprocessable_entity }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line50">50</a>       end</pre></td>
+          <td><pre><a name="line51">51</a>       end</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line51">51</a>     end</pre></td>
+          <td><pre><a name="line52">52</a>     end</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line52">52</a>   end</pre></td>
+          <td><pre><a name="line53">53</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line53">53</a> </pre></td>
+          <td><pre><a name="line54">54</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line54">54</a>   # DELETE /questions/1 or /questions/1.json</pre></td>
+          <td><pre><a name="line55">55</a>   # DELETE /questions/1 or /questions/1.json</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line55">55</a>   def destroy</pre></td>
+          <td><pre><a name="line56">56</a>   def destroy</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line56">56</a>     @question.destroy</pre></td>
+          <td><pre><a name="line57">57</a>     @question.destroy</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line57">57</a> </pre></td>
+          <td><pre><a name="line58">58</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line58">58</a>     respond_to do |format|</pre></td>
+          <td><pre><a name="line59">59</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line59">59</a>       format.html { redirect_to questions_url, notice: &#39;Question was successfully destroyed.&#39; }</pre></td>
+          <td><pre><a name="line60">60</a>       format.html { redirect_to questions_url, notice: &#39;Question was successfully destroyed.&#39; }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line60">60</a>       format.json { head :no_content }</pre></td>
+          <td><pre><a name="line61">61</a>       format.json { head :no_content }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line61">61</a>     end</pre></td>
+          <td><pre><a name="line62">62</a>     end</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line62">62</a>   end</pre></td>
+          <td><pre><a name="line63">63</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line63">63</a> </pre></td>
+          <td><pre><a name="line64">64</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line64">64</a>   private</pre></td>
+          <td><pre><a name="line65">65</a>   private</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line65">65</a> </pre></td>
+          <td><pre><a name="line66">66</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line66">66</a>   # Use callbacks to share common setup or constraints between actions.</pre></td>
+          <td><pre><a name="line67">67</a>   # Use callbacks to share common setup or constraints between actions.</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line67">67</a>   def set_question</pre></td>
+          <td><pre><a name="line68">68</a>   def set_question</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line68">68</a>     @question = Question.find(params[:id])</pre></td>
+          <td><pre><a name="line69">69</a>     @question = Question.find(params[:id])</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line69">69</a>   end</pre></td>
+          <td><pre><a name="line70">70</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line70">70</a> </pre></td>
+          <td><pre><a name="line71">71</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line71">71</a>   # Only allow a list of trusted parameters through.</pre></td>
+          <td><pre><a name="line72">72</a>   # Only allow a list of trusted parameters through.</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line72">72</a>   def question_params</pre></td>
+          <td><pre><a name="line73">73</a>   def question_params</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line73">73</a>     params.require(:question).permit(:title, :answer, :assignment_id, option: {})</pre></td>
+          <td><pre><a name="line74">74</a>     params.require(:question).permit(:title, :answer, :assignment_id, option: {})</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line74">74</a>   end</pre></td>
+          <td><pre><a name="line75">75</a>   end</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line75">75</a> end</pre></td>
+          <td><pre><a name="line76">76</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-05 18:12:02 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-06 17:03:54 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

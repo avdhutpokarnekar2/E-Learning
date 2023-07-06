@@ -1,5 +1,5 @@
 class AddUserIdToCourses < ActiveRecord::Migration[7.0]
   def change
-    add_column :courses, :user_id, :integer
+    add_reference :courses, :user, null: false, foreign_key: true
   end
 end

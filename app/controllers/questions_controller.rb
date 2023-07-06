@@ -6,7 +6,8 @@ class QuestionsController < ApplicationController
 
   # GET /questions or /questions.json
   def index
-    @questions = Question.all
+    assignment_id = params[:assignment_id]
+    @questions = Question.where(assignment_id: assignment_id)
   end
 
   # GET /questions/1 or /questions/1.json
