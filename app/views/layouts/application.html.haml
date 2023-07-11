@@ -5,9 +5,10 @@
     %meta{name: "viewport", content: "width=device-width,initial-scale=1"}
     = csrf_meta_tags
     = csp_meta_tag
-    
+    %script{src: 'https://js.stripe.com/v3/'}
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = stylesheet_link_tag "styles/bootstrap4/bootstrap.min.css", "data-turbo-track": "reload"
+    = javascript_include_tag 'https://checkout.stripe.com/checkout.js'
     = stylesheet_link_tag "plugins/OwlCarousel2-2.2.1/owl.carousel.css", "data-turbo-track": "reload"
     = stylesheet_link_tag "plugins/OwlCarousel2-2.2.1/owl.theme.css", "data-turbo-track": "reload"
     = stylesheet_link_tag "plugins/OwlCarousel2-2.2.1/animate.css", "data-turbo-track": "reload"

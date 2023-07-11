@@ -26,16 +26,16 @@
           <tr>
             <td class="left_align"><a href="app-controllers-assessments_controller_rb.html">app/controllers/assessments_controller.rb</a></td>
             <td class='right_align'><tt>95</tt></td>
-            <td class='right_align'><tt>53</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>86.32%</tt></div>
+            <td class='right_align'><tt>71</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>25.26%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:86px"></div>
-        <div class="uncovered" style="width:14px"></div>
+        <div class="covered" style="width:25px"></div>
+        <div class="uncovered" style="width:75px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>75.47%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:75px"></div>
-        <div class="uncovered" style="width:25px"></div>
+        <div class="covered" style="width:0px"></div>
+        <div class="uncovered" style="width:100px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -59,10 +59,10 @@
         <tr class="inferred">
           <td><pre><a name="line4">4</a> # controller assessment</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line5">5</a> class AssessmentsController &lt; ApplicationController</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line6">6</a>   before_action :set_assessment, only: %i[show edit update destroy]</pre></td>
         </tr>
         <tr class="inferred">
@@ -71,13 +71,13 @@
         <tr class="inferred">
           <td><pre><a name="line8">8</a>   # GET /assessments or /assessments.json</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line9">9</a>   def index</pre></td>
         </tr>
         <tr class="uncovered">
           <td><pre><a name="line10">10</a>     @assessments = Assessment.all</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line11">11</a>   end</pre></td>
         </tr>
         <tr class="inferred">
@@ -86,7 +86,7 @@
         <tr class="inferred">
           <td><pre><a name="line13">13</a>   # GET /assessments/1 or /assessments/1.json</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line14">14</a>   def show; end</pre></td>
         </tr>
         <tr class="inferred">
@@ -95,25 +95,25 @@
         <tr class="inferred">
           <td><pre><a name="line16">16</a>   # GET /assessments/new</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line17">17</a>   def new</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line18">18</a>     course = Course.find(params[:id])</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line19">19</a>     @@course = course</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line20">20</a>     @assignment = course.assignment</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line21">21</a>     @questions = @assignment.questions</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line22">22</a>     @assessment = Assessment.new</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line23">23</a>   end</pre></td>
         </tr>
         <tr class="inferred">
@@ -122,7 +122,7 @@
         <tr class="inferred">
           <td><pre><a name="line25">25</a>   # GET /assessments/1/edit</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line26">26</a>   def edit; end</pre></td>
         </tr>
         <tr class="inferred">
@@ -131,55 +131,55 @@
         <tr class="inferred">
           <td><pre><a name="line28">28</a>   # POST /assessments or /assessments.json</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line29">29</a>   def create</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line30">30</a>     if assessment_params[:question_set].present?</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line31">31</a>       question = assessment_params[:question_set]</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line32">32</a>       count = 0</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line33">33</a>       question.each do |key, value|</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line34">34</a>         current_question = Question.find(key)</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line35">35</a>         count += 1 if current_question.answer == value</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line36">36</a>       end</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line37">37</a>       params[:assessment][:grade] = count</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line38">38</a>     end</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line39">39</a>     @assessment = Assessment.new(assessment_params)</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line40">40</a>     respond_to do |format|</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line41">41</a>       if @assessment.save</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line42">42</a>         certificate</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line43">43</a>         format.html { redirect_to assessment_url(@assessment), notice: &#39;Assessment was successfully created.&#39; }</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line44">44</a>         format.json { render :show, status: :created, location: @assessment }</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line45">45</a>       else</pre></td>
         </tr>
         <tr class="uncovered">
@@ -188,43 +188,43 @@
         <tr class="uncovered">
           <td><pre><a name="line47">47</a>         format.json { render json: @assessment.errors, status: :unprocessable_entity }</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line48">48</a>       end</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line49">49</a>     end</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line50">50</a>   end</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line51">51</a> </pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line52">52</a>   def certificate</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line53">53</a>     binding.pry</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line54">54</a>     grade = params[:assessment][:grade]</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line55">55</a>     user_id = params[:assessment][:user_id]</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line56">56</a>     course = @@course</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line57">57</a>     assignment_id = params[:assessment][:assignment_id]</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line58">58</a>     course_id = Course.where(assignment_id: assignment_id)</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line59">59</a>     certificate = Certificate.create(grade: grade, user_id: user_id, course_id: course.id)</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line60">60</a>   end</pre></td>
         </tr>
         <tr class="inferred">
@@ -233,7 +233,7 @@
         <tr class="inferred">
           <td><pre><a name="line62">62</a>   # PATCH/PUT /assessments/1 or /assessments/1.json</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line63">63</a>   def update</pre></td>
         </tr>
         <tr class="uncovered">
@@ -248,7 +248,7 @@
         <tr class="uncovered">
           <td><pre><a name="line67">67</a>         format.json { render :show, status: :ok, location: @assessment }</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line68">68</a>       else</pre></td>
         </tr>
         <tr class="uncovered">
@@ -257,13 +257,13 @@
         <tr class="uncovered">
           <td><pre><a name="line70">70</a>         format.json { render json: @assessment.errors, status: :unprocessable_entity }</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line71">71</a>       end</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line72">72</a>     end</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line73">73</a>   end</pre></td>
         </tr>
         <tr class="inferred">
@@ -272,7 +272,7 @@
         <tr class="inferred">
           <td><pre><a name="line75">75</a>   # DELETE /assessments/1 or /assessments/1.json</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line76">76</a>   def destroy</pre></td>
         </tr>
         <tr class="uncovered">
@@ -290,16 +290,16 @@
         <tr class="uncovered">
           <td><pre><a name="line81">81</a>       format.json { head :no_content }</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line82">82</a>     end</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line83">83</a>   end</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line84">84</a> </pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line85">85</a>   private</pre></td>
         </tr>
         <tr class="inferred">
@@ -308,13 +308,13 @@
         <tr class="inferred">
           <td><pre><a name="line87">87</a>   # Use callbacks to share common setup or constraints between actions.</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line88">88</a>   def set_assessment</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line89">89</a>     @assessment = Assessment.find(params[:id])</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line90">90</a>   end</pre></td>
         </tr>
         <tr class="inferred">
@@ -323,22 +323,22 @@
         <tr class="inferred">
           <td><pre><a name="line92">92</a>   # Only allow a list of trusted parameters through.</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line93">93</a>   def assessment_params</pre></td>
         </tr>
-        <tr class="marked">
+        <tr class="uncovered">
           <td><pre><a name="line94">94</a>     params.require(:assessment).permit(:grade, :assignment_id, :user_id, question_set: {})</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line95">95</a>   end</pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line96">96</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-06 17:03:54 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-11 10:57:56 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

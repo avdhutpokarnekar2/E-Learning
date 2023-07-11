@@ -23,5 +23,5 @@
           %p
             %ul.main_nav.list-unstyled
               %li.active
-                = link_to "Buy Now", root_path, class: "btn btn-primary"
+                = link_to "Buy Now", payment_stripe_payment_path(course_id: @course.id), class: "btn btn-primary"
           %p

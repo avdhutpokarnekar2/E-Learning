@@ -1,5 +1,23 @@
 ActiveAdmin.register User do
   permit_params :role
+  permit_params :verified
+
+  form do |f|
+    f.semantic_errors
+    f.inputs do
+      f.input :verified
+    end
+    f.actions
+  end
+
+  index do
+    selectable_column
+    id_column
+    column :email
+    column :verified
+    actions
+  end
+
 
   form do |f|
     f.inputs do
