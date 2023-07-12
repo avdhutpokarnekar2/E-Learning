@@ -26,4 +26,16 @@ module Users
     #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
     # end
   end
+
+  private
+
+  def after_sign_in_path_for(resource)
+    if resource.is_a?(User) && resource.instructor? && resource.verified?
+      # Redirect to the instructor dashboard or any other page
+      instructor_dashboard_path
+    else
+      # Redirect to the default path for other users
+      super
+    end
+  end
 end

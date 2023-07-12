@@ -25,17 +25,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-admin-users_rb.html">app/admin/users.rb</a></td>
-            <td class='right_align'><tt>60</tt></td>
-            <td class='right_align'><tt>41</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>76.67%</tt></div>
+            <td class='right_align'><tt>84</tt></td>
+            <td class='right_align'><tt>46</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>70.24%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:77px"></div>
-        <div class="uncovered" style="width:23px"></div>
+        <div class="covered" style="width:70px"></div>
+        <div class="uncovered" style="width:30px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>65.85%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>45.65%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:66px"></div>
-        <div class="uncovered" style="width:34px"></div>
+        <div class="covered" style="width:46px"></div>
+        <div class="uncovered" style="width:54px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -54,79 +54,79 @@
           <td><pre><a name="line2">2</a> ActiveAdmin.register User do</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line3">3</a>   permit_params :role</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line4">4</a>   permit_params :verified</pre></td>
+          <td><pre><a name="line3">3</a>   permit_params :email, :password, :password_confirmation, :first_name, :last_name, :mobile_no, :role, :verified</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line5">5</a> </pre></td>
+          <td><pre><a name="line4">4</a> </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line6">6</a>   form do |f|</pre></td>
+          <td><pre><a name="line5">5</a>   form do |f|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line7">7</a>     f.semantic_errors</pre></td>
+          <td><pre><a name="line6">6</a>     f.inputs &#39;User Details&#39; do</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line8">8</a>     f.inputs do</pre></td>
+          <td><pre><a name="line7">7</a>       f.input :email</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line9">9</a>       f.input :verified</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line10">10</a>     end</pre></td>
+          <td><pre><a name="line8">8</a>       f.input :password</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line11">11</a>     f.actions</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line12">12</a>   end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line13">13</a> </pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line14">14</a>   index do</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line15">15</a>     selectable_column</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line16">16</a>     id_column</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line17">17</a>     column :email</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line18">18</a>     column :verified</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line19">19</a>     actions</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line20">20</a>   end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line21">21</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line22">22</a> </pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line23">23</a>   form do |f|</pre></td>
+          <td><pre><a name="line9">9</a>       f.input :password_confirmation</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line24">24</a>     f.inputs do</pre></td>
+          <td><pre><a name="line10">10</a>       f.input :first_name</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line25">25</a>       f.input :role, as: :select, collection: User.roles.keys</pre></td>
+          <td><pre><a name="line11">11</a>       f.input :last_name</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line12">12</a>       f.input :mobile_no</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line13">13</a>       f.input :role, as: :select, collection: User.roles.keys</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line14">14</a>       f.input :verified</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line26">26</a>     end</pre></td>
+          <td><pre><a name="line15">15</a>     end</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line27">27</a>     f.actions</pre></td>
+          <td><pre><a name="line16">16</a>     f.actions</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line17">17</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line18">18</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line19">19</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line20">20</a>   member_action :verify, method: :put do</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line21">21</a>     user = User.find(params[:id])</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line22">22</a>     user.update(verified: true)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line23">23</a>     redirect_to admin_user_path(user), notice: &#39;Instructor verified!&#39;</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line24">24</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line25">25</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line26">26</a>   action_item :verify, only: :show do</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line27">27</a>     link_to &#39;Verify&#39;, verify_admin_user_path(user), method: :put if user.instructor? &amp;&amp; !user.verified?</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line28">28</a>   end</pre></td>
@@ -137,103 +137,175 @@
         <tr class="inferred">
           <td><pre><a name="line30">30</a> </pre></td>
         </tr>
-        <tr class="marked">
-          <td><pre><a name="line31">31</a>   permit_params :email, :password, :password_confirmation</pre></td>
+        <tr class="inferred">
+          <td><pre><a name="line31">31</a> </pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line32">32</a> </pre></td>
         </tr>
-        <tr class="marked">
-          <td><pre><a name="line33">33</a>   index do</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line34">34</a>     selectable_column</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line35">35</a>     id_column</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line36">36</a>     column :email</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line37">37</a>     column :first_name</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line38">38</a>     column :role</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line39">39</a>     column :created_at</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line40">40</a>     actions</pre></td>
+        <tr class="inferred">
+          <td><pre><a name="line33">33</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line41">41</a>   end</pre></td>
+          <td><pre><a name="line34">34</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line35">35</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line36">36</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line37">37</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line38">38</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line39">39</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line40">40</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line41">41</a> </pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line42">42</a> </pre></td>
         </tr>
-        <tr class="marked">
-          <td><pre><a name="line43">43</a>   filter :email</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line44">44</a>   filter :current_sign_in_at</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line45">45</a>   filter :sign_in_count</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line46">46</a>   filter :created_at</pre></td>
+        <tr class="inferred">
+          <td><pre><a name="line43">43</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line47">47</a> </pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line48">48</a>   form do |f|</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line49">49</a>     f.inputs do</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line50">50</a>       f.input :email</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line51">51</a>       f.input :first_name</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line52">52</a>       f.input :last_name</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line53">53</a>       f.input :mobile_no</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line54">54</a>       f.input :password</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line55">55</a>       f.input :password_confirmation</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line56">56</a>       f.input :role</pre></td>
+          <td><pre><a name="line44">44</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line57">57</a>     end</pre></td>
+          <td><pre><a name="line45">45</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line46">46</a> </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line58">58</a>     f.actions</pre></td>
+          <td><pre><a name="line47">47</a>   form do |f|</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line48">48</a>     f.inputs do</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line49">49</a>       f.input :role, as: :select, collection: User.roles.keys</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line59">59</a>   end</pre></td>
+          <td><pre><a name="line50">50</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line51">51</a>     f.actions</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line60">60</a> </pre></td>
+          <td><pre><a name="line52">52</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line61">61</a> end</pre></td>
+          <td><pre><a name="line53">53</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line54">54</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line55">55</a>   permit_params :email, :password, :password_confirmation</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line56">56</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line57">57</a>   index do</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line58">58</a>     selectable_column</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line59">59</a>     id_column</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line60">60</a>     column :email</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line61">61</a>     column :first_name</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line62">62</a>     column :role</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line63">63</a>     column :created_at</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line64">64</a>     actions</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line65">65</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line66">66</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line67">67</a>   filter :email</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line68">68</a>   filter :current_sign_in_at</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line69">69</a>   filter :sign_in_count</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line70">70</a>   filter :created_at</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line71">71</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line72">72</a>   form do |f|</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line73">73</a>     f.inputs do</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line74">74</a>       f.input :email</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line75">75</a>       f.input :first_name</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line76">76</a>       f.input :last_name</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line77">77</a>       f.input :mobile_no</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line78">78</a>       f.input :password</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line79">79</a>       f.input :password_confirmation</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line80">80</a>       f.input :role</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line81">81</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line82">82</a>     f.actions</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line83">83</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line84">84</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line85">85</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-11 10:57:56 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-12 11:22:46 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

@@ -25,8 +25,8 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-models-user_rb.html">app/models/user.rb</a></td>
-            <td class='right_align'><tt>14</tt></td>
-            <td class='right_align'><tt>6</tt></td>
+            <td class='right_align'><tt>16</tt></td>
+            <td class='right_align'><tt>7</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
       <div class="percent_graph">
         <div class="covered" style="width:100px"></div>
@@ -69,7 +69,7 @@
           <td><pre><a name="line7">7</a>   devise :database_authenticatable, </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line8">8</a>          :recoverable, :rememberable, :validatable</pre></td>
+          <td><pre><a name="line8">8</a>          :recoverable, :rememberable, :validatable, :registerable</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line9">9</a> </pre></td>
@@ -90,12 +90,18 @@
           <td><pre><a name="line14">14</a>   has_many :courses, through: :enrollments, dependent: :destroy</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line15">15</a> end</pre></td>
+          <td><pre><a name="line15">15</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line16">16</a>   attribute :verified, :boolean, default: false</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line17">17</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-11 10:57:56 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-12 11:22:46 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>
