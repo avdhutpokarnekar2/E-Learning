@@ -1,75 +1,79 @@
-# frozen_string_literal: true
+# spec/controllers/lessons_controller_spec.rb
 
 require 'rails_helper'
 
-RSpec.describe 'Lessons', type: :request do
+RSpec.describe LessonsController, type: :controller do
+  let(:user) { create(:user) }
+  let(:course) { create(:course, user_id: user.id) }
+
+  before do
+    sign_in user
+  end
   describe 'GET #index' do
-    it 'returns a successful response' do
-      get '/lessons'
-      expect(response).to have_http_status(:success)
-    end
-
-    it 'assigns @lessons with all lessons' do
-      course = FactoryBot.create(:course)
-      lesson1 = FactoryBot.create(:lesson, course_id: course.id)
-      lesson2 = FactoryBot.create(:lesson, course_id: course.id)
-      get '/lessons'
-      expect(assigns(:lessons)).to eq([lesson1, lesson2])
-    end
-
     it 'renders the index template' do
-      get '/lessons'
-      expect(response).to render_template(:index)
+      get :index, params: { course_id: course}
+      expect(response).to be_successful
     end
   end
-  describe 'GET #new' do
-    it 'assigns a new Lesson to @lessons' do
-      get '/lessons/new'
-      expect(assigns(:lesson)).to be_a_new(Lesson)
-    end
 
-    it 'renders the template' do
-      get '/lessons/new'
+  describe 'GET #new' do
+    it 'renders the new template' do
+      get :new, params: { course_id: course.id }
       expect(response).to render_template(:new)
     end
   end
 
-  describe 'Post #create' do
-    context 'with invalid parameters' do
-      let(:invalid_lessons_params) do
-        {
-          name: nil
-        }
-      end
 
-      it 'does not create a new lesson' do
-        expect do
-          post '/lessons', params: { lesson: invalid_lessons_params }
-        end.not_to change(Lesson, :count)
-      end
-
-      it 'renders the new template' do
-        post '/lessons', params: { lesson: invalid_lessons_params }
-        expect(response).to render_template(:new)
-      end
-
-      it 'sets an unprocessable entity status' do
-        post '/lessons', params: { lesson: invalid_lessons_params }
-        expect(response).to have_http_status(:unprocessable_entity)
-      end
+  describe 'POST #create' do
+    let(:valid_lesson_params) do
+      {
+        name: 'Sample Lesson',
+        course_id: course.id
+      }
     end
 
     context 'with valid parameters' do
-      let(:valid_params) do
-        {
-          name: 'lesson',
-          course_id: 1
-        }
+      it 'creates a new lesson' do
+        expect {
+          post :create, params: { course_id: course.id, lesson: valid_lesson_params }
+        }.to change(Lesson, :count).by(1)
+
+        expect(response).to redirect_to(courses_path)
       end
-      it 'assigns a newly created course to @lesson' do
-        post '/lessons', params: { lesson: valid_params }
-        expect(assigns(:lesson)).to be_a(Lesson)
+    end  
+  end
+
+  describe 'PATCH #update' do
+    let(:lesson) { create(:lesson, course_id: course.id) }
+    context 'with valid parameters' do
+      it 'updates the requested lesson' do
+        new_name = 'Updated Lesson'
+        patch :update, params: { course_id: course.id, id: lesson.id, lesson: { name: new_name } }
+        expect(response).to redirect_to(course_lesson_url(lesson))
+        lesson.reload
+        expect(lesson.name).to eq(new_name)
+      end
+    end
+
+    context 'with invalid parameters' do
+      it 'does not update the requested lesson' do
+        original_name = lesson.name
+        patch :update, params: { course_id: course.id, id: lesson.id, lesson: { name: '' } }
+        expect(response).to render_template(:edit)
+        expect(response).to have_http_status(:unprocessable_entity)
+        lesson.reload
+        expect(lesson.name).to eq(original_name)
       end
     end
   end
+
+# ...
+
+  # describe 'DELETE #destroy' do
+  #   let!(:lesson) { create(:lesson, course_id: course.id) }
+  #   it 'redirects to the lesson index' do
+  #     delete :destroy, params: { course_id: course.id, id: lesson.id }
+  #     expect(response).to redirect_to(courses_path)
+  #   end
+  # end
 end

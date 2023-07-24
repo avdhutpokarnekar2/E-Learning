@@ -384,6 +384,7 @@ DEPENDENCIES
   haml-rails
   importmap-rails
   jbuilder
+  jquery-rails
   pg (~> 1.1)
   pry
   puma (~> 5.0)

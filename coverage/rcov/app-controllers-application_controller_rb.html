@@ -25,17 +25,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-application_controller_rb.html">app/controllers/application_controller.rb</a></td>
-            <td class='right_align'><tt>22</tt></td>
-            <td class='right_align'><tt>6</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>95.45%</tt></div>
+            <td class='right_align'><tt>23</tt></td>
+            <td class='right_align'><tt>7</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>95.65%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:95px"></div>
-        <div class="uncovered" style="width:5px"></div>
+        <div class="covered" style="width:96px"></div>
+        <div class="uncovered" style="width:4px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>83.33%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>85.71%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:83px"></div>
-        <div class="uncovered" style="width:17px"></div>
+        <div class="covered" style="width:86px"></div>
+        <div class="uncovered" style="width:14px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -66,60 +66,63 @@
           <td><pre><a name="line6">6</a>   # protect_from_forgery with: :exception</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line7">7</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line8">8</a>   # before_action :set_csrf_cookie</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line9">9</a>   # before_action :authenticate_user!</pre></td>
+          <td><pre><a name="line7">7</a>   # before_action :set_csrf_cookie</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line10">10</a>   include Pundit::Authorization</pre></td>
+          <td><pre><a name="line8">8</a>   before_action :authenticate_user!</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line9">9</a>   include Pundit::Authorization</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line10">10</a>   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line11">11</a> </pre></td>
         </tr>
-        <tr class="marked">
-          <td><pre><a name="line12">12</a>   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized</pre></td>
+        <tr class="inferred">
+          <td><pre><a name="line12">12</a>   # def verify</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line13">13</a> </pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line14">14</a>   private</pre></td>
+          <td><pre><a name="line13">13</a>   #   if current_user.instructor &amp;&amp; current_user.verified == false</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line15">15</a> </pre></td>
+          <td><pre><a name="line14">14</a>   #     flash[:alert] = &quot;You are not authorized.&quot;</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line16">16</a>   # def set_csrf_cookie</pre></td>
+          <td><pre><a name="line15">15</a>   #     redirect_to courses_path</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line17">17</a>   #   cookies[&#39;CSRF-TOKEN&#39;] = form_authenticity_token</pre></td>
+          <td><pre><a name="line16">16</a>   #   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line18">18</a>   # end</pre></td>
+          <td><pre><a name="line17">17</a>   # end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line19">19</a> </pre></td>
+          <td><pre><a name="line18">18</a> </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line20">20</a>   def user_not_authorized(_exception)</pre></td>
+          <td><pre><a name="line19">19</a>   private</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line20">20</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line21">21</a>   def user_not_authorized(_exception)</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line21">21</a>     redirect_to root_path</pre></td>
+          <td><pre><a name="line22">22</a>     redirect_to root_path</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line22">22</a>   end</pre></td>
+          <td><pre><a name="line23">23</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line23">23</a> end</pre></td>
+          <td><pre><a name="line24">24</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-12 11:22:46 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-24 13:27:48 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

@@ -42,7 +42,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to question_url(@question), notice: 'Question was successfully updated.' }
+        format.html { redirect_to assignment_questions_path(@question), notice: 'Question was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -56,7 +56,9 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     respond_to do |format|
-      format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }
+      format.html do
+        redirect_to assignment_questions_path(@question.assignment), notice: 'Question was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end

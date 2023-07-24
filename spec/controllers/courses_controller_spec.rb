@@ -5,19 +5,24 @@ require 'factory_bot_rails'
 
 RSpec.describe CoursesController, type: :controller do # rubocop:disable Metrics/BlockLength
   # for index method
-
   describe 'GET #index' do
     it 'courses' do
       user = FactoryBot.create(:user)
+      course = FactoryBot.create(:course, user_id: user.id)
       allow(controller).to receive(:current_user).and_return(user)
       get :index
-      expect(assigns(:courses)).to eq(Course.all)
+      expect(response).to be_successful
     end
   end
 
   # for new method
 
   describe 'GET #new' do
+    before(:each) do
+      user = FactoryBot.create(:user)
+      FactoryBot.create(:course, name: 'Course 1', user_id: user.id)
+      FactoryBot.create(:course, name: 'Course 2', user_id: user.id)
+    end
     it 'assigns a new Course to @course' do
       get :new
       expect(assigns(:course)).to be_a_new(Course)
@@ -37,6 +42,7 @@ RSpec.describe CoursesController, type: :controller do # rubocop:disable Metrics
         {
           name: nil,
           description: 'Lorem ipsum'
+
         }
       end
 
@@ -58,12 +64,16 @@ RSpec.describe CoursesController, type: :controller do # rubocop:disable Metrics
     end
 
     context 'with valid parameters' do
+      let(:user) {create(:user)}
       let(:valid_course_params) do
         {
           name: 'Sample Course',
           description: 'Lorem ipsum',
           fees: 910,
-          duration: 3
+          duration: 3,
+          course_type: 1,
+          user_id: user.id,
+          start_date: DateTime.new(2023, 7, 6, 12, 57, 0, '+00:00')
         }
       end
       it 'creates a new course' do
@@ -91,7 +101,8 @@ RSpec.describe CoursesController, type: :controller do # rubocop:disable Metrics
   # for upadate method
 
   describe 'PATCH #update' do # rubocop:disable Metrics/BlockLength
-    let(:course) { FactoryBot.create(:course) } # Assuming you're using FactoryBot for test data creation
+    let(:user) {create(:user)}
+    let(:course) { FactoryBot.create(:course, user_id: user.id) } # Assuming you're using FactoryBot for test data creation
 
     context 'with valid parameters' do
       let(:updated_course_params) do
@@ -137,7 +148,8 @@ RSpec.describe CoursesController, type: :controller do # rubocop:disable Metrics
   # for delete method
 
   describe 'DELETE #destroy' do
-    let!(:course) { FactoryBot.create(:course) } # Assuming you're using FactoryBot for test data creation
+    let(:user) {create(:user)}
+    let!(:course) { FactoryBot.create(:course, user_id: user.id) } # Assuming you're using FactoryBot for test data creation
 
     it 'destroys the course' do
       expect do

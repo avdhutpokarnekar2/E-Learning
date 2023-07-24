@@ -16,8 +16,9 @@
                       %div (009) 35475 6688933 32
                     %li
                       %div info@elearntemplate.com
-                    %li
-                      = link_to "Instructor",courses_path,data: {turbo: false}
+                    - if user_signed_in? && (current_user.role == "instructor" || current_user.role == "admin")
+                      %li
+                        = link_to "Instructor",courses_path,data: {turbo: false}
                   .top_bar_login.ml-auto
                     %ul
                       - if user_signed_in?
@@ -41,6 +42,17 @@
                           = link_to "Login",new_user_session_path, data: {turbo: false}
 
       / Header Content
+      - if notice
+        .alert.alert-success.alrt.fade.show= notice
+        :javascript
+          :plain
+            $(document).ready(function() {
+              setTimeout(function() {
+                $(".alert-success").alert('close');
+              }, 2000);
+            });    
+      - if flash.alert
+        %p.alert.alert-danger= flash.alert
       .header_container
         .container
           .row
@@ -60,8 +72,6 @@
                       = link_to "about",about_home_index_path
                     %li
                       = link_to "courses",course_home_index_path
-                    %li
-                      %a{:href => "news.html"} news
                     %li
                       = link_to "Contacts",contacts_path
                   .search_button

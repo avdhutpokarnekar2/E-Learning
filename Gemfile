@@ -66,30 +66,30 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda-matchers'
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
 
-
-gem 'devise' 
+gem 'activeadmin'
+gem 'devise'
 gem 'dotenv-rails'
 gem 'factory_bot_rails'
 gem 'faker'
 gem 'haml-rails'
+gem 'jquery-rails'
 gem 'pry'
 gem 'pundit'
 gem 'rails-controller-testing'
 gem 'rspec'
 gem 'rspec-rails', '~> 6.0'
 gem 'rubocop'
+gem 'shoulda-matchers'
 gem 'simplecov'
 gem 'simplecov-rcov', require: false
+gem 'simple_form'
+gem 'stripe'
 gem 'warden'
 gem 'wicked_pdf'
-gem 'simple_form'
 gem 'wkhtmltopdf-binary'
-gem 'activeadmin'
-gem'stripe'

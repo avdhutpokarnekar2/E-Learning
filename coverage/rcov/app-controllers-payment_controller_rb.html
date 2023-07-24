@@ -25,12 +25,12 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-payment_controller_rb.html">app/controllers/payment_controller.rb</a></td>
-            <td class='right_align'><tt>29</tt></td>
-            <td class='right_align'><tt>26</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>10.34%</tt></div>
+            <td class='right_align'><tt>32</tt></td>
+            <td class='right_align'><tt>27</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>15.62%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:10px"></div>
-        <div class="uncovered" style="width:90px"></div>
+        <div class="covered" style="width:16px"></div>
+        <div class="uncovered" style="width:84px"></div>
       </div></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
       <div class="percent_graph">
@@ -50,97 +50,106 @@
 
     <table class="details">
       <tbody>
-        <tr class="uncovered">
-          <td><pre><a name="line2">2</a> class PaymentController &lt; ApplicationController</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line3">3</a> 	require &#39;stripe&#39;</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line4">4</a>   Stripe.api_key = ENV[&#39;stripe_secret_key&#39;]</pre></td>
+        <tr class="inferred">
+          <td><pre><a name="line2">2</a> # frozen_string_literal: true</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line5">5</a> </pre></td>
+          <td><pre><a name="line3">3</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line6">6</a> 	def stripe_payment</pre></td>
+          <td><pre><a name="line4">4</a> class PaymentController &lt; ApplicationController</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line7">7</a> 		course = Course.find(params[:course_id])</pre></td>
+          <td><pre><a name="line5">5</a>   require &#39;stripe&#39;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line8">8</a> 		course_fee = course.fees*100</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line9">9</a>   	product = Stripe::Product.create({name: &#39;Order 1&#39;})</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line10">10</a>     @session = Stripe::Checkout::Session.create({payment_method_types: [&#39;card&#39;],</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line11">11</a>             line_items: [</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line12">12</a>             price_data: {</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line13">13</a>             product: product.id,</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line14">14</a>             unit_amount: course_fee,</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line15">15</a>             currency: &#39;inr&#39;},</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line16">16</a>             quantity: 1,],</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line17">17</a>             mode: &#39;payment&#39;,</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line18">18</a>             success_url: payment_success_url,</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line19">19</a>             cancel_url: payment_cancel_url</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line20">20</a>             })</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line21">21</a>   end</pre></td>
+          <td><pre><a name="line6">6</a>   Stripe.api_key = ENV[&#39;stripe_secret_key&#39;]</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line22">22</a> </pre></td>
+          <td><pre><a name="line7">7</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line23">23</a> 	def success</pre></td>
+          <td><pre><a name="line8">8</a>   def stripe_payment</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line24">24</a> 		redirect_to root_url, notice: &quot;Purchase Successful&quot;</pre></td>
+          <td><pre><a name="line9">9</a>     course = Course.find(params[:course_id])</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line25">25</a> 	end</pre></td>
+          <td><pre><a name="line10">10</a>     course_fee = course.fees * 100</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line11">11</a>     product = Stripe::Product.create({ name: &#39;Order 1&#39; })</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line12">12</a>     @session = Stripe::Checkout::Session.create({ payment_method_types: [&#39;card&#39;],</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line13">13</a>                                                   line_items: [</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line14">14</a>                                                     price_data: {</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line15">15</a>                                                       product: product.id,</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line16">16</a>                                                       unit_amount: course_fee,</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line17">17</a>                                                       currency: &#39;inr&#39;</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line18">18</a>                                                     },</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line19">19</a>                                                     quantity: 1</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line20">20</a>                                                   ],</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line21">21</a>                                                   mode: &#39;payment&#39;,</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line22">22</a>                                                   success_url: payment_success_url,</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line23">23</a>                                                   cancel_url: payment_cancel_url })</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line24">24</a>   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line26">26</a> </pre></td>
+          <td><pre><a name="line25">25</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line27">27</a> 	def cancel</pre></td>
+          <td><pre><a name="line26">26</a>   def success</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line28">28</a> 		redirect_to root_url, notice: &quot;Purchase Unsuccessful&quot;</pre></td>
+          <td><pre><a name="line27">27</a>     redirect_to root_url, notice: &#39;Purchase Successful&#39;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line29">29</a> 	end</pre></td>
+          <td><pre><a name="line28">28</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line29">29</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line30">30</a> end</pre></td>
+          <td><pre><a name="line30">30</a>   def cancel</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line31">31</a>     redirect_to root_url, notice: &#39;Purchase Unsuccessful&#39;</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line32">32</a>   end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line33">33</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-12 11:22:46 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-24 13:27:48 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

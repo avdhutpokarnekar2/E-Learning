@@ -1,0 +1,23 @@
+<!-- app/views/lessons/edit.html.erb -->
+
+<h1>Edit Lesson</h1>
+
+<%= form_with(model: @lesson, url: lesson_path(@lesson), method: :patch) do |form| %>
+  <% if @lesson.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
+
+      <ul>
+        <% @lesson.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- Add form fields for lesson attributes here -->
+
+  <div class="actions">
+    <%= form.submit "Update Lesson" %>
+  </div>
+<% end %>

@@ -25,17 +25,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-admin-dashboard_rb.html">app/admin/dashboard.rb</a></td>
-            <td class='right_align'><tt>33</tt></td>
+            <td class='right_align'><tt>34</tt></td>
             <td class='right_align'><tt>7</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>88.24%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:100px"></div>
-        <div class="uncovered" style="width:0px"></div>
+        <div class="covered" style="width:88px"></div>
+        <div class="uncovered" style="width:12px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>42.86%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:100px"></div>
-        <div class="uncovered" style="width:0px"></div>
+        <div class="covered" style="width:43px"></div>
+        <div class="uncovered" style="width:57px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -53,106 +53,109 @@
         <tr class="inferred">
           <td><pre><a name="line2">2</a> # frozen_string_literal: true</pre></td>
         </tr>
-        <tr class="marked">
-          <td><pre><a name="line3">3</a> ActiveAdmin.register_page &quot;Dashboard&quot; do</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line4">4</a>   menu priority: 1, label: proc { I18n.t(&quot;active_admin.dashboard&quot;) }</pre></td>
-        </tr>
         <tr class="inferred">
-          <td><pre><a name="line5">5</a> </pre></td>
+          <td><pre><a name="line3">3</a> </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line6">6</a>   content title: proc { I18n.t(&quot;active_admin.dashboard&quot;) } do</pre></td>
+          <td><pre><a name="line4">4</a> ActiveAdmin.register_page &#39;Dashboard&#39; do</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line7">7</a>     div class: &quot;blank_slate_container&quot;, id: &quot;dashboard_default_message&quot; do</pre></td>
+          <td><pre><a name="line5">5</a>   menu priority: 1, label: proc { I18n.t(&#39;active_admin.dashboard&#39;) }</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line6">6</a> </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line8">8</a>       span class: &quot;blank_slate&quot; do</pre></td>
+          <td><pre><a name="line7">7</a>   content title: proc { I18n.t(&#39;active_admin.dashboard&#39;) } do</pre></td>
         </tr>
-        <tr class="marked">
-          <td><pre><a name="line9">9</a>         span I18n.t(&quot;active_admin.dashboard_welcome.welcome&quot;)</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line8">8</a>     div class: &#39;blank_slate_container&#39;, id: &#39;dashboard_default_message&#39; do</pre></td>
         </tr>
-        <tr class="marked">
-          <td><pre><a name="line10">10</a>         small I18n.t(&quot;active_admin.dashboard_welcome.call_to_action&quot;)</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line9">9</a>       span class: &#39;blank_slate&#39; do</pre></td>
         </tr>
-        <tr class="inferred">
-          <td><pre><a name="line11">11</a>       end</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line10">10</a>         span I18n.t(&#39;active_admin.dashboard_welcome.welcome&#39;)</pre></td>
         </tr>
-        <tr class="inferred">
-          <td><pre><a name="line12">12</a>     end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line13">13</a> </pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line11">11</a>         small I18n.t(&#39;active_admin.dashboard_welcome.call_to_action&#39;)</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line14">14</a>     # Here is an example of a simple dashboard with columns and panels.</pre></td>
+          <td><pre><a name="line12">12</a>       end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line15">15</a>     #</pre></td>
+          <td><pre><a name="line13">13</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line16">16</a>     # columns do</pre></td>
+          <td><pre><a name="line14">14</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line17">17</a>     #   column do</pre></td>
+          <td><pre><a name="line15">15</a>     # Here is an example of a simple dashboard with columns and panels.</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line18">18</a>     #     panel &quot;Recent Posts&quot; do</pre></td>
+          <td><pre><a name="line16">16</a>     #</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line19">19</a>     #       ul do</pre></td>
+          <td><pre><a name="line17">17</a>     # columns do</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line20">20</a>     #         Post.recent(5).map do |post|</pre></td>
+          <td><pre><a name="line18">18</a>     #   column do</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line21">21</a>     #           li link_to(post.title, admin_post_path(post))</pre></td>
+          <td><pre><a name="line19">19</a>     #     panel &quot;Recent Posts&quot; do</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line22">22</a>     #         end</pre></td>
+          <td><pre><a name="line20">20</a>     #       ul do</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line23">23</a>     #       end</pre></td>
+          <td><pre><a name="line21">21</a>     #         Post.recent(5).map do |post|</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line24">24</a>     #     end</pre></td>
+          <td><pre><a name="line22">22</a>     #           li link_to(post.title, admin_post_path(post))</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line25">25</a>     #   end</pre></td>
+          <td><pre><a name="line23">23</a>     #         end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line26">26</a> </pre></td>
+          <td><pre><a name="line24">24</a>     #       end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line27">27</a>     #   column do</pre></td>
+          <td><pre><a name="line25">25</a>     #     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line28">28</a>     #     panel &quot;Info&quot; do</pre></td>
+          <td><pre><a name="line26">26</a>     #   end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line29">29</a>     #       para &quot;Welcome to ActiveAdmin.&quot;</pre></td>
+          <td><pre><a name="line27">27</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line30">30</a>     #     end</pre></td>
+          <td><pre><a name="line28">28</a>     #   column do</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line31">31</a>     #   end</pre></td>
+          <td><pre><a name="line29">29</a>     #     panel &quot;Info&quot; do</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line32">32</a>     # end</pre></td>
+          <td><pre><a name="line30">30</a>     #       para &quot;Welcome to ActiveAdmin.&quot;</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line33">33</a>   end # content</pre></td>
+          <td><pre><a name="line31">31</a>     #     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line34">34</a> end</pre></td>
+          <td><pre><a name="line32">32</a>     #   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line33">33</a>     # end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line34">34</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line35">35</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-12 11:22:46 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-24 13:27:48 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

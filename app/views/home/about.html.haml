@@ -1,224 +1,224 @@
-/ Home
-.home
-  / Background image artist https://unsplash.com/@thepootphotographer
-  .home_background.parallax_background.parallax-window{ data: {parallax: "scroll", speed: "0.8"} }
-    = image_tag("about.jpg")
-  .home_container
-    .container
-      .row
-        .col
-          .home_content.text-center
-            .home_title About us
-            .breadcrumbs
-              %ul
-                %li
-                  %a{:href => "index.html"} Home
-                %li About us
-/ About
-.about
-  .container
-    .row.about_row.row-lg-eq-height
-      .col-lg-6
-        .about_content
-          .about_title Our Platform's main goal
-          .about_text
-            %p Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut. Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id convallis libero, sed blandit nibh. Nam ultricies tristique nibh, consequat ornare nibh. Quisque vitae odio ligula.
-      .col-lg-6
-        .about_image
-          = image_tag('about_1.jpg')
-      .row.about_row.row-lg-eq-height
-        .col-lg-6.order-lg-1.order-2
-          .about_image
-            = image_tag('about_1.jpg')
-          .col-lg-6.order-lg-2.order-1
-            .about_content
-              .about_title eLearn's Vision
-              .about_text
-                %p Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut. Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id convallis libero, sed blandit nibh. Nam ultricies tristique nibh.
-    / Milestones
-    .milestones
-      / Background image artis https://unsplash.com/@thepootphotographer
-      .parallax_background.parallax-window{ data: {parallax: "scroll", speed: "0.8"} }
-        = image_tag("milestones.jpg", style: "width: -webkit-fill-available")
-      .container
-        .row.milestones_container
-          / Milestone
-          .col-lg-3.milestone_col
-            .milestone.text-center
-              .milestone_icon
-                = image_tag('milestone_1.svg')
-                .milestone_counter{"data-end-value" => "1548"} 0
-                .milestone_text Online Courses
-            / Milestone
-            .col-lg-3.milestone_col
-              .milestone.text-center
-                .milestone_icon
-                  = image_tag('milestone_2.svg')
-                  .milestone_counter{"data-end-value" => "7286"} 0
-                  .milestone_text Students
-              / Milestone
-              .col-lg-3.milestone_col
-                .milestone.text-center
-                  .milestone_icon
-                    = image_tag('milestone_3.svg')
-                    .milestone_counter{"data-end-value" => "257"} 0
-                    .milestone_text Teachers
-                / Milestone
-                .col-lg-3.milestone_col
-                  .milestone.text-center
-                    .milestone_icon
-                      = image_tag('milestone_4.svg')
-                      .milestone_counter{"data-end-value" => "39"} 0
-                      .milestone_text Countries
-            / Teachers
-            .teachers
-              .container
-                .row
-                  .col
-                    .teachers_title.text-center Meet the Teachers
-                .row.teachers_row
-                  / Teacher
-                  .col-lg-4.col-md-6
-                    .teacher
-                      .teacher_image
-                        = image_tag('teacher_1.jpg')
-                        .teacher_body.text-center
-                          .teacher_title
-                            %a{:href => "#"} Jonathan Smith
-                          .teacher_subtitle Marketing
-                          .teacher_social
-                            %ul
-                              %li
-                                %a{:href => "#"}
-                                  %i.fa.fa-google-plus{"aria-hidden" => "true"}
-                              %li
-                                %a{:href => "#"}
-                                  %i.fa.fa-pinterest{"aria-hidden" => "true"}
-                              %li
-                                %a{:href => "#"}
-                                  %i.fa.fa-facebook{"aria-hidden" => "true"}
-                              %li
-                                %a{:href => "#"}
-                                  %i.fa.fa-twitter{"aria-hidden" => "true"}
-                    / Teacher
-                    .col-lg-4.col-md-6
-                      .teacher
-                        .teacher_image
-                          = image_tag('teacher_2.jpg')
-                          .teacher_body.text-center
-                            .teacher_title
-                              %a{:href => "#"} Michelle Williams
-                            .teacher_subtitle Art  Design
-                            .teacher_social
-                              %ul
-                                %li
-                                  %a{:href => "#"}
-                                    %i.fa.fa-google-plus{"aria-hidden" => "true"}
-                                %li
-                                  %a{:href => "#"}
-                                    %i.fa.fa-pinterest{"aria-hidden" => "true"}
-                                %li
-                                  %a{:href => "#"}
-                                    %i.fa.fa-facebook{"aria-hidden" => "true"}
-                                %li
-                                  %a{:href => "#"}
-                                    %i.fa.fa-twitter{"aria-hidden" => "true"}
-                      / Teacher
-                      .col-lg-4.col-md-6
-                        .teacher
-                          .teacher_image
-                            = image_tag('teacher_3.jpg')
-                            .teacher_body.text-center
-                              .teacher_title
-                                %a{:href => "#"} Jack Gallagan
-                              .teacher_subtitle Marketing
-                              .teacher_social
-                                %ul
-                                  %li
-                                    %a{:href => "#"}
-                                      %i.fa.fa-google-plus{"aria-hidden" => "true"}
-                                  %li
-                                    %a{:href => "#"}
-                                      %i.fa.fa-pinterest{"aria-hidden" => "true"}
-                                  %li
-                                    %a{:href => "#"}
-                                      %i.fa.fa-facebook{"aria-hidden" => "true"}
-                                  %li
-                                    %a{:href => "#"}
-                                      %i.fa.fa-twitter{"aria-hidden" => "true"}
-                        / Teacher
-                        .col-lg-4.col-md-6
-                          .teacher
-                            .teacher_image
-                              = image_tag('teacher_4.jpg')
-                              .teacher_body.text-center
-                                .teacher_title
-                                  %a{:href => "#"} Christinne Smith
-                                .teacher_subtitle Marketing
-                                .teacher_social
-                                  %ul
-                                    %li
-                                      %a{:href => "#"}
-                                        %i.fa.fa-google-plus{"aria-hidden" => "true"}
-                                    %li
-                                      %a{:href => "#"}
-                                        %i.fa.fa-pinterest{"aria-hidden" => "true"}
-                                    %li
-                                      %a{:href => "#"}
-                                        %i.fa.fa-facebook{"aria-hidden" => "true"}
-                                    %li
-                                      %a{:href => "#"}
-                                        %i.fa.fa-twitter{"aria-hidden" => "true"}
-                          / Teacher
-                          .col-lg-4.col-md-6
-                            .teacher
-                              .teacher_image
-                                = image_tag('teacher_5.jpg')
-                                .teacher_body.text-center
-                                  .teacher_title
-                                    %a{:href => "#"} Michelle Williams
-                                  .teacher_subtitle Art  Design
-                                  .teacher_social
-                                    %ul
-                                      %li
-                                        %a{:href => "#"}
-                                          %i.fa.fa-google-plus{"aria-hidden" => "true"}
-                                      %li
-                                        %a{:href => "#"}
-                                          %i.fa.fa-pinterest{"aria-hidden" => "true"}
-                                      %li
-                                        %a{:href => "#"}
-                                          %i.fa.fa-facebook{"aria-hidden" => "true"}
-                                      %li
-                                        %a{:href => "#"}
-                                          %i.fa.fa-twitter{"aria-hidden" => "true"}
-                            / Teacher
-                            .col-lg-4.col-md-6
-                              .teacher
-                                .teacher_image
-                                  = image_tag('teacher_6.jpg')
-                                  .teacher_body.text-center
-                                    .teacher_title
-                                      %a{:href => "#"} Jack Gallagan
-                                    .teacher_subtitle Marketing
-                                    .teacher_social
-                                      %ul
-                                        %li
-                                          %a{:href => "#"}
-                                            %i.fa.fa-google-plus{"aria-hidden" => "true"}
-                                        %li
-                                          %a{:href => "#"}
-                                            %i.fa.fa-pinterest{"aria-hidden" => "true"}
-                                        %li
-                                          %a{:href => "#"}
-                                            %i.fa.fa-facebook{"aria-hidden" => "true"}
-                                        %li
-                                          %a{:href => "#"}
-                                            %i.fa.fa-twitter{"aria-hidden" => "true"}
-                            .row
-                              .col.text-center
-                                .button.teachers_button
-                                  %a{:href => "#"}
-                                    see all teachers
-                                    .button_arrow
-                                      %i.fa.fa-angle-right{"aria-hidden" => "true"}
+/ / Home
+/ .home
+/   / Background image artist https://unsplash.com/@thepootphotographer
+/   .home_background.parallax_background.parallax-window{ data: {parallax: "scroll", speed: "0.8"} }
+/     = image_tag("about.jpg")
+/   .home_container
+/     .container
+/       .row
+/         .col
+/           .home_content.text-center
+/             .home_title About us
+/             .breadcrumbs
+/               %ul
+/                 %li
+/                   %a{:href => "index.html"} Home
+/                 %li About us
+/ / About
+/ .about
+/   .container
+/     .row.about_row.row-lg-eq-height
+/       .col-lg-6
+/         .about_content
+/           .about_title Our Platform's main goal
+/           .about_text
+/             %p Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut. Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id convallis libero, sed blandit nibh. Nam ultricies tristique nibh, consequat ornare nibh. Quisque vitae odio ligula.
+/       .col-lg-6
+/         .about_image
+/           = image_tag('about_1.jpg')
+/       .row.about_row.row-lg-eq-height
+/         .col-lg-6.order-lg-1.order-2
+/           .about_image
+/             = image_tag('about_1.jpg')
+/           .col-lg-6.order-lg-2.order-1
+/             .about_content
+/               .about_title eLearn's Vision
+/               .about_text
+/                 %p Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut. Maecenas rutrum viverra sapien sed fermentum. Morbi tempor odio eget lacus tempus pulvinar. Praesent vel nisl fermentum, gravida augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id convallis libero, sed blandit nibh. Nam ultricies tristique nibh.
+/     / Milestones
+/     .milestones
+/       / Background image artis https://unsplash.com/@thepootphotographer
+/       .parallax_background.parallax-window{ data: {parallax: "scroll", speed: "0.8"} }
+/         = image_tag("milestones.jpg", style: "width: -webkit-fill-available")
+/       .container
+/         .row.milestones_container
+/           / Milestone
+/           .col-lg-3.milestone_col
+/             .milestone.text-center
+/               .milestone_icon
+/                 = image_tag('milestone_1.svg')
+/                 .milestone_counter{"data-end-value" => "1548"} 0
+/                 .milestone_text Online Courses
+/             / Milestone
+/             .col-lg-3.milestone_col
+/               .milestone.text-center
+/                 .milestone_icon
+/                   = image_tag('milestone_2.svg')
+/                   .milestone_counter{"data-end-value" => "7286"} 0
+/                   .milestone_text Students
+/               / Milestone
+/               .col-lg-3.milestone_col
+/                 .milestone.text-center
+/                   .milestone_icon
+/                     = image_tag('milestone_3.svg')
+/                     .milestone_counter{"data-end-value" => "257"} 0
+/                     .milestone_text Teachers
+/                 / Milestone
+/                 .col-lg-3.milestone_col
+/                   .milestone.text-center
+/                     .milestone_icon
+/                       = image_tag('milestone_4.svg')
+/                       .milestone_counter{"data-end-value" => "39"} 0
+/                       .milestone_text Countries
+/             / Teachers
+/             .teachers
+/               .container
+/                 .row
+/                   .col
+/                     .teachers_title.text-center Meet the Teachers
+/                 .row.teachers_row
+/                   / Teacher
+/                   .col-lg-4.col-md-6
+/                     .teacher
+/                       .teacher_image
+/                         = image_tag('teacher_1.jpg')
+/                         .teacher_body.text-center
+/                           .teacher_title
+/                             %a{:href => "#"} Jonathan Smith
+/                           .teacher_subtitle Marketing
+/                           .teacher_social
+/                             %ul
+/                               %li
+/                                 %a{:href => "#"}
+/                                   %i.fa.fa-google-plus{"aria-hidden" => "true"}
+/                               %li
+/                                 %a{:href => "#"}
+/                                   %i.fa.fa-pinterest{"aria-hidden" => "true"}
+/                               %li
+/                                 %a{:href => "#"}
+/                                   %i.fa.fa-facebook{"aria-hidden" => "true"}
+/                               %li
+/                                 %a{:href => "#"}
+/                                   %i.fa.fa-twitter{"aria-hidden" => "true"}
+/                     / Teacher
+/                     .col-lg-4.col-md-6
+/                       .teacher
+/                         .teacher_image
+/                           = image_tag('teacher_2.jpg')
+/                           .teacher_body.text-center
+/                             .teacher_title
+/                               %a{:href => "#"} Michelle Williams
+/                             .teacher_subtitle Art  Design
+/                             .teacher_social
+/                               %ul
+/                                 %li
+/                                   %a{:href => "#"}
+/                                     %i.fa.fa-google-plus{"aria-hidden" => "true"}
+/                                 %li
+/                                   %a{:href => "#"}
+/                                     %i.fa.fa-pinterest{"aria-hidden" => "true"}
+/                                 %li
+/                                   %a{:href => "#"}
+/                                     %i.fa.fa-facebook{"aria-hidden" => "true"}
+/                                 %li
+/                                   %a{:href => "#"}
+/                                     %i.fa.fa-twitter{"aria-hidden" => "true"}
+/                       / Teacher
+/                       .col-lg-4.col-md-6
+/                         .teacher
+/                           .teacher_image
+/                             = image_tag('teacher_3.jpg')
+/                             .teacher_body.text-center
+/                               .teacher_title
+/                                 %a{:href => "#"} Jack Gallagan
+/                               .teacher_subtitle Marketing
+/                               .teacher_social
+/                                 %ul
+/                                   %li
+/                                     %a{:href => "#"}
+/                                       %i.fa.fa-google-plus{"aria-hidden" => "true"}
+/                                   %li
+/                                     %a{:href => "#"}
+/                                       %i.fa.fa-pinterest{"aria-hidden" => "true"}
+/                                   %li
+/                                     %a{:href => "#"}
+/                                       %i.fa.fa-facebook{"aria-hidden" => "true"}
+/                                   %li
+/                                     %a{:href => "#"}
+/                                       %i.fa.fa-twitter{"aria-hidden" => "true"}
+/                         / Teacher
+/                         .col-lg-4.col-md-6
+/                           .teacher
+/                             .teacher_image
+/                               = image_tag('teacher_4.jpg')
+/                               .teacher_body.text-center
+/                                 .teacher_title
+/                                   %a{:href => "#"} Christinne Smith
+/                                 .teacher_subtitle Marketing
+/                                 .teacher_social
+/                                   %ul
+/                                     %li
+/                                       %a{:href => "#"}
+/                                         %i.fa.fa-google-plus{"aria-hidden" => "true"}
+/                                     %li
+/                                       %a{:href => "#"}
+/                                         %i.fa.fa-pinterest{"aria-hidden" => "true"}
+/                                     %li
+/                                       %a{:href => "#"}
+/                                         %i.fa.fa-facebook{"aria-hidden" => "true"}
+/                                     %li
+/                                       %a{:href => "#"}
+/                                         %i.fa.fa-twitter{"aria-hidden" => "true"}
+/                           / Teacher
+/                           .col-lg-4.col-md-6
+/                             .teacher
+/                               .teacher_image
+/                                 = image_tag('teacher_5.jpg')
+/                                 .teacher_body.text-center
+/                                   .teacher_title
+/                                     %a{:href => "#"} Michelle Williams
+/                                   .teacher_subtitle Art  Design
+/                                   .teacher_social
+/                                     %ul
+/                                       %li
+/                                         %a{:href => "#"}
+/                                           %i.fa.fa-google-plus{"aria-hidden" => "true"}
+/                                       %li
+/                                         %a{:href => "#"}
+/                                           %i.fa.fa-pinterest{"aria-hidden" => "true"}
+/                                       %li
+/                                         %a{:href => "#"}
+/                                           %i.fa.fa-facebook{"aria-hidden" => "true"}
+/                                       %li
+/                                         %a{:href => "#"}
+/                                           %i.fa.fa-twitter{"aria-hidden" => "true"}
+/                             / Teacher
+/                             .col-lg-4.col-md-6
+/                               .teacher
+/                                 .teacher_image
+/                                   = image_tag('teacher_6.jpg')
+/                                   .teacher_body.text-center
+/                                     .teacher_title
+/                                       %a{:href => "#"} Jack Gallagan
+/                                     .teacher_subtitle Marketing
+/                                     .teacher_social
+/                                       %ul
+/                                         %li
+/                                           %a{:href => "#"}
+/                                             %i.fa.fa-google-plus{"aria-hidden" => "true"}
+/                                         %li
+/                                           %a{:href => "#"}
+/                                             %i.fa.fa-pinterest{"aria-hidden" => "true"}
+/                                         %li
+/                                           %a{:href => "#"}
+/                                             %i.fa.fa-facebook{"aria-hidden" => "true"}
+/                                         %li
+/                                           %a{:href => "#"}
+/                                             %i.fa.fa-twitter{"aria-hidden" => "true"}
+/                             .row
+/                               .col.text-center
+/                                 .button.teachers_button
+/                                   %a{:href => "#"}
+/                                     see all teachers
+/                                     .button_arrow
+/                                       %i.fa.fa-angle-right{"aria-hidden" => "true"}

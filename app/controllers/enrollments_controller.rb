@@ -3,8 +3,9 @@
 # enrollment controller
 class EnrollmentsController < ApplicationController
   def enroll
-    if current_user.courses.include?(@course)
-      notice => 'You are already enrolled in this course'
+    user = current_user
+    if user.courses.include?(@course)
+      flash[:notice] = 'You are already enrolled in this course'
     else
       @course = Course.find(params[:id])
       current_user.courses << @course

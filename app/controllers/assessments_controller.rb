@@ -7,6 +7,7 @@ class AssessmentsController < ApplicationController
   # GET /assessments or /assessments.json
   def index
     @assessments = Assessment.all
+    authorize @assessments
   end
 
   # GET /assessments/1 or /assessments/1.json
@@ -17,7 +18,7 @@ class AssessmentsController < ApplicationController
     course = Course.find(params[:id])
     @@course = course
     @assignment = course.assignment
-    @questions = @assignment.questions
+    @questions = @assignment.questions if @assignment.present?
     @assessment = Assessment.new
   end
 
@@ -49,17 +50,17 @@ class AssessmentsController < ApplicationController
   end
 
   def certificate
-    binding.pry
     grade = params[:assessment][:grade]
     user_id = params[:assessment][:user_id]
     course = @@course
     assignment_id = params[:assessment][:assignment_id]
-    course_id = Course.where(assignment_id: assignment_id)
-    certificate = Certificate.create(grade: grade, user_id: user_id, course_id: course.id)
+    Course.where(assignment_id: assignment_id)
+    Certificate.create(grade: grade, user_id: user_id, course_id: course.id)
   end
 
   # PATCH/PUT /assessments/1 or /assessments/1.json
   def update
+    authorize @assessment
     respond_to do |format|
       if @assessment.update(assessment_params)
         format.html { redirect_to assessment_url(@assessment), notice: 'Assessment was successfully updated.' }
@@ -74,7 +75,7 @@ class AssessmentsController < ApplicationController
   # DELETE /assessments/1 or /assessments/1.json
   def destroy
     @assessment.destroy
-
+    authorize @assessment
     respond_to do |format|
       format.html { redirect_to assessments_url, notice: 'Assessment was successfully destroyed.' }
       format.json { head :no_content }

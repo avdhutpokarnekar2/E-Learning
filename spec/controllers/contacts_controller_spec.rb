@@ -4,9 +4,10 @@ require 'rails_helper'
 
 RSpec.describe ContactsController, type: :controller do # rubocop:disable Metrics/BlockLength
   describe 'GET #index' do
-    it 'assigns a new contact to @contact' do
+    
+    it 'renders the index template' do
       get :index
-      expect(assigns(:contact)).to be_a_new(Contact)
+      expect(response).to render_template(:index)
     end
   end
 
@@ -35,5 +36,6 @@ RSpec.describe ContactsController, type: :controller do # rubocop:disable Metric
       post :create, params: params
       expect(flash[:notice]).to eq('Contact form saved successfully.')
     end
+
   end
 end

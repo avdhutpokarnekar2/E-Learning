@@ -66,34 +66,34 @@
           <td><pre><a name="line6">6</a>   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line7">7</a>   devise :database_authenticatable, </pre></td>
+          <td><pre><a name="line7">7</a>   devise :database_authenticatable,</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line8">8</a>          :recoverable, :rememberable, :validatable, :registerable</pre></td>
+          <td><pre><a name="line8">8</a>          :recoverable, :rememberable, :validatable, :registerable, :confirmable</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line9">9</a> </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line10">10</a>   enum role: { student: 0, instructor: 1, admin: 2 }</pre></td>
+          <td><pre><a name="line10">10</a>   attribute :verified, :boolean, default: false</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line11">11</a> </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line12">12</a>   has_many :enrollments, dependent: :destroy</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line13">13</a>   has_many :assessments, dependent: :destroy</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line14">14</a>   has_many :courses, through: :enrollments, dependent: :destroy</pre></td>
+          <td><pre><a name="line12">12</a>   enum role: { student: 0, instructor: 1, admin: 2 }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line15">15</a> </pre></td>
+          <td><pre><a name="line13">13</a> </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line16">16</a>   attribute :verified, :boolean, default: false</pre></td>
+          <td><pre><a name="line14">14</a>   has_many :enrollments, dependent: :destroy</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line15">15</a>   has_many :assessments, dependent: :destroy</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line16">16</a>   has_many :courses, through: :enrollments, dependent: :destroy</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line17">17</a> end</pre></td>
@@ -101,7 +101,7 @@
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-12 11:22:46 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-24 13:27:48 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

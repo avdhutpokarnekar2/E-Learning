@@ -2,6 +2,18 @@
 
 module Users
   class SessionsController < Devise::SessionsController
+    def create
+      email = params[:user][:email]
+      resource = User.find_by(email: email)
+      if resource.instructor? && !resource.verified?
+        flash[:alert] = 'Your account has not been verified yet.'
+        redirect_to new_user_session_path
+      else
+        set_flash_message!(:notice, :signed_in)
+        sign_in(resource_name, resource)
+        respond_with resource, location: after_sign_in_path_for(resource)
+      end
+    end
     # before_action :configure_sign_in_params, only: [:create]
 
     # GET /resource/sign_in
@@ -25,17 +37,5 @@ module Users
     # def configure_sign_in_params
     #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
     # end
-  end
-
-  private
-
-  def after_sign_in_path_for(resource)
-    if resource.is_a?(User) && resource.instructor? && resource.verified?
-      # Redirect to the instructor dashboard or any other page
-      instructor_dashboard_path
-    else
-      # Redirect to the default path for other users
-      super
-    end
   end
 end

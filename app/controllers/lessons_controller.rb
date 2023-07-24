@@ -2,6 +2,8 @@
 
 # lesson controller
 class LessonsController < ApplicationController
+  before_action :set_course, only: %i[show edit update destroy]
+
   def index
     course_id = params[:course_id]
     @lessons = Lesson.where(course_id: course_id)
@@ -10,7 +12,8 @@ class LessonsController < ApplicationController
   def show; end
 
   def new
-    @lesson = Lesson.new
+    @course = Course.find(params[:course_id])
+    @lesson = @course.lessons.build
   end
 
   def edit; end
@@ -31,7 +34,7 @@ class LessonsController < ApplicationController
   def update
     respond_to do |format|
       if @lesson.update(lesson_params)
-        format.html { redirect_to lesson_url(@lesson), notice: 'lesson was successfully updated.' }
+        format.html { redirect_to course_lesson_url(@lesson), notice: 'Lesson was successfully updated.' }
         format.json { render :show, status: :ok, location: @lesson }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -41,7 +44,8 @@ class LessonsController < ApplicationController
   end
 
   def destroy
-    @lesson.destroy
+    @lesson.destroy if @lesson.present?
+
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
       format.json { head :no_content }

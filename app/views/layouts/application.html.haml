@@ -6,6 +6,7 @@
     = csrf_meta_tags
     = csp_meta_tag
     %script{src: 'https://js.stripe.com/v3/'}
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"}
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = stylesheet_link_tag "styles/bootstrap4/bootstrap.min.css", "data-turbo-track": "reload"
     = javascript_include_tag 'https://checkout.stripe.com/checkout.js'
@@ -17,6 +18,6 @@
     = stylesheet_link_tag "styles/responsive.css", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
-    = render partial: 'home/header' 
-    = yield
-    = render partial: 'home/footer'
+  = render partial: 'home/header'
+  = yield
+  = render partial: 'home/footer'

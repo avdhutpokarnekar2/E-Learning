@@ -6,7 +6,7 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments or /assignments.json
   def index
-    course_id =Course.find(params[:course_id])
+    course_id = Course.find(params[:course_id])
     @@course_id = course_id
     @assignments = Assignment.where(course_id: course_id.id)
   end

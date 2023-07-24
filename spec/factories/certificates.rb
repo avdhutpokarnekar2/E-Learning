@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :certificate do
-    grade { "MyString" }
-    user { nil }
-    course { nil }
+    grade { "4" }
+    association :user
+    association :course
   end
 end

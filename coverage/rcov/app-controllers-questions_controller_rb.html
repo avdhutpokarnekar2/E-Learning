@@ -25,12 +25,12 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-questions_controller_rb.html">app/controllers/questions_controller.rb</a></td>
-            <td class='right_align'><tt>75</tt></td>
-            <td class='right_align'><tt>52</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>30.67%</tt></div>
+            <td class='right_align'><tt>77</tt></td>
+            <td class='right_align'><tt>54</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>29.87%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:31px"></div>
-        <div class="uncovered" style="width:69px"></div>
+        <div class="covered" style="width:30px"></div>
+        <div class="uncovered" style="width:70px"></div>
       </div></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
       <div class="percent_graph">
@@ -183,7 +183,7 @@
           <td><pre><a name="line45">45</a>       if @question.update(question_params)</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line46">46</a>         format.html { redirect_to question_url(@question), notice: &#39;Question was successfully updated.&#39; }</pre></td>
+          <td><pre><a name="line46">46</a>         format.html { redirect_to assignment_questions_path(@question), notice: &#39;Question was successfully updated.&#39; }</pre></td>
         </tr>
         <tr class="uncovered">
           <td><pre><a name="line47">47</a>         format.json { render :show, status: :ok, location: @question }</pre></td>
@@ -225,60 +225,66 @@
           <td><pre><a name="line59">59</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line60">60</a>       format.html { redirect_to questions_url, notice: &#39;Question was successfully destroyed.&#39; }</pre></td>
+          <td><pre><a name="line60">60</a>       format.html do</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line61">61</a>       format.json { head :no_content }</pre></td>
+          <td><pre><a name="line61">61</a>         redirect_to assignment_questions_path(@question.assignment), notice: &#39;Question was successfully destroyed.&#39;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line62">62</a>     end</pre></td>
+          <td><pre><a name="line62">62</a>       end</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line63">63</a>   end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line64">64</a> </pre></td>
+          <td><pre><a name="line63">63</a>       format.json { head :no_content }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line65">65</a>   private</pre></td>
+          <td><pre><a name="line64">64</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line65">65</a>   end</pre></td>
         </tr>
         <tr class="inferred">
           <td><pre><a name="line66">66</a> </pre></td>
         </tr>
-        <tr class="inferred">
-          <td><pre><a name="line67">67</a>   # Use callbacks to share common setup or constraints between actions.</pre></td>
-        </tr>
         <tr class="uncovered">
-          <td><pre><a name="line68">68</a>   def set_question</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line69">69</a>     @question = Question.find(params[:id])</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line70">70</a>   end</pre></td>
+          <td><pre><a name="line67">67</a>   private</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line71">71</a> </pre></td>
+          <td><pre><a name="line68">68</a> </pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line72">72</a>   # Only allow a list of trusted parameters through.</pre></td>
+          <td><pre><a name="line69">69</a>   # Use callbacks to share common setup or constraints between actions.</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line73">73</a>   def question_params</pre></td>
+          <td><pre><a name="line70">70</a>   def set_question</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line74">74</a>     params.require(:question).permit(:title, :answer, :assignment_id, option: {})</pre></td>
+          <td><pre><a name="line71">71</a>     @question = Question.find(params[:id])</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line75">75</a>   end</pre></td>
+          <td><pre><a name="line72">72</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line73">73</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line74">74</a>   # Only allow a list of trusted parameters through.</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line76">76</a> end</pre></td>
+          <td><pre><a name="line75">75</a>   def question_params</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line76">76</a>     params.require(:question).permit(:title, :answer, :assignment_id, option: {})</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line77">77</a>   end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line78">78</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2023-07-12 11:22:46 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
+    <p>Generated on 2023-07-24 13:27:48 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.3.1</a></p>
 
   </body>
 </html>

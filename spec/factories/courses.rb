@@ -6,5 +6,6 @@ FactoryBot.define do
     description { 'Learn the basics of Ruby programming' }
     fees { 990 }
     duration { 3 }
+    association :user
   end
 end

@@ -181,10 +181,10 @@ $(document).ready(function()
 		    			value: endValue,
 		    			roundProps:"value", 
 						ease: Circ.easeOut, 
-						onUpdate:function()
-						{
-							document.getElementsByClassName('milestone_counter')[i].innerHTML = signBefore + counter.value + signAfter;
-						}
+						// onUpdate:function()
+						// {
+						// 	document.getElementsByClassName('milestone_counter')[i].innerHTML = signBefore + counter.value + signAfter;
+						// }
 		    		});
 		    	})
 			    .addTo(ctrl);
